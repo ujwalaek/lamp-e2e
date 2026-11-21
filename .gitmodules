@@ -1,0 +1,3 @@
+[submodule "lamp"]
+	path = lamp
+	url = https://github.com/aair-lab/lamp.git
