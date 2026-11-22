@@ -1,0 +1,17 @@
+{
+ "demo": "demo_36",
+ "case": "drop",
+ "success": false,
+ "frames": 532,
+ "carry": [
+  294,
+  412
+ ],
+ "event_step": 353,
+ "fraction_outside": {
+  "gripper_1->frame_1": 1.0,
+  "gripper_1->tool_1": 0.8778195488721805,
+  "frame_1->stand_1": 0.3101503759398496,
+  "frame_1->tool_1": 0.9586466165413534
+ }
+}

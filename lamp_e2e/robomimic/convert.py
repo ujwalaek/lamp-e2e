@@ -66,25 +66,28 @@ def fixed_body_pose(xml_str, body):
 
 
 def load_demo(g, task, tool_frame=False):
-    spec = TASKS[task]
     obs = g["obs"]
-    o = obs["object"][:]
+    return build_demo(task, obs["object"][:], obs["robot0_eef_pos"][:], obs["robot0_eef_quat"][:],
+                      obs["robot0_gripper_qpos"][:], g["actions"][:, -1], g.attrs["model_file"], tool_frame)
+
+
+def build_demo(task, o, eef_pos, eq, gq, gripper_cmd, model_file, tool_frame=False):
+    """Arrays (as recorded by robomimic, or live from robosuite) -> LAMP-ready demo dict."""
+    spec = TASKS[task]
     T = o.shape[0]
-    eq = obs["robot0_eef_quat"][:]
     if tool_frame:
         # Express the gripper in a frame rotated 180 deg about its x axis, so "pointing down at the object"
         # is close to zero rotation (as in LAMP's own simulated grasps) instead of close to 180 deg, where
         # the rotation-vector representation flips sign and splits one grasp across many angle bins.
         eq = (R.from_quat(eq) * R.from_euler("x", np.pi)).as_quat()
-    poses = {"gripper_1": to6d(obs["robot0_eef_pos"][:], eq)}
+    poses = {"gripper_1": to6d(eef_pos, eq)}
     rel_dist = {}
     for name, k in spec["objects"].items():
         poses[name] = to6d(o[:, 14 * k + 7:14 * k + 10], o[:, 14 * k + 10:14 * k + 14])
         rel_dist[name] = np.linalg.norm(o[:, 14 * k:14 * k + 3], axis=1)
     for name, body in spec["fixed"].items():
-        poses[name] = np.repeat(fixed_body_pose(g.attrs["model_file"], body)[None], T, axis=0)
-    closed = g["actions"][:, -1] > 0
-    gq = obs["robot0_gripper_qpos"][:]
+        poses[name] = np.repeat(fixed_body_pose(model_file, body)[None], T, axis=0)
+    closed = np.asarray(gripper_cmd) > 0
     gap = gq[:, 0] - gq[:, 1]
     held = [None] * T
     for t in range(T):

@@ -1,0 +1,15 @@
+{
+ "demo": "demo_0",
+ "case": "nominal",
+ "success": true,
+ "frames": 127,
+ "carry": [
+  48,
+  116
+ ],
+ "event_step": 82,
+ "fraction_outside": {
+  "gripper_1->nut_1": 0.5118110236220472,
+  "nut_1->peg_1": 1.0
+ }
+}

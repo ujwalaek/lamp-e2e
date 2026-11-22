@@ -1,0 +1,8 @@
+== square demo_5 nominal (17:38:22)
+{"demo": "demo_5", "case": "nominal", "success": true, "frames": 144, "carry": [40, 131], "event_step": 85, "fraction_outside": {"gripper_1->nut_1": 0.5833333333333334, "nut_1->peg_1": 0.9791666666666666}}
+== square demo_5 drop (17:38:52)
+{"demo": "demo_5", "case": "drop", "success": false, "frames": 144, "carry": [40, 131], "event_step": 85, "fraction_outside": {"gripper_1->nut_1": 0.6875, "nut_1->peg_1": 1.0}}
+== square demo_5 miss (17:39:18)
+{"demo": "demo_5", "case": "miss", "success": false, "frames": 144, "carry": [40, 131], "event_step": 85, "fraction_outside": {"gripper_1->nut_1": 0.3958333333333333, "nut_1->peg_1": 1.0}}
+== square demo_0 nominal (17:39:49)
+{"demo": "demo_0", "case": "nominal", "success": true, "frames": 127, "carry": [48, 116], "event_step": 82, "fraction_outside": {"gripper_1->nut_1": 0.5118110236220472, "nut_1->peg_1": 1.0}}

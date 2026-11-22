@@ -1,0 +1,6 @@
+== tool_hang demo_36 nominal (17:34:49)
+{"demo": "demo_36", "case": "nominal", "success": true, "frames": 532, "carry": [294, 412], "event_step": 353, "fraction_outside": {"gripper_1->frame_1": 1.0, "gripper_1->tool_1": 0.6804511278195489, "frame_1->stand_1": 0.3101503759398496, "frame_1->tool_1": 0.9379699248120301}}
+== tool_hang demo_36 drop (17:35:57)
+{"demo": "demo_36", "case": "drop", "success": false, "frames": 532, "carry": [294, 412], "event_step": 353, "fraction_outside": {"gripper_1->frame_1": 1.0, "gripper_1->tool_1": 0.8778195488721805, "frame_1->stand_1": 0.3101503759398496, "frame_1->tool_1": 0.9586466165413534}}
+== tool_hang demo_36 miss (17:37:07)
+{"demo": "demo_36", "case": "miss", "success": false, "frames": 532, "carry": [294, 412], "event_step": 353, "fraction_outside": {"gripper_1->frame_1": 1.0, "gripper_1->tool_1": 0.7763157894736842, "frame_1->stand_1": 0.45112781954887216, "frame_1->tool_1": 0.9624060150375939}}

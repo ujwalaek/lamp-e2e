@@ -123,6 +123,23 @@ F1 is for the learned predicate that best matches each ground-truth event on the
   - Smooth predicates over time before reading transitions.
   - Replace the all-or-nothing transition check with transition frequencies learned from the demos, plus explicit goal conditions.
 
+## Rollout videos
+
+`lamp_e2e/out/videos/` holds annotated rollouts of held-out demos, each replayed in the MuJoCo physics simulator. Every frame shows:
+- each object pair's relative pose,
+- whether that pose is inside a region LAMP learned (green) or outside every learned region (red),
+- a timeline of that status.
+
+The drop and miss failures are physically simulated: the gripper is opened mid-carry, or the arm is pushed sideways. Start with `rollouts_overview.mp4`, which joins all six clips; `out/videos/README.md` explains how to read them.
+
+```bash
+bash lamp_e2e/robomimic/make_videos.sh square    "nominal drop miss" demo_5
+bash lamp_e2e/robomimic/make_videos.sh tool_hang "nominal drop miss" demo_36
+venv/bin/python lamp_e2e/robomimic/stitch_videos.py
+```
+
+Rendering needs `mujoco==3.3.0`, `robosuite==1.5.1`, `imageio[ffmpeg]` and `MUJOCO_GL=egl`. MuJoCo 4.x is not compatible with robosuite 1.5.1.
+
 ## Caveats
 
 - **The grasp flag is inferred:** gripper commanded closed, object within 12 cm, fingers not fully shut. robomimic doesn't record it.
