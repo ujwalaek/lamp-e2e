@@ -1,0 +1,18 @@
+{
+ "drop": {
+  "n": 20,
+  "flag_transition": 0.85,
+  "flag_transition_goal": 0.85
+ },
+ "miss": {
+  "n": 20,
+  "flag_transition": 0.75,
+  "flag_transition_goal": 0.75
+ },
+ "_goal_signature": [
+  "(frame_tool_0 frame tool)",
+  "(gripper_frame_0 gripper frame)",
+  "(gripper_stand_0 gripper stand)"
+ ],
+ "_bins_vs_gmm_agreement": 0.9677879714576962
+}

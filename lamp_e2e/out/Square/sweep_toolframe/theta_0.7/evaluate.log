@@ -1,0 +1,11 @@
+held-out states: 688  learned predicates: ['gripper_nut_1', 'nut_peg_1', 'nut_peg_2']
+
+ground truth 'nut_on_peg': true in 7% of states
+   nut_peg_1              accuracy 93.8%  precision 100.0%  recall 15.7%
+   nut_peg_2              accuracy 90.3%  precision 16.7%  recall  7.8%
+   gripper_nut_1          accuracy 91.9%  precision  0.0%  recall  0.0%
+
+ground truth 'holding': true in 51% of states
+   nut_peg_2              accuracy 48.7%  precision 45.8%  recall  3.1%
+   gripper_nut_1          accuracy 49.7%  precision 100.0%  recall  1.4%
+   nut_peg_1              accuracy 48.7%  precision 37.5%  recall  0.9%

@@ -1,0 +1,5 @@
+| theta | RCRs per pair | actions | best predicate vs ground truth | flagged (transition check) | flagged (transition + goal) |
+|---|---|---|---|---|---|
+| 0.9 | frame_stand 3, frame_tool 2, gripper_frame 1, gripper_stand 0, gripper_tool 2, stand_tool 0 | 59 | frame_is_assembled: frame_stand_2 F1 0.99; holding: gripper_frame_1 F1 0.54; tool_on_frame: frame_stand_2 F1 0.10 | nominal 75% / drop 80% / miss 85% | nominal 75% / drop 80% / miss 85% |
+| 0.7 | frame_stand 3, frame_tool 3, gripper_frame 2, gripper_stand 1, gripper_tool 2, stand_tool 2 | 108 | frame_is_assembled: frame_stand_2 F1 0.99; holding: gripper_frame_1 F1 0.54; tool_on_frame: frame_stand_2 F1 0.10 | nominal 100% / drop 60% / miss 55% | nominal 100% / drop 60% / miss 55% |
+| 0.5 | frame_stand 1, frame_tool 3, gripper_frame 3, gripper_stand 2, gripper_tool 4, stand_tool 2 | 108 | frame_is_assembled: frame_stand_1 F1 0.80; holding: gripper_frame_1 F1 0.71; tool_on_frame: frame_stand_1 F1 0.07 | nominal 100% / drop 85% / miss 75% | nominal 100% / drop 85% / miss 75% |

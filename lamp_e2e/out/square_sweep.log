@@ -1,0 +1,48 @@
+﻿===== Square theta=1.0 (06:44:16)
+  gripper_nut: 0 RCR(s)
+  gripper_peg: 0 RCR(s)
+  nut_peg: 1 RCR(s)
+#abstract transitions: 2  #lifted actions: 2
+  nominal     20                 0 (  0%)                       0 (  0%)
+  drop        20                 0 (  0%)                       0 (  0%)
+  miss        20                 0 (  0%)                       0 (  0%)
+===== Square theta=0.9 (06:45:35)
+  gripper_nut: 0 RCR(s)
+  gripper_peg: 0 RCR(s)
+  nut_peg: 2 RCR(s)
+#abstract transitions: 5  #lifted actions: 5
+  nominal     20                 0 (  0%)                       0 (  0%)
+  drop        20                 0 (  0%)                       0 (  0%)
+  miss        20                 0 (  0%)                       0 (  0%)
+===== Square theta=0.7 (06:46:55)
+  gripper_nut: 0 RCR(s)
+  gripper_peg: 0 RCR(s)
+  nut_peg: 2 RCR(s)
+#abstract transitions: 6  #lifted actions: 6
+  nominal     20                 0 (  0%)                       0 (  0%)
+  drop        20                 0 (  0%)                       0 (  0%)
+  miss        20                 0 (  0%)                       0 (  0%)
+===== Square theta=0.5 (06:48:21)
+  gripper_nut: 2 RCR(s)
+  gripper_peg: 0 RCR(s)
+  nut_peg: 2 RCR(s)
+#abstract transitions: 15  #lifted actions: 12
+  nominal     20                 1 (  5%)                       1 (  5%)
+  drop        20                 0 (  0%)                       0 (  0%)
+  miss        20                 0 (  0%)                       0 (  0%)
+===== Square theta=0.3 (06:51:30)
+  gripper_nut: 2 RCR(s)
+  gripper_peg: 0 RCR(s)
+  nut_peg: 2 RCR(s)
+#abstract transitions: 33  #lifted actions: 25
+  nominal     20                 2 ( 10%)                       2 ( 10%)
+  drop        20                 0 (  0%)                       0 (  0%)
+  miss        20                 0 (  0%)                       0 (  0%)
+| theta | RCRs per pair | actions | best predicate vs ground truth | flagged (transition check) | flagged (transition + goal) |
+|---|---|---|---|---|---|
+| 1.0 | gripper_nut 0, gripper_peg 0, nut_peg 1 | 2 | holding: nut_peg_1 F1 0.01; nut_on_peg: nut_peg_1 F1 0.00 | nominal 0% / drop 0% / miss 0% | nominal 0% / drop 0% / miss 0% |
+| 0.9 | gripper_nut 0, gripper_peg 0, nut_peg 2 | 5 | holding: nut_peg_2 F1 0.06; nut_on_peg: nut_peg_1 F1 0.27 | nominal 0% / drop 0% / miss 0% | nominal 0% / drop 0% / miss 0% |
+| 0.7 | gripper_nut 0, gripper_peg 0, nut_peg 2 | 6 | holding: nut_peg_2 F1 0.06; nut_on_peg: nut_peg_1 F1 0.27 | nominal 0% / drop 0% / miss 0% | nominal 0% / drop 0% / miss 0% |
+| 0.5 | gripper_nut 2, gripper_peg 0, nut_peg 2 | 12 | holding: gripper_nut_1 F1 0.07; nut_on_peg: nut_peg_1 F1 0.27 | nominal 5% / drop 0% / miss 0% | nominal 5% / drop 0% / miss 0% |
+| 0.3 | gripper_nut 2, gripper_peg 0, nut_peg 2 | 25 | holding: nut_peg_2 F1 0.19; nut_on_peg: nut_peg_1 F1 0.60 | nominal 10% / drop 0% / miss 0% | nominal 10% / drop 0% / miss 0% |
+

@@ -1,0 +1,14 @@
+{
+ "nominal": {
+  "n": 20,
+  "flag_transition": 1.0,
+  "flag_transition_goal": 1.0
+ },
+ "_goal_signature": [
+  "(frame_tool_0 frame tool)",
+  "(gripper_frame_0 gripper frame)",
+  "(gripper_stand_0 gripper stand)",
+  "(gripper_tool_0 gripper tool)"
+ ],
+ "_bins_vs_gmm_agreement": 0.9467248908296944
+}

@@ -7,6 +7,8 @@ relational critical regions → predicates + PDDL action model → per-state pre
 - `lamp_e2e/`: my scripts, which run LAMP's own learning code with a numpy stand-in for their OpenRAVE simulator.
   **See [lamp_e2e/README.md](lamp_e2e/README.md)** for the paper ↔ code ↔ script mapping, implementation details, results and caveats.
 - `lamp_e2e/out/`: results from the reference run (seed 0).
+- `lamp_e2e/robomimic/`: the same pipeline applied to **robomimic Square and Tool Hang**, using real human demos.
+  **See [lamp_e2e/robomimic/README.md](lamp_e2e/robomimic/README.md)** for the results and what they mean for execution monitoring.
 
 ## Setup and run
 

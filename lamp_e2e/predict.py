@@ -21,20 +21,17 @@ import warnings
 
 import numpy as np
 
-from _lamp_path import setup
-setup()
+import lamp_env
 
-from Config import Config  # noqa: E402
-Config.declare_config("Packing", "MagneticGripper")
-import py3_patches  # noqa: E402
-py3_patches.apply()
+DOMAIN = lamp_env.domain_from_argv()
+Config = lamp_env.declare(DOMAIN)
 import useful_functions as uf  # noqa: E402
 from src.data_structures.WorldModel import WorldModel  # noqa: E402
 from src.data_structures.PDDLState import PDDLState  # noqa: E402
 from src.utilities.TransitionClusters import TransitionClusters  # noqa: E402
 
 warnings.filterwarnings("ignore")
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out")
+OUT = lamp_env.out_dir(DOMAIN)
 
 
 def link_pose(state, name):
@@ -114,6 +111,8 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--test_env", default="env9")
     ap.add_argument("--train_envs", nargs="*", default=["env1", "env2"])
+    ap.add_argument("--domain", default="Packing")
+    ap.add_argument("--quiet", action="store_true", help="only print the summary, not every abstract sequence")
     a = ap.parse_args()
     os.makedirs(OUT, exist_ok=True)
 
@@ -126,6 +125,17 @@ if __name__ == "__main__":
         action_of[str(k)] = "a{}".format(getattr(act, "action_id", "?"))
         # Paper, Alg. 3: pre(a) = intersection of the (lifted) pre-states of all transitions in the cluster.
         pre_of[str(k)] = set.intersection(*[lifted_sig(t[0]) for t in cluster])
+
+    # Goal signature (my addition for monitoring): lifted predicates true in the final abstract state of
+    # every training demo that reached the end of the task. Training demos are abstracted the same way.
+    goal_sig = None
+    for env in a.train_envs:
+        for traj in uf.load_traj(env)["env_states"]:
+            od = uf.get_object_dictionary(list(traj[-1].object_dict.keys()))
+            sig = lifted_sig(abstract(traj[-1], model, od, uf.get_auxilary_preds(od, model.relations)))
+            if env == a.train_envs[0]:      # first env = full demos (env2 in Packing is truncated on purpose)
+                goal_sig = sig if goal_sig is None else goal_sig & sig
+    print("goal signature (true at the end of every full training demo):", sorted(goal_sig))
 
     print("calibrating GMM thresholds eps on training states ...")
     eps = calibrate_eps(model, a.train_envs)
@@ -176,7 +186,10 @@ if __name__ == "__main__":
                 seq.append(" ".join(sorted(r for r in true_names)))
                 prev = st
         verdict = "ANOMALY" if any(f.startswith("UNEXPLAINED") for f in flags) else "OK"
-        summary.append((ti, lab, verdict))
+        reached = goal_sig.issubset(lifted_sig(prev))
+        summary.append((ti, lab, verdict, reached))
+        if a.quiet:
+            continue
         print("\n--- test demo {} [{}] -> {}".format(ti, lab, verdict))
         for i, s in enumerate(seq):
             print("   s{}: {}".format(i, s))
@@ -188,7 +201,23 @@ if __name__ == "__main__":
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         w.writeheader(); w.writerows(rows)
     print("\n=== execution-monitoring summary ===")
-    for ti, lab, v in summary:
-        print("  demo {} [{:7s}] -> {}".format(ti, lab, v))
+    if not a.quiet:
+        for ti, lab, v, r in summary:
+            print("  demo {} [{:7s}] -> {}  (goal reached: {})".format(ti, lab, v, r))
+    import json
+    mon = {}
+    print("  {:8s} {:>5s}  {:>24s}  {:>30s}".format("case", "demos", "flagged: transition check",
+                                                     "flagged: transition+goal check"))
+    for lab in sorted(set(s[1] for s in summary)):
+        rows_l = [s for s in summary if s[1] == lab]
+        n = len(rows_l)
+        k1 = sum(1 for s in rows_l if s[2] == "ANOMALY")
+        k2 = sum(1 for s in rows_l if s[2] == "ANOMALY" or not s[3])
+        print("  {:8s} {:5d}  {:>16d} ({:4.0%})  {:>22d} ({:4.0%})".format(lab, n, k1, k1 / n, k2, k2 / n))
+        mon[lab] = {"n": n, "flag_transition": k1 / n, "flag_transition_goal": k2 / n}
+    mon["_goal_signature"] = sorted(goal_sig)
+    mon["_bins_vs_gmm_agreement"] = agree / total if total else None
+    with open(os.path.join(OUT, "monitor_{}.json".format(a.test_env)), "w") as f:
+        json.dump(mon, f, indent=1)
     print("\nbin-membership vs GMM agreement: {:.1%} over {} predicate evaluations".format(agree / total, total))
     print("per-state predictions ->", path)

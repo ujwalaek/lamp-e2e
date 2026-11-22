@@ -1,0 +1,35 @@
+goal signature (true at the end of every full training demo): ['(gripper_nut_0 gripper nut)', '(gripper_peg_0 gripper peg)']
+calibrating GMM thresholds eps on training states ...
+  eps[gripper_nut_1] = 9.13
+  eps[nut_peg_1] = 8.97
+  eps[nut_peg_2] = 6.20
+
+=== predictions on env8 ===
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 5833.52it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 8473.34it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 9425.40it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 8774.69it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 4969.55it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 7854.50it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 8224.13it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 8830.11it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 8886.24it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 7281.78it/s]
+
+=== execution-monitoring summary ===
+  case     demos  flagged: transition check  flagged: transition+goal check
+  drop        20                 0 (  0%)                       0 (  0%)
+  miss        20                 0 (  0%)                       0 (  0%)
+
+bin-membership vs GMM agreement: 99.2% over 4131 predicate evaluations
+per-state predictions -> /home/ujwalak/lamp_work/lamp_e2e/out/Square/predictions_env8.csv

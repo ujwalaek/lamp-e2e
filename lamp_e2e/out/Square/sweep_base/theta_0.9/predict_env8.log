@@ -1,0 +1,30 @@
+goal signature (true at the end of every full training demo): ['(gripper_nut_0 gripper nut)', '(gripper_peg_0 gripper peg)']
+calibrating GMM thresholds eps on training states ...
+  eps[nut_peg_1] = 8.48
+  eps[nut_peg_2] = 7.13
+
+=== predictions on env8 ===
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10356.31it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 13273.11it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 16131.94it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 13706.88it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 12336.19it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 13357.66it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 13025.79it/s]
+generating clusters
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 12557.80it/s]
+
+=== execution-monitoring summary ===
+  case     demos  flagged: transition check  flagged: transition+goal check
+  drop        20                 0 (  0%)                       0 (  0%)
+  miss        20                 0 (  0%)                       0 (  0%)
+
+bin-membership vs GMM agreement: 99.8% over 2754 predicate evaluations
+per-state predictions -> /home/ujwalak/lamp_work/lamp_e2e/out/Square/predictions_env8.csv

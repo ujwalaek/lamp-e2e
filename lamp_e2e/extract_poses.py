@@ -16,11 +16,10 @@ import os
 
 import numpy as np
 
-from _lamp_path import setup
-setup()
+import lamp_env
 
-from Config import Config  # noqa: E402
-Config.declare_config("Packing", "MagneticGripper")
+DOMAIN = lamp_env.domain_from_argv()
+Config = lamp_env.declare(DOMAIN)
 import src.utilities.DataAugmentation as DA  # noqa: E402
 import useful_functions as uf  # noqa: E402
 
@@ -34,7 +33,9 @@ def dump_continuous(env, trajs):
         return p[1] if name.split("_")[0] in Config.ROBOT_TYPES else p
 
     out = {}
-    pairs = [("gripper_1", "can_1"), ("can_1", "surface_1")]
+    names = sorted(n for n in trajs[0][0].object_dict if n.split("_")[0] not in Config.NON_RELATION_OBJECTS)
+    names.sort(key=lambda n: n.split("_")[0] not in Config.ROBOT_TYPES)     # robot links first, as LAMP does
+    pairs = [(p, q) for i, p in enumerate(names) for q in names[i + 1:]]
     for prim, sec in pairs:
         rows = []
         for ti, traj in enumerate(trajs):
@@ -50,6 +51,7 @@ def dump_continuous(env, trajs):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("-n", "--name", nargs="*", default=["env1", "env2", "env9"])
+    ap.add_argument("--domain", default="Packing")
     a = ap.parse_args()
     for env in a.name:
         da = DA.DataAugmenter(env)

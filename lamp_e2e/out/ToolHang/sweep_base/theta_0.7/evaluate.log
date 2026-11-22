@@ -1,0 +1,16 @@
+held-out states: 1145  learned predicates: ['gripper_frame_1', 'gripper_tool_1', 'frame_stand_1', 'frame_tool_1', 'frame_tool_2', 'frame_tool_3', 'stand_tool_1', 'stand_tool_2']
+
+ground truth 'frame_is_assembled': true in 44% of states
+   frame_stand_1          accuracy 76.6%  precision 69.4%  recall 83.7%
+   frame_tool_1           accuracy 61.7%  precision 100.0%  recall 12.9%
+   stand_tool_2           accuracy 23.6%  precision 19.5%  recall 23.7%
+
+ground truth 'tool_on_frame': true in 2% of states
+   frame_stand_1          accuracy 47.9%  precision  3.0%  recall 69.2%
+   frame_tool_3           accuracy 97.2%  precision  0.0%  recall  0.0%
+   gripper_tool_1         accuracy 95.2%  precision  0.0%  recall  0.0%
+
+ground truth 'holding': true in 65% of states
+   frame_stand_1          accuracy 48.8%  precision 63.3%  recall 51.4%
+   stand_tool_2           accuracy 48.0%  precision 62.5%  recall 51.0%
+   frame_tool_2           accuracy 44.2%  precision 100.0%  recall 14.5%

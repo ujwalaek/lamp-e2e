@@ -1,107 +1,107 @@
 calibrating GMM thresholds eps on training states ...
-  eps[gripper_can_1] = 19.22
-  eps[gripper_can_2] = 18.55
-  eps[can_surface_1] = 13.02
+  eps[gripper_can_1] = 18.55
+  eps[gripper_can_2] = 19.44
+  eps[can_surface_1] = 13.09
 
 === predictions on env9 ===
 
 --- test demo 0 [nominal] -> OK
    s0: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
-        --[a5]-->
-   s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a1]-->
-   s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[a3]-->
+   s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
+        --[a5]-->
+   s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
+        --[a4]-->
    s3: (can_surface_1 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[a2]-->
    s4: (can_surface_1 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a4]-->
+        --[a1]-->
    s5: (can_surface_1 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
 
 --- test demo 1 [nominal] -> OK
    s0: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
-        --[a5]-->
-   s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a1]-->
-   s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[a3]-->
+   s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
+        --[a5]-->
+   s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
+        --[a4]-->
    s3: (can_surface_1 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[a2]-->
    s4: (can_surface_1 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a4]-->
+        --[a1]-->
    s5: (can_surface_1 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
 
 --- test demo 2 [nominal] -> OK
    s0: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
-        --[a5]-->
-   s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a1]-->
-   s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[a3]-->
+   s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
+        --[a5]-->
+   s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
+        --[a4]-->
    s3: (can_surface_1 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[a2]-->
    s4: (can_surface_1 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a4]-->
+        --[a1]-->
    s5: (can_surface_1 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
 
 --- test demo 3 [drop] -> ANOMALY
    s0: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
-        --[a5]-->
+        --[a3]-->
    s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a1]-->
+        --[a5]-->
    s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[UNEXPLAINED: effect matches no learned action]-->
    s3: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
 
 --- test demo 4 [drop] -> ANOMALY
    s0: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
-        --[a5]-->
+        --[a3]-->
    s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a1]-->
+        --[a5]-->
    s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[UNEXPLAINED: effect matches no learned action]-->
    s3: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
 
 --- test demo 5 [drop] -> ANOMALY
    s0: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
-        --[a5]-->
+        --[a3]-->
    s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a1]-->
+        --[a5]-->
    s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[UNEXPLAINED: effect matches no learned action]-->
    s3: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
 
 --- test demo 6 [miss] -> ANOMALY
    s0: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
-        --[a5]-->
+        --[a3]-->
    s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a1]-->
+        --[a5]-->
    s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[UNEXPLAINED: effect of a2 but precondition violated, missing (can_surface_1 can surface)]-->
    s3: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[UNEXPLAINED: effect of a4 but precondition violated, missing (can_surface_1 can surface)]-->
+        --[UNEXPLAINED: effect of a1 but precondition violated, missing (can_surface_1 can surface)]-->
    s4: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
 
 --- test demo 7 [miss] -> ANOMALY
    s0: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
-        --[a5]-->
+        --[a3]-->
    s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a1]-->
+        --[a5]-->
    s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[UNEXPLAINED: effect of a2 but precondition violated, missing (can_surface_1 can surface)]-->
    s3: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[UNEXPLAINED: effect of a4 but precondition violated, missing (can_surface_1 can surface)]-->
+        --[UNEXPLAINED: effect of a1 but precondition violated, missing (can_surface_1 can surface)]-->
    s4: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
 
 --- test demo 8 [miss] -> ANOMALY
    s0: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
-        --[a5]-->
+        --[a3]-->
    s1: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[a1]-->
+        --[a5]-->
    s2: (can_surface_0 can_1 surface_1) (gripper_can_1 gripper_1 can_1)
         --[UNEXPLAINED: effect of a2 but precondition violated, missing (can_surface_1 can surface)]-->
    s3: (can_surface_0 can_1 surface_1) (gripper_can_2 gripper_1 can_1)
-        --[UNEXPLAINED: effect of a4 but precondition violated, missing (can_surface_1 can surface)]-->
+        --[UNEXPLAINED: effect of a1 but precondition violated, missing (can_surface_1 can surface)]-->
    s4: (can_surface_0 can_1 surface_1) (gripper_can_0 gripper_1 can_1)
 
 === execution-monitoring summary ===
@@ -114,6 +114,9 @@ calibrating GMM thresholds eps on training states ...
   demo 6 [miss   ] -> ANOMALY
   demo 7 [miss   ] -> ANOMALY
   demo 8 [miss   ] -> ANOMALY
+  drop       3 demos, flagged ANOMALY:   3 (100%)
+  miss       3 demos, flagged ANOMALY:   3 (100%)
+  nominal    3 demos, flagged ANOMALY:   0 (0%)
 
 bin-membership vs GMM agreement: 99.8% over 954 predicate evaluations
 per-state predictions -> /home/ujwalak/lamp_work/lamp_e2e/out/predictions_env9.csv

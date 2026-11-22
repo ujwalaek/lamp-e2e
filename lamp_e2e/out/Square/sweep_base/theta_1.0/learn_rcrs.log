@@ -1,0 +1,10 @@
+total_traj_count = 180
+gripper_nut 0
+gripper_peg 0
+nut_peg 1
+file prefix: 180_0_
+thresholds: {'gripper_nut': 1.0, 'gripper_peg': 1.0, 'nut_peg': 1.0}
+  gripper_nut: 0 RCR(s)
+  gripper_peg: 0 RCR(s)
+  nut_peg: 1 RCR(s)
+    RCR 1: 4 bins | grasp-sensor values [0] | xyz bins [7, 7, 5]..[7, 7, 5]

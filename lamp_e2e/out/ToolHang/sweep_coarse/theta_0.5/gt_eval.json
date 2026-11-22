@@ -1,0 +1,26 @@
+{
+ "frame_is_assembled": {
+  "predicate": "frame_stand_1",
+  "accuracy": 0.7799126637554585,
+  "precision": 0.6693657219973009,
+  "recall": 0.9860834990059643,
+  "f1": 0.797427652733119,
+  "gt_rate": 0.4393013100436681
+ },
+ "tool_on_frame": {
+  "predicate": "frame_stand_1",
+  "accuracy": 0.37554585152838427,
+  "precision": 0.03508771929824561,
+  "recall": 1.0,
+  "f1": 0.06779661016949151,
+  "gt_rate": 0.022707423580786028
+ },
+ "holding": {
+  "predicate": "gripper_frame_1",
+  "accuracy": 0.7039301310043669,
+  "precision": 1.0,
+  "recall": 0.5461847389558233,
+  "f1": 0.7064935064935065,
+  "gt_rate": 0.6524017467248908
+ }
+}

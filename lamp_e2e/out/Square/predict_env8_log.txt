@@ -1,0 +1,11 @@
+calibrating GMM thresholds eps on training states ...
+  eps[nut_peg_1] = 9.66
+
+=== predictions on env8 ===
+
+=== execution-monitoring summary ===
+  drop      20 demos, flagged ANOMALY:   0 (0%)
+  miss      20 demos, flagged ANOMALY:   0 (0%)
+
+bin-membership vs GMM agreement: 100.0% over 1377 predicate evaluations
+per-state predictions -> /home/ujwalak/lamp_work/lamp_e2e/out/Square/predictions_env8.csv

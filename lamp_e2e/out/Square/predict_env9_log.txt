@@ -1,0 +1,10 @@
+calibrating GMM thresholds eps on training states ...
+  eps[nut_peg_1] = 9.66
+
+=== predictions on env9 ===
+
+=== execution-monitoring summary ===
+  nominal   20 demos, flagged ANOMALY:   0 (0%)
+
+bin-membership vs GMM agreement: 99.7% over 688 predicate evaluations
+per-state predictions -> /home/ujwalak/lamp_work/lamp_e2e/out/Square/predictions_env9.csv

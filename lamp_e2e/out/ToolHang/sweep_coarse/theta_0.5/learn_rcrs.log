@@ -1,0 +1,30 @@
+total_traj_count = 180
+gripper_frame 3
+gripper_stand 2
+gripper_tool 4
+frame_stand 1
+frame_tool 3
+stand_tool 2
+file prefix: 180_0_
+thresholds: {'gripper_stand': 0.5, 'frame_gripper': 0.5, 'gripper_tool': 0.5, 'frame_stand': 0.5, 'stand_tool': 0.5, 'frame_tool': 0.5}
+  gripper_frame: 3 RCR(s)
+    RCR 1: 4 bins | grasp-sensor values [1] | xyz bins [12, 14, 14]..[13, 14, 15]
+    RCR 2: 1 bins | grasp-sensor values [0] | xyz bins [13, 14, 14]..[13, 14, 14]
+    RCR 3: 2 bins | grasp-sensor values [2] | xyz bins [20, 14, 14]..[20, 14, 15]
+  gripper_stand: 2 RCR(s)
+    RCR 1: 8 bins | grasp-sensor values [2] | xyz bins [23, 16, 12]..[25, 16, 14]
+    RCR 2: 1 bins | grasp-sensor values [2] | xyz bins [20, 16, 7]..[20, 16, 7]
+  gripper_tool: 4 RCR(s)
+    RCR 1: 10 bins | grasp-sensor values [0] | xyz bins [14, 14, 13]..[14, 14, 14]
+    RCR 2: 3 bins | grasp-sensor values [2] | xyz bins [24, 23, 16]..[24, 23, 17]
+    RCR 3: 12 bins | grasp-sensor values [1] | xyz bins [14, 14, 14]..[14, 14, 14]
+    RCR 4: 2 bins | grasp-sensor values [2] | xyz bins [23, 23, 15]..[23, 23, 15]
+  frame_stand: 1 RCR(s)
+    RCR 1: 8 bins | grasp-sensor values [0] | xyz bins [9, 9, 2]..[10, 11, 5]
+  frame_tool: 3 RCR(s)
+    RCR 1: 17 bins | grasp-sensor values [0] | xyz bins [6, 10, 11]..[6, 11, 12]
+    RCR 2: 1 bins | grasp-sensor values [0] | xyz bins [7, 11, 10]..[7, 11, 10]
+    RCR 3: 5 bins | grasp-sensor values [0] | xyz bins [4, 11, 2]..[4, 13, 3]
+  stand_tool: 2 RCR(s)
+    RCR 1: 12 bins | grasp-sensor values [0] | xyz bins [10, 14, 15]..[11, 15, 18]
+    RCR 2: 2 bins | grasp-sensor values [0] | xyz bins [14, 16, 11]..[14, 16, 12]

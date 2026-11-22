@@ -1,0 +1,13 @@
+goal signature (true at the end of every full training demo): ['(gripper_nut_0 gripper nut)', '(gripper_peg_0 gripper peg)', '(nut_peg_0 nut peg)']
+calibrating GMM thresholds eps on training states ...
+  eps[nut_peg_1] = 8.86
+
+=== predictions on env8 ===
+
+=== execution-monitoring summary ===
+  case     demos  flagged: transition check  flagged: transition+goal check
+  drop        20                 0 (  0%)                       0 (  0%)
+  miss        20                 0 (  0%)                       0 (  0%)
+
+bin-membership vs GMM agreement: 100.0% over 1377 predicate evaluations
+per-state predictions -> /home/ujwalak/lamp_work/lamp_e2e/out/Square/predictions_env8.csv

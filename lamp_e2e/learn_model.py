@@ -21,17 +21,14 @@ import os
 import sys
 import time
 
-from _lamp_path import setup
-setup()
+import lamp_env
 
-from Config import Config  # noqa: E402
-Config.declare_config("Packing", "MagneticGripper")
-import py3_patches  # noqa: E402
-py3_patches.apply()
+DOMAIN = lamp_env.domain_from_argv()
+Config = lamp_env.declare(DOMAIN)
 from src.data_structures.WorldModel import WorldModel  # noqa: E402
 from src.data_structures.TransitionGraph import TransitionGraph  # noqa: E402
 
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "out")
+OUT = lamp_env.out_dir(DOMAIN)
 
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
