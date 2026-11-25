@@ -26,8 +26,11 @@ def card(w, h, title, text):
     d = ImageDraw.Draw(im)
     d.text((40, h // 2 - 50), title, fill=(30, 30, 30), font=font(34, True))
     d.text((40, h // 2 + 5), text, fill=(90, 90, 90), font=font(18))
-    d.text((40, h - 40), "LAMP learned regions on held-out robomimic rollouts  |  green = in a learned region, "
-           "red = outside, grey = none learned", fill=(130, 130, 130), font=font(14))
+    note = ("Stage-aware durative monitor  |  green = condition holds, amber = needed by stage end, red = violated, "
+            "grey = not checked in this stage") if "durative" in VID else \
+           ("LAMP learned regions on held-out robomimic rollouts  |  green = in a learned region, "
+            "red = outside, grey = none learned")
+    d.text((40, h - 40), note, fill=(130, 130, 130), font=font(14))
     return np.array(im)
 
 
@@ -38,7 +41,19 @@ def pad(fr, w, h):
     return out
 
 
+DURATIVE_CLIPS = [
+    ("square_nominal", "Square, NOMINAL (recorded human demo)", "Every stage's conditions hold: no alarm."),
+    ("square_drop", "Square, DROP", "Gripper opens mid-carry: 'move-nut-to-peg' ends without the nut at the peg -> alarm at the drop."),
+    ("square_miss", "Square, MISS", "Arm pushed sideways: the nut is released away from the peg -> alarm at release."),
+    ("tool_hang_nominal", "Tool Hang, NOMINAL (recorded human demo)", "Every checkable condition holds: no alarm ('tool on hook' was never learned)."),
+    ("tool_hang_drop", "Tool Hang, DROP", "The frame is dropped while being inserted -> alarm: insert-frame ends without the frame in the stand."),
+    ("tool_hang_miss", "Tool Hang, MISS", "Arm pushed during insertion -> alarm: insert-frame ends without the frame in the stand."),
+]
+
+
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "durative":
+        VID, CLIPS = os.path.join(VID, "durative"), DURATIVE_CLIPS
     readers = [(imageio.get_reader(os.path.join(VID, c + ".mp4")), t, s) for c, t, s in CLIPS]
     sizes = [r.get_meta_data()["size"] for r, _, _ in readers]
     W = max(s[0] for s in sizes); H = max(s[1] for s in sizes)

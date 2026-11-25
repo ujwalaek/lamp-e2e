@@ -123,6 +123,15 @@ F1 is for the learned predicate that best matches each ground-truth event on the
   - Smooth predicates over time before reading transitions.
   - Replace the all-or-nothing transition check with transition frequencies learned from the demos, plus explicit goal conditions.
 
+## Stage-aware durative monitor
+
+**See [DURATIVE.md](DURATIVE.md)** for:
+- the durative PDDL models,
+- stage-aware checks (each relation checked only in its own stage),
+- the analysis of every false alarm and miss.
+
+With the peg's symmetry folded in and regions widened by one bin, Square catches 20/20 drops and 20/20 misses with 1 false alarm in 20 normal runs. Stage-aware videos are in `out/videos/durative/`.
+
 ## Rollout videos
 
 `lamp_e2e/out/videos/` holds annotated rollouts of held-out demos, each replayed in the MuJoCo physics simulator. Every frame shows:

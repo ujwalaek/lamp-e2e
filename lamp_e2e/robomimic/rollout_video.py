@@ -72,7 +72,7 @@ def carry_window(actions):
     return [(b, e) for b, e in segs if e - b >= 0.5 * longest][-1]
 
 
-def rollout(f, demo, case, push, push_steps, camera, size):
+def rollout(f, demo, case, push, push_steps, camera, size, render=True):
     g = f["data"][demo]
     actions = g["actions"][:].copy()
     s, e = carry_window(actions)
@@ -90,10 +90,12 @@ def rollout(f, demo, case, push, push_steps, camera, size):
         rec["object"].append(obs["object-state"]); rec["eef_pos"].append(obs["robot0_eef_pos"])
         rec["eef_quat"].append(obs["robot0_eef_quat"]); rec["gq"].append(obs["robot0_gripper_qpos"])
         rec["cmd"].append(actions[t, -1])
-        frames.append(env.sim.render(height=size, width=size, camera_name=camera)[::-1])
+        if render:
+            frames.append(env.sim.render(height=size, width=size, camera_name=camera)[::-1])
         obs, _, _, _ = env.step(actions[t])
     success = bool(env._check_success())
     rec = {k: np.array(v) for k, v in rec.items()}
+    env.close()
     return rec, frames, success, g.attrs["model_file"], (s, e, mid)
 
 

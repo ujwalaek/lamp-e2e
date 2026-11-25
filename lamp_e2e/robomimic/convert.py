@@ -71,6 +71,28 @@ def load_demo(g, task, tool_frame=False):
                       obs["robot0_gripper_qpos"][:], g["actions"][:, -1], g.attrs["model_file"], tool_frame)
 
 
+def canonicalize_peg(poses):
+    """The square peg is 4-fold symmetric about its vertical axis, so its frame is only defined up to 90 deg
+    turns. Per frame, turn the peg frame by k*90 deg (k in 0..3) to the one closest to the nut's yaw, so
+    the four physically identical seatings of the nut map to one relative orientation. Idempotent."""
+    if "peg_1" not in poses or "nut_1" not in poses:
+        return poses
+    peg, nut = poses["peg_1"], poses["nut_1"]
+    out = peg.copy()
+    for t in range(len(peg)):
+        Rp, Rn = R.from_rotvec(peg[t, 3:]), R.from_rotvec(nut[t, 3:])
+        best = None
+        for k in range(4):
+            Rk = Rp * R.from_euler("z", k * np.pi / 2)
+            ang = (Rk.inv() * Rn).magnitude()
+            if best is None or ang < best[0]:
+                best = (ang, Rk)
+        out[t, 3:] = best[1].as_rotvec()
+    poses = dict(poses)
+    poses["peg_1"] = out
+    return poses
+
+
 def build_demo(task, o, eef_pos, eq, gq, gripper_cmd, model_file, tool_frame=False):
     """Arrays (as recorded by robomimic, or live from robosuite) -> LAMP-ready demo dict."""
     spec = TASKS[task]
@@ -100,6 +122,8 @@ def build_demo(task, o, eef_pos, eq, gq, gripper_cmd, model_file, tool_frame=Fal
         if rel_dist[name][t] < GRASP_DIST:
             held[t] = name
     flags = o[:, 42:44] if task == "tool_hang" else None
+    if os.environ.get("LAMP_PEG_SYMMETRY") == "1":
+        poses = canonicalize_peg(poses)
     return dict(T=T, poses=poses, held=held, flags=flags)
 
 

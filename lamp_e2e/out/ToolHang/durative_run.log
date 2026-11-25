@@ -1,0 +1,30 @@
+===== ToolHang coarse_dilate0 (14:16:35)
+data ready in 724s
+labelled 180 training runs (889s)
+self-test: our region membership (no widening) vs LAMP's evaluate_in_ll_state: 0 mismatches
+false alarms on nominal held-out demos: 15/20
+drop: 20 rollouts, 18 really failed, detected 17/18
+miss: 20 rollouts, 19 really failed, detected 19/19
+   103  ('approach-tool', 'at end', 'at-tool-grasp', True)
+    43  ('move-tool-to-hook', 'at end', 'tool-at-hook', True)
+    40  ('move-frame-to-stand', 'at start', 'holding-frame', True)
+    31  ('move-tool-to-hook', 'at start', 'holding-tool', True)
+    30  ('insert-frame', 'at end', 'frame-in-stand', True)
+     9  ('move-tool-to-hook', 'over all', 'frame-in-stand', True)
+     9  ('approach-tool', 'over all', 'frame-in-stand', True)
+     6  ('hang-tool-and-retreat', 'over all', 'frame-in-stand', True)
+===== ToolHang coarse_dilate1 (14:33:45)
+data ready in 0s
+labelled 180 training runs (266s)
+self-test: our region membership (no widening) vs LAMP's evaluate_in_ll_state: 0 mismatches
+false alarms on nominal held-out demos: 3/20
+drop: 20 rollouts, 18 really failed, detected 11/18
+miss: 20 rollouts, 19 really failed, detected 18/19
+     9  ('move-tool-to-hook', 'over all', 'holding-tool', True)
+     9  ('insert-frame', 'over all', 'holding-frame', True)
+     9  ('insert-frame', 'at end', 'frame-in-stand', True)
+     9  ('approach-tool', 'over all', 'frame-in-stand', True)
+     5  ('approach-tool', 'at end', 'at-tool-grasp', True)
+     4  ('move-tool-to-hook', 'at end', 'tool-at-hook', True)
+     2  ('move-tool-to-hook', 'at start', 'holding-tool', True)
+     1  ('move-tool-to-hook', 'over all', 'frame-in-stand', True)

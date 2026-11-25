@@ -1,0 +1,64 @@
+[robosuite WARNING] No private macro file found! (macros.py:53)
+[robosuite WARNING] It is recommended to use a private macro file (macros.py:54)
+[robosuite WARNING] To setup, run: python /home/ujwalak/lamp_work/venv/lib/python3.12/site-packages/robosuite/scripts/setup_macros.py (macros.py:55)
+[robosuite WARNING] Could not import robosuite_models. Some robots may not be available. If you want to use these robots, please install robosuite_models from source (https://github.com/ARISE-Initiative/robosuite_models) or through pip install. (__init__.py:30)
+[robosuite WARNING] Could not load the mink-based whole-body IK. Make sure you install related import properly, otherwise you will not be able to use the default IK controller setting for GR1 robot. (__init__.py:40)
+rollout drop demo_0 failed
+rollout drop demo_5 failed
+rollout drop demo_14 failed
+rollout drop demo_21 failed
+rollout drop demo_27 failed
+rollout drop demo_32 failed
+rollout drop demo_36 failed
+rollout drop demo_44 failed
+rollout drop demo_56 failed
+rollout drop demo_93 failed
+rollout drop demo_103 failed
+rollout drop demo_105 failed
+rollout drop demo_111 failed
+rollout drop demo_125 failed
+rollout drop demo_131 failed
+rollout drop demo_155 failed
+rollout drop demo_168 failed
+rollout drop demo_176 failed
+rollout drop demo_180 failed
+rollout drop demo_191 failed
+rollout miss demo_0 failed
+rollout miss demo_5 failed
+rollout miss demo_14 failed
+rollout miss demo_21 failed
+rollout miss demo_27 failed
+rollout miss demo_32 failed
+rollout miss demo_36 failed
+rollout miss demo_44 failed
+rollout miss demo_56 failed
+rollout miss demo_93 failed
+rollout miss demo_103 failed
+rollout miss demo_105 failed
+rollout miss demo_111 failed
+rollout miss demo_125 failed
+rollout miss demo_131 failed
+rollout miss demo_155 failed
+rollout miss demo_168 failed
+rollout miss demo_176 failed
+rollout miss demo_180 failed
+rollout miss demo_191 failed
+data ready in 551s
+labelled 180 training runs (613s)
+evaluated nominal (633s)
+evaluated drop (640s)
+evaluated miss (647s)
+
+=== Square: stage-aware durative monitor ===
+false alarms on nominal held-out demos: 17/20
+drop: 20 rollouts, 20 really failed, detected 20/20
+miss: 20 rollouts, 20 really failed, detected 20/20
+
+condition violations on TRAINING demos (out of 180):
+    93  ('approach-nut', 'at end', 'at-grasp-pose', True)
+    69  ('move-nut-to-peg', 'at end', 'nut-above-peg', True)
+    69  ('insert-nut', 'at start', 'nut-above-peg', True)
+    68  ('insert-nut', 'at end', 'nut-on-peg', True)
+    68  ('release-and-retreat', 'at start', 'nut-on-peg', True)
+    14  ('move-nut-to-peg', 'at start', 'holding', True)
+     9  ('move-nut-to-peg', 'over all', 'holding', True)
