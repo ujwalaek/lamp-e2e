@@ -1,6 +1,6 @@
 # Stage-aware durative monitoring on LAMP's learned regions
 
-Two things were requested:
+Two things :
 - A **durative PDDL model** for each task.
 - Detectors that are **used only during their stage**, ignoring task-irrelevant relations. For example, the gripper–peg relation only matters while approaching the peg, and the gripper–nut relation should be verified while the nut is being moved to the peg.
 
