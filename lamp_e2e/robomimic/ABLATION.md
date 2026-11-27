@@ -1,9 +1,6 @@
-# Does the relative-pose method work by itself? (no-hardcoding ablation)
+# Relative-pose method  
 
-**Question.** Can LAMP's relative-pose regions detect execution failures *without* task knowledge written by hand?
-If not, what exactly breaks?
-
-**Short answer.** Yes, on both robomimic tasks, with generic settings only. Two things decide it:
+LAMP's relative-pose regions detect execution failures without task knowledge written by hand on both robomimic tasks, with generic settings only. Two things decide it:
 
 - the **criticality threshold θ** (the share of demos that must visit a bin);
 - **who the training demos come from**.
