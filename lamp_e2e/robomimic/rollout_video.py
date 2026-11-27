@@ -72,15 +72,57 @@ def carry_window(actions):
     return [(b, e) for b, e in segs if e - b >= 0.5 * longest][-1]
 
 
-def rollout(f, demo, case, push, push_steps, camera, size, render=True):
-    g = f["data"][demo]
-    actions = g["actions"][:].copy()
+FAILURES = ("drop", "miss", "slip", "stall", "wrong_grasp", "wrong_peg")
+STALL_STEPS = 300          # 15 s at 20 Hz
+SLIP_GRIP = 0.0            # gripper command during a slip (1 = closed, -1 = open)
+
+
+def inject_failure(actions, case, push=1.0, push_steps=12):
+    """Return (modified actions, event step). The event step is when the failure starts."""
+    actions = actions.copy()
     s, e = carry_window(actions)
     mid = s + (e - s) // 2
+    event = mid
     if case == "drop":
         actions[mid:, -1] = -1.0
     elif case == "miss":
         actions[mid:mid + push_steps, 1] += push
+    elif case == "slip":
+        # grip loosens gradually (closed -> open over 2 s) while the arm keeps moving: the object slides out
+        # (a constant half-strength command, SLIP_GRIP = 0, did not release the nut at all in physics)
+        # starts a quarter of the way into the carry (at mid-carry the nut is often already over the peg and a
+        # slow release just drops it into place)
+        q = s + (e - s) // 4
+        event = q
+        ramp = np.linspace(1.0, -1.0, 40)
+        n = min(len(ramp), len(actions) - q)
+        actions[q:q + n, -1] = ramp[:n]
+        actions[q + n:e, -1] = -1.0
+    elif case == "stall":
+        # the arm freezes (zero motion, gripper still closed) for STALL_STEPS, then the demo continues
+        hold = np.zeros((STALL_STEPS, actions.shape[1]))
+        hold[:, -1] = actions[mid, -1]
+        actions = np.vstack([actions[:mid], hold, actions[mid:]])
+    elif case == "wrong_grasp":
+        # nudge the gripper sideways during the last steps before it closes, so it closes off the grasp point
+        k = 8
+        actions[max(0, s - k):s, 1] += 1.0
+        event = s
+    elif case == "wrong_peg":
+        # carry the square nut towards the round peg (20 cm in -y on the Square table) instead of the square one
+        # (16 steps moved it only ~13 cm, landing between the pegs)
+        actions[mid:mid + 24, 1] -= 1.0
+    return actions, event
+
+
+def rollout(f, demo, case, push, push_steps, camera, size, render=True, return_event=False):
+    g = f["data"][demo]
+    actions = g["actions"][:].copy()
+    s, e = carry_window(actions)
+    mid = s + (e - s) // 2
+    event = mid
+    if case in FAILURES:
+        actions, event = inject_failure(actions, case, push, push_steps)
     env = make_env(f)
     restore(env, g.attrs["model_file"], g["states"][0])
     rec = {k: [] for k in ("object", "eef_pos", "eef_quat", "gq", "cmd")}
@@ -96,6 +138,8 @@ def rollout(f, demo, case, push, push_steps, camera, size, render=True):
     success = bool(env._check_success())
     rec = {k: np.array(v) for k, v in rec.items()}
     env.close()
+    if return_event:
+        return rec, frames, success, g.attrs["model_file"], (s, e, mid), event
     return rec, frames, success, g.attrs["model_file"], (s, e, mid)
 
 

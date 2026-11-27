@@ -1,0 +1,569 @@
+===== Square A0_pure: LAMP defaults (15:35:57)
+saved env1: 180 demos, 6217 states
+  gripper_nut: 0 RCR(s)
+  gripper_peg: 0 RCR(s)
+  nut_peg: 1 RCR(s)
+#abstract transitions: 2  #lifted actions: 2
+nut_peg_1: 4 bins | sensor [0] | pos x [-1.0,+1.0] y [-1.0,+1.0] z [-10.1,-6.1] cm | angle-bin sets r[30, 31] p[30, 31] y[59]
+training demos: 180 | test cases: {'nominal': 20, 'drop': 20, 'miss': 20, 'slip': 20, 'stall': 20, 'wrong_grasp': 20, 'wrong_peg': 20, 'mh_better': 25, 'mh_okay': 50, 'mh_worse': 50}
+LAMP regions used as predicates: ['nut_peg_1']
+learned carry sequence: ('nut_1',) (177/180 training demos follow it exactly)
+labelled training runs (35s)
+labelled test runs (120s)
+== cut-off 98%: learned 2 conditions over 3 stages
+   free0          all       not nut_peg_1  (177/177)
+   carry1-nut     all       not nut_peg_1  (177/177)
+   near misses (held in most but not enough training demos, so NOT used):
+   nominal: flagged 0/20
+   drop: flagged 0/20
+   miss: flagged 0/20
+   slip: flagged 0/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 0/20
+   wrong_peg: flagged 0/20
+   mh_better: flagged 0/25
+   mh_okay: flagged 10/50
+   mh_worse: flagged 21/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A0_pure_q98
+== cut-off 95%: learned 3 conditions over 3 stages
+   free0          all       not nut_peg_1  (177/177)
+   carry1-nut     all       not nut_peg_1  (177/177)
+   free1          all       not nut_peg_1  (175/180)
+   near misses (held in most but not enough training demos, so NOT used):
+   nominal: flagged 1/20
+   drop: flagged 0/20
+   miss: flagged 0/20
+   slip: flagged 0/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 0/20
+   wrong_peg: flagged 0/20
+   mh_better: flagged 7/25
+   mh_okay: flagged 10/50
+   mh_worse: flagged 21/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A0_pure_q95
+== cut-off 90%: learned 3 conditions over 3 stages
+   free0          all       not nut_peg_1  (177/177)
+   carry1-nut     all       not nut_peg_1  (177/177)
+   free1          all       not nut_peg_1  (175/180)
+   near misses (held in most but not enough training demos, so NOT used):
+   nominal: flagged 1/20
+   drop: flagged 0/20
+   miss: flagged 0/20
+   slip: flagged 0/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 0/20
+   wrong_peg: flagged 0/20
+   mh_better: flagged 7/25
+   mh_okay: flagged 10/50
+   mh_worse: flagged 21/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A0_pure_q90
+== cut-off 80%: learned 3 conditions over 3 stages
+   free0          all       not nut_peg_1  (177/177)
+   carry1-nut     all       not nut_peg_1  (177/177)
+   free1          all       not nut_peg_1  (175/180)
+   near misses (held in most but not enough training demos, so NOT used):
+   nominal: flagged 1/20
+   drop: flagged 0/20
+   miss: flagged 0/20
+   slip: flagged 0/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 0/20
+   wrong_peg: flagged 0/20
+   mh_better: flagged 7/25
+   mh_okay: flagged 10/50
+   mh_worse: flagged 21/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A0_pure_q80
+===== Square A1_coarse_bins: LAMP_GRIP_BINS=10 LAMP_ANG_BINS=13 (15:47:08)
+saved env1: 180 demos, 6217 states
+  gripper_nut: 1 RCR(s)
+  gripper_peg: 0 RCR(s)
+  nut_peg: 0 RCR(s)
+#abstract transitions: 2  #lifted actions: 2
+gripper_nut_1: 1 bins | sensor [1] | pos x [+4.5,+7.6] y [-1.5,+1.5] z [-1.5,+1.5] cm | angle-bin sets r[6] p[6] y[1]
+training demos: 180 | test cases: {'nominal': 20, 'drop': 20, 'miss': 20, 'slip': 20, 'stall': 20, 'wrong_grasp': 20, 'wrong_peg': 20, 'mh_better': 25, 'mh_okay': 50, 'mh_worse': 50}
+LAMP regions used as predicates: ['gripper_nut_1']
+learned carry sequence: ('nut_1',) (177/180 training demos follow it exactly)
+labelled training runs (30s)
+labelled test runs (128s)
+== cut-off 98%: learned 2 conditions over 3 stages
+   free0          all       not gripper_nut_1  (177/177)
+   free1          all       not gripper_nut_1  (180/180)
+   near misses (held in most but not enough training demos, so NOT used):
+   nominal: flagged 0/20
+   drop: flagged 1/20
+   miss: flagged 1/20
+   slip: flagged 1/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 1/20
+   wrong_peg: flagged 1/20
+   mh_better: flagged 0/25
+   mh_okay: flagged 10/50
+   mh_worse: flagged 20/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A1_coarse_bins_q98
+== cut-off 95%: learned 2 conditions over 3 stages
+   free0          all       not gripper_nut_1  (177/177)
+   free1          all       not gripper_nut_1  (180/180)
+   near misses (held in most but not enough training demos, so NOT used):
+   nominal: flagged 0/20
+   drop: flagged 1/20
+   miss: flagged 1/20
+   slip: flagged 1/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 1/20
+   wrong_peg: flagged 1/20
+   mh_better: flagged 0/25
+   mh_okay: flagged 10/50
+   mh_worse: flagged 20/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A1_coarse_bins_q95
+== cut-off 90%: learned 2 conditions over 3 stages
+   free0          all       not gripper_nut_1  (177/177)
+   free1          all       not gripper_nut_1  (180/180)
+   near misses (held in most but not enough training demos, so NOT used):
+   nominal: flagged 0/20
+   drop: flagged 1/20
+   miss: flagged 1/20
+   slip: flagged 1/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 1/20
+   wrong_peg: flagged 1/20
+   mh_better: flagged 0/25
+   mh_okay: flagged 10/50
+   mh_worse: flagged 20/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A1_coarse_bins_q90
+== cut-off 80%: learned 2 conditions over 3 stages
+   free0          all       not gripper_nut_1  (177/177)
+   free1          all       not gripper_nut_1  (180/180)
+   near misses (held in most but not enough training demos, so NOT used):
+   nominal: flagged 0/20
+   drop: flagged 1/20
+   miss: flagged 1/20
+   slip: flagged 1/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 1/20
+   wrong_peg: flagged 1/20
+   mh_better: flagged 0/25
+   mh_okay: flagged 10/50
+   mh_worse: flagged 20/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A1_coarse_bins_q80
+===== Square A2_theta: LAMP_GRIP_BINS=10 LAMP_ANG_BINS=13 LAMP_THETA_GRIP=0.5 LAMP_THETA_OBJ=0.5 (16:26:07)
+saved env1: 180 demos, 6217 states
+  gripper_nut: 3 RCR(s)
+  gripper_peg: 0 RCR(s)
+  nut_peg: 2 RCR(s)
+#abstract transitions: 60  #lifted actions: 37
+gripper_nut_1: 1 bins | sensor [1] | pos x [-7.6,-4.5] y [-1.5,+1.5] z [-1.5,+1.5] cm | angle-bin sets r[6] p[6] y[6]
+gripper_nut_2: 4 bins | sensor [1] | pos x [+4.5,+7.6] y [-1.5,+1.5] z [-1.5,+1.5] cm | angle-bin sets r[6] p[6] y[0, 1, 11, 12]
+gripper_nut_3: 3 bins | sensor [0] | pos x [+4.5,+7.6] y [-1.5,+1.5] z [-4.5,+1.5] cm | angle-bin sets r[6] p[6] y[1, 11]
+nut_peg_1: 4 bins | sensor [0] | pos x [-1.0,+1.0] y [-1.0,+1.0] z [-14.1,-2.0] cm | angle-bin sets r[6] p[6] y[3, 9]
+nut_peg_2: 2 bins | sensor [0] | pos x [-1.0,+1.0] y [-1.0,+1.0] z [+2.0,+6.1] cm | angle-bin sets r[6] p[6] y[3, 9]
+training demos: 180 | test cases: {'nominal': 20, 'drop': 20, 'miss': 20, 'slip': 20, 'stall': 20, 'wrong_grasp': 20, 'wrong_peg': 20, 'mh_better': 25, 'mh_okay': 50, 'mh_worse': 50}
+LAMP regions used as predicates: ['gripper_nut_1', 'gripper_nut_1|gripper_nut_2', 'gripper_nut_1|gripper_nut_2|gripper_nut_3', 'gripper_nut_1|gripper_nut_3', 'gripper_nut_2', 'gripper_nut_2|gripper_nut_3', 'gripper_nut_3', 'nut_peg_1', 'nut_peg_1|nut_peg_2', 'nut_peg_2']
+learned carry sequence: ('nut_1',) (177/180 training demos follow it exactly)
+labelled training runs (223s)
+labelled test runs (623s)
+== cut-off 98%: learned 5 conditions over 3 stages
+   free0          all       not gripper_nut_1|gripper_nut_2  (177/177)
+   free0          all       not nut_peg_1|nut_peg_2  (177/177)
+   carry1-nut     all       not gripper_nut_3  (177/177)
+   carry1-nut     all       not nut_peg_2  (177/177)
+   free1          all       not gripper_nut_1|gripper_nut_2  (180/180)
+   near misses (held in most but not enough training demos, so NOT used):
+     free0          at end    gripper_nut_1|gripper_nut_2|gripper_nut_3  (176/180)
+     carry1-nut     at start  gripper_nut_1|gripper_nut_2|gripper_nut_3  (176/180)
+     free0          at end    gripper_nut_1|gripper_nut_2  (172/180)
+     carry1-nut     at start  gripper_nut_1|gripper_nut_2  (172/180)
+     free0          at end    gripper_nut_1|gripper_nut_3  (169/180)
+     carry1-nut     at start  gripper_nut_1|gripper_nut_3  (169/180)
+     carry1-nut     at end    gripper_nut_1|gripper_nut_2|gripper_nut_3  (161/180)
+     free1          at start  gripper_nut_1|gripper_nut_2|gripper_nut_3  (161/180)
+   nominal: flagged 0/20
+   drop: flagged 0/20
+   miss: flagged 0/20
+   slip: flagged 0/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 2/20
+   wrong_peg: flagged 0/20
+   mh_better: flagged 1/25
+   mh_okay: flagged 10/50
+   mh_worse: flagged 20/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A2_theta_q98
+== cut-off 95%: learned 7 conditions over 3 stages
+   free0          end       gripper_nut_1|gripper_nut_2  (172/180)
+   free0          all       not gripper_nut_1|gripper_nut_2  (177/177)
+   free0          all       not nut_peg_1|nut_peg_2  (177/177)
+   carry1-nut     start     gripper_nut_1|gripper_nut_2  (172/180)
+   carry1-nut     all       not gripper_nut_3  (177/177)
+   carry1-nut     all       not nut_peg_1|nut_peg_2  (172/177)
+   free1          all       not gripper_nut_1|gripper_nut_2  (180/180)
+   near misses (held in most but not enough training demos, so NOT used):
+     free0          at end    gripper_nut_1|gripper_nut_3  (169/180)
+     carry1-nut     at start  gripper_nut_1|gripper_nut_3  (169/180)
+     carry1-nut     at end    gripper_nut_1|gripper_nut_2|gripper_nut_3  (161/180)
+     free1          at start  gripper_nut_1|gripper_nut_2|gripper_nut_3  (161/180)
+     carry1-nut     at end    gripper_nut_1|gripper_nut_2  (159/180)
+     free1          at start  gripper_nut_1|gripper_nut_2  (159/180)
+     carry1-nut     at all    gripper_nut_1|gripper_nut_2  (154/177)
+     carry1-nut     at all    gripper_nut_1|gripper_nut_2|gripper_nut_3  (154/177)
+   nominal: flagged 3/20
+   drop: flagged 4/20
+   miss: flagged 4/20
+   slip: flagged 4/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 7/20
+   wrong_peg: flagged 4/20
+   mh_better: flagged 10/25
+   mh_okay: flagged 27/50
+   mh_worse: flagged 35/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A2_theta_q95
+== cut-off 90%: learned 9 conditions over 3 stages
+   free0          end       gripper_nut_1|gripper_nut_2  (172/180)
+   free0          all       not gripper_nut_1|gripper_nut_2|gripper_nut_3  (160/177)
+   free0          end       gripper_nut_1|gripper_nut_3  (169/180)
+   free0          all       not nut_peg_1|nut_peg_2  (177/177)
+   carry1-nut     start     gripper_nut_1|gripper_nut_2  (172/180)
+   carry1-nut     start     gripper_nut_1|gripper_nut_3  (169/180)
+   carry1-nut     all       not gripper_nut_3  (177/177)
+   carry1-nut     all       not nut_peg_1|nut_peg_2  (172/177)
+   free1          all       not gripper_nut_1|gripper_nut_2  (180/180)
+   near misses (held in most but not enough training demos, so NOT used):
+     carry1-nut     at end    gripper_nut_1|gripper_nut_2|gripper_nut_3  (161/180)
+     free1          at start  gripper_nut_1|gripper_nut_2|gripper_nut_3  (161/180)
+     carry1-nut     at end    gripper_nut_1|gripper_nut_2  (159/180)
+     free1          at start  gripper_nut_1|gripper_nut_2  (159/180)
+     carry1-nut     at all    gripper_nut_1|gripper_nut_2  (154/177)
+     carry1-nut     at all    gripper_nut_1|gripper_nut_2|gripper_nut_3  (154/177)
+     carry1-nut     at end    gripper_nut_1|gripper_nut_3  (149/180)
+     free1          at start  gripper_nut_1|gripper_nut_3  (149/180)
+   nominal: flagged 4/20
+   drop: flagged 5/20
+   miss: flagged 5/20
+   slip: flagged 5/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 11/20
+   wrong_peg: flagged 5/20
+   mh_better: flagged 11/25
+   mh_okay: flagged 31/50
+   mh_worse: flagged 42/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A2_theta_q90
+== cut-off 80%: learned 12 conditions over 3 stages
+   free0          end       gripper_nut_1|gripper_nut_2  (172/180)
+   free0          all       not gripper_nut_1|gripper_nut_2|gripper_nut_3  (160/177)
+   free0          end       gripper_nut_1|gripper_nut_3  (169/180)
+   free0          all       not nut_peg_1|nut_peg_2  (177/177)
+   carry1-nut     all       gripper_nut_1|gripper_nut_2  (154/177)
+   carry1-nut     start     gripper_nut_1|gripper_nut_3  (169/180)
+   carry1-nut     end       gripper_nut_1|gripper_nut_3  (149/180)
+   carry1-nut     all       not gripper_nut_3  (177/177)
+   carry1-nut     all       not nut_peg_1|nut_peg_2  (172/177)
+   free1          start     gripper_nut_1|gripper_nut_2  (159/180)
+   free1          all       not gripper_nut_1|gripper_nut_2  (180/180)
+   free1          start     gripper_nut_1|gripper_nut_3  (149/180)
+   near misses (held in most but not enough training demos, so NOT used):
+     free1          at end    gripper_nut_1|gripper_nut_2|gripper_nut_3  (142/180)
+     free1          at end    gripper_nut_1|gripper_nut_2  (138/180)
+     free1          at end    gripper_nut_1|gripper_nut_3  (131/180)
+     free1          at end    nut_peg_1|nut_peg_2  (118/180)
+     carry1-nut     at end    nut_peg_1|nut_peg_2  (116/180)
+     free1          at start  nut_peg_1|nut_peg_2  (116/180)
+     free1          at end    nut_peg_2  (116/180)
+     carry1-nut     at end    nut_peg_1  (112/180)
+   nominal: flagged 9/20
+   drop: flagged 6/20
+   miss: flagged 9/20
+   slip: flagged 7/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 13/20
+   wrong_peg: flagged 11/20
+   mh_better: flagged 13/25
+   mh_okay: flagged 32/50
+   mh_worse: flagged 46/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A2_theta_q80
+===== Square A3_peg_symmetry: LAMP_GRIP_BINS=10 LAMP_ANG_BINS=13 LAMP_THETA_GRIP=0.5 LAMP_THETA_OBJ=0.5 LAMP_PEG_SYMMETRY=1 (16:41:28)
+saved env1: 180 demos, 6217 states
+  gripper_nut: 3 RCR(s)
+  gripper_peg: 0 RCR(s)
+  nut_peg: 2 RCR(s)
+#abstract transitions: 61  #lifted actions: 39
+gripper_nut_1: 1 bins | sensor [1] | pos x [-7.6,-4.5] y [-1.5,+1.5] z [-1.5,+1.5] cm | angle-bin sets r[6] p[6] y[6]
+gripper_nut_2: 4 bins | sensor [1] | pos x [+4.5,+7.6] y [-1.5,+1.5] z [-1.5,+1.5] cm | angle-bin sets r[6] p[6] y[0, 1, 11, 12]
+gripper_nut_3: 3 bins | sensor [0] | pos x [+4.5,+7.6] y [-1.5,+1.5] z [-4.5,+1.5] cm | angle-bin sets r[6] p[6] y[1, 11]
+nut_peg_1: 1 bins | sensor [0] | pos x [-1.0,+1.0] y [-1.0,+1.0] z [+2.0,+6.1] cm | angle-bin sets r[6] p[6] y[6]
+nut_peg_2: 3 bins | sensor [0] | pos x [-1.0,+1.0] y [-1.0,+1.0] z [-14.1,-2.0] cm | angle-bin sets r[6] p[6] y[6]
+training demos: 180 | test cases: {'nominal': 20, 'drop': 20, 'miss': 20, 'slip': 20, 'stall': 20, 'wrong_grasp': 20, 'wrong_peg': 20, 'mh_better': 25, 'mh_okay': 50, 'mh_worse': 50}
+LAMP regions used as predicates: ['gripper_nut_1', 'gripper_nut_1|gripper_nut_2', 'gripper_nut_1|gripper_nut_2|gripper_nut_3', 'gripper_nut_1|gripper_nut_3', 'gripper_nut_2', 'gripper_nut_2|gripper_nut_3', 'gripper_nut_3', 'nut_peg_1', 'nut_peg_1|nut_peg_2', 'nut_peg_2']
+learned carry sequence: ('nut_1',) (177/180 training demos follow it exactly)
+labelled training runs (258s)
+labelled test runs (1165s)
+== cut-off 98%: learned 5 conditions over 3 stages
+   free0          all       not gripper_nut_1|gripper_nut_2  (177/177)
+   free0          all       not nut_peg_1|nut_peg_2  (177/177)
+   carry1-nut     all       not gripper_nut_3  (177/177)
+   carry1-nut     all       not nut_peg_1  (177/177)
+   free1          all       not gripper_nut_1|gripper_nut_2  (180/180)
+   near misses (held in most but not enough training demos, so NOT used):
+     free0          at end    gripper_nut_1|gripper_nut_2|gripper_nut_3  (176/180)
+     carry1-nut     at start  gripper_nut_1|gripper_nut_2|gripper_nut_3  (176/180)
+     carry1-nut     at end    nut_peg_1|nut_peg_2  (173/180)
+     carry1-nut     at end    nut_peg_2  (173/180)
+     free1          at start  nut_peg_1|nut_peg_2  (173/180)
+     free1          at start  nut_peg_2  (173/180)
+     free0          at end    gripper_nut_1|gripper_nut_2  (172/180)
+     carry1-nut     at start  gripper_nut_1|gripper_nut_2  (172/180)
+   nominal: flagged 1/20
+   drop: flagged 0/20
+   miss: flagged 0/20
+   slip: flagged 0/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 3/20
+   wrong_peg: flagged 0/20
+   mh_better: flagged 1/25
+   mh_okay: flagged 11/50
+   mh_worse: flagged 20/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A3_peg_symmetry_q98
+== cut-off 95%: learned 10 conditions over 3 stages
+   free0          end       gripper_nut_1|gripper_nut_2  (172/180)
+   free0          all       not gripper_nut_1|gripper_nut_2  (177/177)
+   free0          all       not nut_peg_1|nut_peg_2  (177/177)
+   carry1-nut     start     gripper_nut_1|gripper_nut_2  (172/180)
+   carry1-nut     all       not gripper_nut_3  (177/177)
+   carry1-nut     all       not nut_peg_1  (177/177)
+   carry1-nut     end       nut_peg_2  (173/180)
+   free1          all       not gripper_nut_1|gripper_nut_2  (180/180)
+   free1          start     nut_peg_2  (173/180)
+   free1          end       nut_peg_2  (171/180)
+   near misses (held in most but not enough training demos, so NOT used):
+     free0          at end    gripper_nut_1|gripper_nut_3  (169/180)
+     carry1-nut     at start  gripper_nut_1|gripper_nut_3  (169/180)
+     free1          at end    nut_peg_1  (166/180)
+     carry1-nut     at end    nut_peg_1  (162/180)
+     free1          at start  nut_peg_1  (162/180)
+     carry1-nut     at end    gripper_nut_1|gripper_nut_2|gripper_nut_3  (161/180)
+     free1          at start  gripper_nut_1|gripper_nut_2|gripper_nut_3  (161/180)
+     carry1-nut     at end    gripper_nut_1|gripper_nut_2  (159/180)
+   nominal: flagged 5/20
+   drop: flagged 20/20
+   miss: flagged 20/20
+   slip: flagged 20/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 12/20
+   wrong_peg: flagged 20/20
+   mh_better: flagged 11/25
+   mh_okay: flagged 30/50
+   mh_worse: flagged 35/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A3_peg_symmetry_q95
+== cut-off 90%: learned 15 conditions over 3 stages
+   free0          end       gripper_nut_1|gripper_nut_2  (172/180)
+   free0          all       not gripper_nut_1|gripper_nut_2|gripper_nut_3  (160/177)
+   free0          end       gripper_nut_1|gripper_nut_3  (169/180)
+   free0          all       not nut_peg_1|nut_peg_2  (177/177)
+   carry1-nut     start     gripper_nut_1|gripper_nut_2  (172/180)
+   carry1-nut     start     gripper_nut_1|gripper_nut_3  (169/180)
+   carry1-nut     all       not gripper_nut_3  (177/177)
+   carry1-nut     end       nut_peg_1  (162/180)
+   carry1-nut     all       not nut_peg_1|nut_peg_2  (164/177)
+   carry1-nut     end       nut_peg_2  (173/180)
+   free1          all       not gripper_nut_1|gripper_nut_2  (180/180)
+   free1          start     nut_peg_1  (162/180)
+   free1          end       nut_peg_1  (166/180)
+   free1          start     nut_peg_2  (173/180)
+   free1          end       nut_peg_2  (171/180)
+   near misses (held in most but not enough training demos, so NOT used):
+     carry1-nut     at end    gripper_nut_1|gripper_nut_2|gripper_nut_3  (161/180)
+     free1          at start  gripper_nut_1|gripper_nut_2|gripper_nut_3  (161/180)
+     carry1-nut     at end    gripper_nut_1|gripper_nut_2  (159/180)
+     free1          at start  gripper_nut_1|gripper_nut_2  (159/180)
+     carry1-nut     at all    gripper_nut_1|gripper_nut_2  (154/177)
+     carry1-nut     at all    gripper_nut_1|gripper_nut_2|gripper_nut_3  (154/177)
+     carry1-nut     at end    gripper_nut_1|gripper_nut_3  (149/180)
+     free1          at start  gripper_nut_1|gripper_nut_3  (149/180)
+   nominal: flagged 7/20
+   drop: flagged 20/20
+   miss: flagged 20/20
+   slip: flagged 20/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 16/20
+   wrong_peg: flagged 20/20
+   mh_better: flagged 13/25
+   mh_okay: flagged 36/50
+   mh_worse: flagged 42/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A3_peg_symmetry_q90
+== cut-off 80%: learned 18 conditions over 3 stages
+   free0          end       gripper_nut_1|gripper_nut_2  (172/180)
+   free0          all       not gripper_nut_1|gripper_nut_2|gripper_nut_3  (160/177)
+   free0          end       gripper_nut_1|gripper_nut_3  (169/180)
+   free0          all       not nut_peg_1|nut_peg_2  (177/177)
+   carry1-nut     all       gripper_nut_1|gripper_nut_2  (154/177)
+   carry1-nut     start     gripper_nut_1|gripper_nut_3  (169/180)
+   carry1-nut     end       gripper_nut_1|gripper_nut_3  (149/180)
+   carry1-nut     all       not gripper_nut_3  (177/177)
+   carry1-nut     end       nut_peg_1  (162/180)
+   carry1-nut     all       not nut_peg_1|nut_peg_2  (164/177)
+   carry1-nut     end       nut_peg_2  (173/180)
+   free1          start     gripper_nut_1|gripper_nut_2  (159/180)
+   free1          all       not gripper_nut_1|gripper_nut_2  (180/180)
+   free1          start     gripper_nut_1|gripper_nut_3  (149/180)
+   free1          start     nut_peg_1  (162/180)
+   free1          end       nut_peg_1  (166/180)
+   free1          start     nut_peg_2  (173/180)
+   free1          end       nut_peg_2  (171/180)
+   near misses (held in most but not enough training demos, so NOT used):
+     free1          at end    gripper_nut_1|gripper_nut_2|gripper_nut_3  (142/180)
+     free1          at end    gripper_nut_1|gripper_nut_2  (138/180)
+     free1          at end    gripper_nut_1|gripper_nut_3  (131/180)
+     free1          at all    nut_peg_1|nut_peg_2  (110/180)
+   nominal: flagged 10/20
+   drop: flagged 20/20
+   miss: flagged 20/20
+   slip: flagged 20/20
+   stall: flagged 20/20
+   wrong_grasp: flagged 16/20
+   wrong_peg: flagged 20/20
+   mh_better: flagged 14/25
+   mh_okay: flagged 36/50
+   mh_worse: flagged 46/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A3_peg_symmetry_q80
+===== Square A4_mixed_operators: LAMP_GRIP_BINS=10 LAMP_ANG_BINS=13 LAMP_THETA_GRIP=0.5 LAMP_THETA_OBJ=0.5 LAMP_PEG_SYMMETRY=1 LAMP_MH_TRAIN=1 (17:09:23)
+added 25 'better' other-operator demos to training
+added 50 'okay' other-operator demos to training
+added 50 'worse' other-operator demos to training
+saved env1: 305 demos, 14033 states
+  gripper_nut: 2 RCR(s)
+  gripper_peg: 0 RCR(s)
+  nut_peg: 2 RCR(s)
+#abstract transitions: 46  #lifted actions: 29
+gripper_nut_1: 4 bins | sensor [1] | pos x [+4.5,+7.6] y [-1.5,+1.5] z [-1.5,+1.5] cm | angle-bin sets r[6] p[6] y[0, 1, 11, 12]
+gripper_nut_2: 4 bins | sensor [0] | pos x [+4.5,+7.6] y [-1.5,+1.5] z [-4.5,+1.5] cm | angle-bin sets r[6] p[6] y[1, 11]
+nut_peg_1: 1 bins | sensor [0] | pos x [-1.0,+1.0] y [-1.0,+1.0] z [+2.0,+6.1] cm | angle-bin sets r[6] p[6] y[6]
+nut_peg_2: 2 bins | sensor [0] | pos x [-1.0,+1.0] y [-1.0,+1.0] z [-14.1,-6.1] cm | angle-bin sets r[6] p[6] y[6]
+training demos: 305 | test cases: {'nominal': 20, 'drop': 20, 'miss': 20, 'slip': 20, 'stall': 20, 'wrong_grasp': 20, 'wrong_peg': 20, 'mh_better': 25, 'mh_okay': 50, 'mh_worse': 50}
+LAMP regions used as predicates: ['gripper_nut_1', 'gripper_nut_1|gripper_nut_2', 'gripper_nut_2', 'nut_peg_1', 'nut_peg_1|nut_peg_2', 'nut_peg_2']
+learned carry sequence: ('nut_1',) (301/305 training demos follow it exactly)
+labelled training runs (390s)
+labelled test runs (1013s)
+== cut-off 98%: learned 5 conditions over 3 stages
+   free0          all       not gripper_nut_1  (301/301)
+   free0          all       not nut_peg_1|nut_peg_2  (301/301)
+   carry1-nut     all       not gripper_nut_2  (301/301)
+   carry1-nut     all       not nut_peg_1  (301/301)
+   free1          all       not gripper_nut_1  (304/304)
+   near misses (held in most but not enough training demos, so NOT used):
+     free1          at end    nut_peg_1|nut_peg_2  (293/305)
+     carry1-nut     at end    nut_peg_1|nut_peg_2  (288/305)
+     free1          at start  nut_peg_1|nut_peg_2  (287/305)
+     free1          at end    nut_peg_1  (286/305)
+     carry1-nut     at end    nut_peg_2  (274/305)
+     free1          at start  nut_peg_2  (271/305)
+     carry1-nut     at end    nut_peg_1  (258/305)
+     free1          at start  nut_peg_1  (258/305)
+   nominal: flagged 2/20
+   drop: flagged 2/20
+   miss: flagged 2/20
+   slip: flagged 2/20
+   stall: flagged 2/20
+   wrong_grasp: flagged 3/20
+   wrong_peg: flagged 2/20
+   mh_better: flagged 1/25
+   mh_okay: flagged 2/50
+   mh_worse: flagged 0/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A4_mixed_operators_q98
+== cut-off 95%: learned 6 conditions over 3 stages
+   free0          all       not gripper_nut_1  (301/301)
+   free0          all       not nut_peg_1|nut_peg_2  (301/301)
+   carry1-nut     all       not gripper_nut_2  (301/301)
+   carry1-nut     all       not nut_peg_1  (301/301)
+   free1          all       not gripper_nut_1  (304/304)
+   free1          end       nut_peg_1|nut_peg_2  (293/305)
+   near misses (held in most but not enough training demos, so NOT used):
+     carry1-nut     at end    nut_peg_1|nut_peg_2  (288/305)
+     free1          at start  nut_peg_1|nut_peg_2  (287/305)
+     free1          at end    nut_peg_1  (286/305)
+     carry1-nut     at end    nut_peg_2  (274/305)
+     free1          at start  nut_peg_2  (271/305)
+     carry1-nut     at end    nut_peg_1  (258/305)
+     free1          at start  nut_peg_1  (258/305)
+     free1          at end    nut_peg_2  (231/305)
+   nominal: flagged 2/20
+   drop: flagged 20/20
+   miss: flagged 20/20
+   slip: flagged 20/20
+   stall: flagged 3/20
+   wrong_grasp: flagged 10/20
+   wrong_peg: flagged 20/20
+   mh_better: flagged 2/25
+   mh_okay: flagged 5/50
+   mh_worse: flagged 4/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A4_mixed_operators_q95
+== cut-off 90%: learned 8 conditions over 3 stages
+   free0          all       not gripper_nut_1  (301/301)
+   free0          all       not nut_peg_1|nut_peg_2  (301/301)
+   carry1-nut     all       not gripper_nut_2  (301/301)
+   carry1-nut     end       nut_peg_1|nut_peg_2  (288/305)
+   carry1-nut     all       not nut_peg_1|nut_peg_2  (283/301)
+   free1          all       not gripper_nut_1  (304/304)
+   free1          end       nut_peg_1  (286/305)
+   free1          start     nut_peg_1|nut_peg_2  (287/305)
+   near misses (held in most but not enough training demos, so NOT used):
+     carry1-nut     at end    nut_peg_2  (274/305)
+     free1          at start  nut_peg_2  (271/305)
+     carry1-nut     at end    nut_peg_1  (258/305)
+     free1          at start  nut_peg_1  (258/305)
+     free1          at end    nut_peg_2  (231/305)
+   nominal: flagged 5/20
+   drop: flagged 20/20
+   miss: flagged 20/20
+   slip: flagged 20/20
+   stall: flagged 6/20
+   wrong_grasp: flagged 14/20
+   wrong_peg: flagged 20/20
+   mh_better: flagged 4/25
+   mh_okay: flagged 8/50
+   mh_worse: flagged 7/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A4_mixed_operators_q90
+== cut-off 80%: learned 10 conditions over 3 stages
+   free0          all       not gripper_nut_1|gripper_nut_2  (267/301)
+   free0          all       not nut_peg_1|nut_peg_2  (301/301)
+   carry1-nut     all       not gripper_nut_2  (301/301)
+   carry1-nut     end       nut_peg_1  (258/305)
+   carry1-nut     all       not nut_peg_1|nut_peg_2  (283/301)
+   carry1-nut     end       nut_peg_2  (274/305)
+   free1          all       not gripper_nut_1  (304/304)
+   free1          start     nut_peg_1  (258/305)
+   free1          end       nut_peg_1  (286/305)
+   free1          start     nut_peg_2  (271/305)
+   near misses (held in most but not enough training demos, so NOT used):
+     free1          at end    nut_peg_2  (231/305)
+   nominal: flagged 9/20
+   drop: flagged 20/20
+   miss: flagged 20/20
+   slip: flagged 20/20
+   stall: flagged 8/20
+   wrong_grasp: flagged 16/20
+   wrong_peg: flagged 20/20
+   mh_better: flagged 6/25
+   mh_okay: flagged 29/50
+   mh_worse: flagged 27/50
+saved /home/ujwalak/lamp_work/lamp_e2e/out/Square/durative_learned_A4_mixed_operators_q80
+===== summary (17:40:51)
+| step | cut-off | LAMP regions | rules | false alarms (held-out) | false alarms: better operators | false alarms: okay operators | false alarms: worse operators | caught: drop | caught: miss | caught: slip | caught: stall | caught: wrong_grasp | caught: wrong_peg |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A0_pure | 98% | 1 | 2 | 0/20 | 0/25 | 10/50 | 21/50 | 0/20 | 0/20 | 0/17 | 20/20 | 0/12 | 0/20 |
+| A0_pure | 95% | 1 | 3 | 1/20 | 7/25 | 10/50 | 21/50 | 0/20 | 0/20 | 0/17 | 20/20 | 0/12 | 0/20 |
+| A0_pure | 90% | 1 | 3 | 1/20 | 7/25 | 10/50 | 21/50 | 0/20 | 0/20 | 0/17 | 20/20 | 0/12 | 0/20 |
+| A0_pure | 80% | 1 | 3 | 1/20 | 7/25 | 10/50 | 21/50 | 0/20 | 0/20 | 0/17 | 20/20 | 0/12 | 0/20 |
+| A1_coarse_bins | 98% | 1 | 2 | 0/20 | 0/25 | 10/50 | 20/50 | 0/20 | 0/20 | 0/17 | 20/20 | 1/12 | 0/20 |
+| A1_coarse_bins | 95% | 1 | 2 | 0/20 | 0/25 | 10/50 | 20/50 | 0/20 | 0/20 | 0/17 | 20/20 | 1/12 | 0/20 |
+| A1_coarse_bins | 90% | 1 | 2 | 0/20 | 0/25 | 10/50 | 20/50 | 0/20 | 0/20 | 0/17 | 20/20 | 1/12 | 0/20 |
+| A1_coarse_bins | 80% | 1 | 2 | 0/20 | 0/25 | 10/50 | 20/50 | 0/20 | 0/20 | 0/17 | 20/20 | 1/12 | 0/20 |
+| A2_theta | 98% | 5 | 5 | 0/20 | 1/25 | 10/50 | 20/50 | 0/20 | 0/20 | 0/17 | 20/20 | 1/12 | 0/20 |
+| A2_theta | 95% | 5 | 7 | 3/20 | 10/25 | 27/50 | 35/50 | 0/20 | 0/20 | 0/17 | 20/20 | 3/12 | 0/20 |
+| A2_theta | 90% | 5 | 9 | 4/20 | 11/25 | 31/50 | 42/50 | 0/20 | 0/20 | 0/17 | 20/20 | 5/12 | 0/20 |
+| A2_theta | 80% | 5 | 12 | 9/20 | 13/25 | 32/50 | 46/50 | 1/20 | 5/20 | 2/17 | 20/20 | 6/12 | 7/20 |
+| A3_peg_symmetry | 98% | 5 | 5 | 1/20 | 1/25 | 11/50 | 20/50 | 0/20 | 0/20 | 0/17 | 20/20 | 1/12 | 0/20 |
+| A3_peg_symmetry | 95% | 5 | 10 | 5/20 | 11/25 | 30/50 | 35/50 | 20/20 | 20/20 | 17/17 | 20/20 | 8/12 | 20/20 |
+| A3_peg_symmetry | 90% | 5 | 15 | 7/20 | 13/25 | 36/50 | 42/50 | 20/20 | 20/20 | 17/17 | 20/20 | 12/12 | 20/20 |
+| A3_peg_symmetry | 80% | 5 | 18 | 10/20 | 14/25 | 36/50 | 46/50 | 20/20 | 20/20 | 17/17 | 20/20 | 12/12 | 20/20 |
+| A4_mixed_operators | 98% | 4 | 5 | 2/20 | 1/25 | 2/50 | 0/50 | 0/20 | 0/20 | 0/17 | 0/20 | 1/12 | 0/20 |
+| A4_mixed_operators | 95% | 4 | 6 | 2/20 | 2/25 | 5/50 | 4/50 | 20/20 | 20/20 | 17/17 | 1/20 | 8/12 | 20/20 |
+| A4_mixed_operators | 90% | 4 | 8 | 5/20 | 4/25 | 8/50 | 7/50 | 20/20 | 20/20 | 17/17 | 2/20 | 12/12 | 20/20 |
+| A4_mixed_operators | 80% | 4 | 10 | 9/20 | 6/25 | 29/50 | 27/50 | 20/20 | 20/20 | 17/17 | 3/20 | 12/12 | 20/20 |
+

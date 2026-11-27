@@ -1,0 +1,7645 @@
+{
+ "score_mode": "combined",
+ "thresholds": null,
+ "predicates": {
+  "holding-frame": [
+   "gripper_frame_1"
+  ],
+  "frame-above-stand": [
+   "frame_stand_1",
+   "frame_stand_3"
+  ],
+  "frame-in-stand": [
+   "frame_stand_2"
+  ],
+  "at-tool-grasp": [
+   "gripper_tool_1"
+  ],
+  "holding-tool": [
+   "gripper_tool_2"
+  ],
+  "tool-at-hook": [
+   "frame_tool_2"
+  ],
+  "tool-on-hook": []
+ },
+ "tolerances": {
+  "approach-frame|all|holding-frame|False": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-frame-to-stand|start|holding-frame|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-frame-to-stand|all|holding-frame|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-frame-to-stand|end|frame-above-stand|True": {
+   "value": 1.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "insert-frame|start|frame-above-stand|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "insert-frame|all|holding-frame|True": {
+   "value": 0.15441176470588236,
+   "train_never": 0,
+   "n": 180
+  },
+  "insert-frame|end|frame-in-stand|True": {
+   "value": 63.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "approach-tool|all|frame-in-stand|True": {
+   "value": 1.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "approach-tool|end|at-tool-grasp|True": {
+   "value": 72.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-tool-to-hook|start|holding-tool|True": {
+   "value": 2.0,
+   "train_never": 1,
+   "n": 180
+  },
+  "move-tool-to-hook|all|holding-tool|True": {
+   "value": 1.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-tool-to-hook|all|frame-in-stand|True": {
+   "value": 0.5396825396825397,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-tool-to-hook|end|tool-at-hook|True": {
+   "value": 113.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "hang-tool-and-retreat|all|frame-in-stand|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "hang-tool-and-retreat|end|tool-on-hook|True": {
+   "value": Infinity,
+   "train_never": 180,
+   "n": 180
+  }
+ },
+ "durations_frames": {
+  "approach-frame": [
+   8.0,
+   81.0
+  ],
+  "move-frame-to-stand": [
+   8.0,
+   172.5
+  ],
+  "insert-frame": [
+   11.5,
+   238.5
+  ],
+  "approach-tool": [
+   10.5,
+   111.0
+  ],
+  "move-tool-to-hook": [
+   14.0,
+   351.0
+  ],
+  "hang-tool-and-retreat": [
+   2.0,
+   97.5
+  ]
+ },
+ "stride": 2,
+ "train_violations": {
+  "move-tool-to-hook|over all|holding-tool|True": 6,
+  "move-tool-to-hook|at end|tool-at-hook|True": 2,
+  "insert-frame|at end|frame-in-stand|True": 8,
+  "approach-tool|over all|frame-in-stand|True": 12,
+  "approach-tool|typical pose|frame_1->stand_1|True": 1,
+  "move-tool-to-hook|at start|holding-tool|True": 1,
+  "move-tool-to-hook|typical pose|frame_1->tool_1|True": 1,
+  "approach-tool|at end|at-tool-grasp|True": 4,
+  "move-tool-to-hook|typical pose|gripper_1->tool_1|True": 1,
+  "move-frame-to-stand|typical pose|frame_1->stand_1|True": 1,
+  "move-tool-to-hook|over all|frame-in-stand|True": 1,
+  "move-tool-to-hook|typical pose|frame_1->stand_1|True": 1
+ },
+ "results": {
+  "nominal": [
+   {
+    "demo": "demo_0",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      35
+     ],
+     [
+      "move-frame-to-stand",
+      35,
+      78
+     ],
+     [
+      "insert-frame",
+      78,
+      190
+     ],
+     [
+      "approach-tool",
+      190,
+      249
+     ],
+     [
+      "move-tool-to-hook",
+      249,
+      334
+     ],
+     [
+      "hang-tool-and-retreat",
+      334,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_5",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      77
+     ],
+     [
+      "insert-frame",
+      77,
+      214
+     ],
+     [
+      "approach-tool",
+      214,
+      255
+     ],
+     [
+      "move-tool-to-hook",
+      255,
+      326
+     ],
+     [
+      "hang-tool-and-retreat",
+      326,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_14",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      31
+     ],
+     [
+      "move-frame-to-stand",
+      31,
+      65
+     ],
+     [
+      "insert-frame",
+      65,
+      186
+     ],
+     [
+      "approach-tool",
+      186,
+      226
+     ],
+     [
+      "move-tool-to-hook",
+      226,
+      346
+     ],
+     [
+      "hang-tool-and-retreat",
+      346,
+      354
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_21",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      73
+     ],
+     [
+      "insert-frame",
+      73,
+      132
+     ],
+     [
+      "approach-tool",
+      132,
+      176
+     ],
+     [
+      "move-tool-to-hook",
+      176,
+      280
+     ],
+     [
+      "hang-tool-and-retreat",
+      280,
+      288
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_27",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      28
+     ],
+     [
+      "move-frame-to-stand",
+      28,
+      64
+     ],
+     [
+      "insert-frame",
+      64,
+      103
+     ],
+     [
+      "approach-tool",
+      103,
+      144
+     ],
+     [
+      "move-tool-to-hook",
+      144,
+      220
+     ],
+     [
+      "hang-tool-and-retreat",
+      220,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_32",
+    "success": true,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 141,
+      "detail": "not true within 20 frames of the stage end (nearest: 45 frames away)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.8,
+       -1.6,
+       -33.3
+      ],
+      "rel_rpy_deg": [
+       4.0,
+       -8.0,
+       -96.0
+      ],
+      "knn_dist": 0.07403552273344244,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 2 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 142,
+      "detail": "false for 40 of 40 frames in a row (tolerance 100% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.8,
+       -1.6,
+       -33.3
+      ],
+      "rel_rpy_deg": [
+       4.0,
+       -8.0,
+       -96.0
+      ],
+      "knn_dist": 0.1830838732899495,
+      "knn_thr": 0.3459476128563502,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 2 (region 5)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      24
+     ],
+     [
+      "move-frame-to-stand",
+      24,
+      62
+     ],
+     [
+      "insert-frame",
+      62,
+      142
+     ],
+     [
+      "approach-tool",
+      142,
+      182
+     ],
+     [
+      "move-tool-to-hook",
+      182,
+      232
+     ],
+     [
+      "hang-tool-and-retreat",
+      232,
+      237
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_36",
+    "success": true,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "over all",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 206,
+      "detail": "false for 32 of 115 frames in a row (tolerance 100% of stage)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       -0.4,
+       0.2,
+       0.0
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       21.0,
+       178.0
+      ],
+      "knn_dist": 0.3364292505518638,
+      "knn_thr": 3.5110957135078364,
+      "in_training_distribution": true,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "grasp flag"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 240,
+      "detail": "atypical for 21 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.4,
+       1.3,
+       -22.5
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -0.0,
+       -107.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      114
+     ],
+     [
+      "approach-tool",
+      114,
+      147
+     ],
+     [
+      "move-tool-to-hook",
+      147,
+      262
+     ],
+     [
+      "hang-tool-and-retreat",
+      262,
+      266
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_44",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      144
+     ],
+     [
+      "approach-tool",
+      144,
+      183
+     ],
+     [
+      "move-tool-to-hook",
+      183,
+      244
+     ],
+     [
+      "hang-tool-and-retreat",
+      244,
+      262
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_56",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      34
+     ],
+     [
+      "move-frame-to-stand",
+      34,
+      66
+     ],
+     [
+      "insert-frame",
+      66,
+      142
+     ],
+     [
+      "approach-tool",
+      142,
+      178
+     ],
+     [
+      "move-tool-to-hook",
+      178,
+      219
+     ],
+     [
+      "hang-tool-and-retreat",
+      219,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_93",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      23
+     ],
+     [
+      "move-frame-to-stand",
+      23,
+      46
+     ],
+     [
+      "insert-frame",
+      46,
+      122
+     ],
+     [
+      "approach-tool",
+      122,
+      148
+     ],
+     [
+      "move-tool-to-hook",
+      148,
+      183
+     ],
+     [
+      "hang-tool-and-retreat",
+      183,
+      189
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_103",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      44
+     ],
+     [
+      "insert-frame",
+      44,
+      82
+     ],
+     [
+      "approach-tool",
+      82,
+      118
+     ],
+     [
+      "move-tool-to-hook",
+      118,
+      164
+     ],
+     [
+      "hang-tool-and-retreat",
+      164,
+      206
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_105",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      53
+     ],
+     [
+      "insert-frame",
+      53,
+      112
+     ],
+     [
+      "approach-tool",
+      112,
+      136
+     ],
+     [
+      "move-tool-to-hook",
+      136,
+      186
+     ],
+     [
+      "hang-tool-and-retreat",
+      186,
+      190
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_111",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      49
+     ],
+     [
+      "insert-frame",
+      49,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      130
+     ],
+     [
+      "move-tool-to-hook",
+      130,
+      187
+     ],
+     [
+      "hang-tool-and-retreat",
+      187,
+      203
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_125",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      22
+     ],
+     [
+      "move-frame-to-stand",
+      22,
+      50
+     ],
+     [
+      "insert-frame",
+      50,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      140
+     ],
+     [
+      "move-tool-to-hook",
+      140,
+      189
+     ],
+     [
+      "hang-tool-and-retreat",
+      189,
+      207
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_131",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      50
+     ],
+     [
+      "insert-frame",
+      50,
+      89
+     ],
+     [
+      "approach-tool",
+      89,
+      113
+     ],
+     [
+      "move-tool-to-hook",
+      113,
+      163
+     ],
+     [
+      "hang-tool-and-retreat",
+      163,
+      168
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_155",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      47
+     ],
+     [
+      "insert-frame",
+      47,
+      129
+     ],
+     [
+      "approach-tool",
+      129,
+      153
+     ],
+     [
+      "move-tool-to-hook",
+      153,
+      221
+     ],
+     [
+      "hang-tool-and-retreat",
+      221,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_168",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      70
+     ],
+     [
+      "insert-frame",
+      70,
+      145
+     ],
+     [
+      "approach-tool",
+      145,
+      169
+     ],
+     [
+      "move-tool-to-hook",
+      169,
+      211
+     ],
+     [
+      "hang-tool-and-retreat",
+      211,
+      219
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_176",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      52
+     ],
+     [
+      "insert-frame",
+      52,
+      105
+     ],
+     [
+      "approach-tool",
+      105,
+      129
+     ],
+     [
+      "move-tool-to-hook",
+      129,
+      166
+     ],
+     [
+      "hang-tool-and-retreat",
+      166,
+      198
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_180",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      58
+     ],
+     [
+      "insert-frame",
+      58,
+      130
+     ],
+     [
+      "approach-tool",
+      130,
+      158
+     ],
+     [
+      "move-tool-to-hook",
+      158,
+      221
+     ],
+     [
+      "hang-tool-and-retreat",
+      221,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_191",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      47
+     ],
+     [
+      "insert-frame",
+      47,
+      110
+     ],
+     [
+      "approach-tool",
+      110,
+      138
+     ],
+     [
+      "move-tool-to-hook",
+      138,
+      200
+     ],
+     [
+      "hang-tool-and-retreat",
+      200,
+      208
+     ]
+    ],
+    "event": null
+   }
+  ],
+  "drop": [
+   {
+    "demo": "demo_0",
+    "success": false,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      35
+     ],
+     [
+      "move-frame-to-stand",
+      35,
+      78
+     ],
+     [
+      "insert-frame",
+      78,
+      190
+     ],
+     [
+      "approach-tool",
+      190,
+      249
+     ],
+     [
+      "move-tool-to-hook",
+      249,
+      292
+     ],
+     [
+      "hang-tool-and-retreat",
+      292,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_5",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 122,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.2,
+       0.9,
+       -37.5
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       1.0,
+       -99.0
+      ],
+      "knn_dist": 0.28473595853897116,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 1 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 123,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       32.6,
+       -26.3,
+       9.4
+      ],
+      "rel_rpy_deg": [
+       91.0,
+       35.0,
+       -91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 25 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 17 (region 14)",
+       "roll bin 9 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 123,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       32.6,
+       -26.3,
+       9.4
+      ],
+      "rel_rpy_deg": [
+       91.0,
+       35.0,
+       -91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 25 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 17 (region 14)",
+       "roll bin 9 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 123,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -26.4,
+       -8.0,
+       -36.1
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -2.0,
+       145.0
+      ],
+      "knn_dist": 16.04352947795373,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 4 (region 6)",
+       "y bin 13 (region 11)",
+       "z bin 2 (region 11)",
+       "yaw bin 10 (region 11)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 123,
+      "detail": "false for 218 of 218 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.3,
+       0.8,
+       -37.5
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       1.0,
+       -99.0
+      ],
+      "knn_dist": 7.437164828735176,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 1 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 127,
+      "detail": "atypical for 218 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.3,
+       0.9,
+       -37.1
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       1.0,
+       -98.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      77
+     ],
+     [
+      "insert-frame",
+      77,
+      123
+     ],
+     [
+      "approach-tool",
+      123,
+      123
+     ],
+     [
+      "move-tool-to-hook",
+      123,
+      123
+     ],
+     [
+      "hang-tool-and-retreat",
+      123,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_14",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 185,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.2,
+       -3.4,
+       -32.7
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -9.0,
+       -90.0
+      ],
+      "knn_dist": 0.8849199852705059,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "y bin 12 (region 11)",
+       "z bin 3 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 186,
+      "detail": "false for 40 of 40 frames in a row (tolerance 100% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.4,
+       -3.6,
+       -32.6
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -10.0,
+       -90.0
+      ],
+      "knn_dist": 1.0673205157646335,
+      "knn_thr": 0.3459476128563502,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "y bin 12 (region 11)",
+       "z bin 3 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "over all",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 233,
+      "detail": "false for 53 of 60 frames in a row (tolerance 100% of stage)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       -0.0,
+       0.2,
+       -4.5
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       3.0,
+       168.0
+      ],
+      "knn_dist": 0.8130205071965948,
+      "knn_thr": 3.5110957135078364,
+      "in_training_distribution": true,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "z bin 13 (region 14)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 226,
+      "detail": "false for 60 of 60 frames in a row (tolerance 54% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": 8.95069581103765,
+      "knn_thr": 0.06579193669004851,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 11 (region 10)",
+       "y bin 12 (region 11)",
+       "z bin 9 (region 5)",
+       "roll bin 4 (region 6)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 8 (region 4)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 285,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       0.8,
+       9.7,
+       10.1
+      ],
+      "rel_rpy_deg": [
+       90.0,
+       -67.0,
+       -90.0
+      ],
+      "knn_dist": 12.240478207251794,
+      "knn_thr": 5.138945135108188,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 11 (region 6)",
+       "y bin 8 (region 11)",
+       "z bin 14 (region 12)",
+       "roll bin 7 (region 6)",
+       "pitch bin 3 (region 5)",
+       "yaw bin 5 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 286,
+      "detail": "false for 68 of 68 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": 8.97754943453098,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 11 (region 10)",
+       "y bin 12 (region 11)",
+       "z bin 9 (region 5)",
+       "roll bin 4 (region 6)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 8 (region 4)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 175,
+      "detail": "atypical for 22 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       -4.1,
+       -32.5
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -12.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 206,
+      "detail": "atypical for 40 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.7,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 246,
+      "detail": "atypical for 60 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 246,
+      "detail": "atypical for 60 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       0.8,
+       9.7,
+       10.1
+      ],
+      "rel_rpy_deg": [
+       90.0,
+       -67.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "gripper_1->tool_1",
+      "pol": true,
+      "frame": 253,
+      "detail": "atypical for 53 frames in a row (normal demos: at most 20)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       2.0,
+       -22.3,
+       -25.1
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       16.0,
+       158.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 290,
+      "detail": "atypical for 68 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      31
+     ],
+     [
+      "move-frame-to-stand",
+      31,
+      65
+     ],
+     [
+      "insert-frame",
+      65,
+      186
+     ],
+     [
+      "approach-tool",
+      186,
+      226
+     ],
+     [
+      "move-tool-to-hook",
+      226,
+      286
+     ],
+     [
+      "hang-tool-and-retreat",
+      286,
+      354
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_21",
+    "success": false,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      74
+     ],
+     [
+      "insert-frame",
+      74,
+      132
+     ],
+     [
+      "approach-tool",
+      132,
+      176
+     ],
+     [
+      "move-tool-to-hook",
+      176,
+      228
+     ],
+     [
+      "hang-tool-and-retreat",
+      228,
+      288
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_27",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 102,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.0,
+       -0.5,
+       -37.4
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -2.0,
+       -98.0
+      ],
+      "knn_dist": 0.39595103562336365,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 1 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 103,
+      "detail": "false for 41 of 41 frames in a row (tolerance 100% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       -0.4,
+       -37.4
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -2.0,
+       -98.0
+      ],
+      "knn_dist": 2.129252909990734,
+      "knn_thr": 0.3459476128563502,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 1 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 143,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       1.5,
+       -0.8,
+       -10.1
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       9.0,
+       173.0
+      ],
+      "knn_dist": 1.142312355525592,
+      "knn_thr": 1.903021091263731,
+      "in_training_distribution": true,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "z bin 11 (region 14)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 144,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       1.2,
+       -1.0,
+       -9.7
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       9.0,
+       173.0
+      ],
+      "knn_dist": 3.297146545488501,
+      "knn_thr": 0.5428848572214522,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "z bin 11 (region 14)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "over all",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 144,
+      "detail": "false for 38 of 38 frames in a row (tolerance 100% of stage)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       1.2,
+       -1.0,
+       -9.7
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       9.0,
+       173.0
+      ],
+      "knn_dist": 3.297146545488501,
+      "knn_thr": 0.5428848572214522,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "z bin 11 (region 14)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 144,
+      "detail": "false for 38 of 38 frames in a row (tolerance 54% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": 7.799885124061435,
+      "knn_thr": 0.06579193669004851,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 11 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 8 (region 5)",
+       "roll bin 4 (region 6)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 8 (region 4)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 181,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -0.3,
+       15.5,
+       7.5
+      ],
+      "rel_rpy_deg": [
+       92.0,
+       -58.0,
+       -91.0
+      ],
+      "knn_dist": 12.18052354019561,
+      "knn_thr": 5.138945135108188,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 11 (region 6)",
+       "y bin 7 (region 11)",
+       "z bin 13 (region 12)",
+       "roll bin 7 (region 6)",
+       "pitch bin 3 (region 5)",
+       "yaw bin 5 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 182,
+      "detail": "false for 53 of 53 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": 7.728625303603407,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 11 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 8 (region 5)",
+       "roll bin 4 (region 6)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 8 (region 4)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 123,
+      "detail": "atypical for 41 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 38 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 38 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -0.3,
+       15.5,
+       7.5
+      ],
+      "rel_rpy_deg": [
+       92.0,
+       -58.0,
+       -91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "gripper_1->tool_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 38 frames in a row (normal demos: at most 20)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       5.1,
+       -13.9,
+       -30.1
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       18.0,
+       146.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 186,
+      "detail": "atypical for 53 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      28
+     ],
+     [
+      "move-frame-to-stand",
+      28,
+      63
+     ],
+     [
+      "insert-frame",
+      63,
+      103
+     ],
+     [
+      "approach-tool",
+      103,
+      144
+     ],
+     [
+      "move-tool-to-hook",
+      144,
+      182
+     ],
+     [
+      "hang-tool-and-retreat",
+      182,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_32",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 82,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       3.9,
+       -37.4
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       7.0,
+       -99.0
+      ],
+      "knn_dist": 0.132691084857713,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "y bin 10 (region 11)",
+       "z bin 1 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 83,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       31.2,
+       -26.7,
+       8.0
+      ],
+      "rel_rpy_deg": [
+       88.0,
+       28.0,
+       -93.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 24 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 17 (region 14)",
+       "roll bin 9 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 83,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       31.2,
+       -26.7,
+       8.0
+      ],
+      "rel_rpy_deg": [
+       88.0,
+       28.0,
+       -93.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 24 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 17 (region 14)",
+       "roll bin 9 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 83,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -26.8,
+       -5.0,
+       -36.3
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       -5.0,
+       153.0
+      ],
+      "knn_dist": 15.995293288226561,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 4 (region 6)",
+       "y bin 12 (region 11)",
+       "z bin 2 (region 11)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 83,
+      "detail": "false for 154 of 154 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       3.8,
+       -37.0
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       7.0,
+       -99.0
+      ],
+      "knn_dist": 7.315026242694084,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "y bin 10 (region 11)",
+       "z bin 1 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 87,
+      "detail": "atypical for 154 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.8,
+       3.0,
+       -32.3
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       10.0,
+       -87.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      24
+     ],
+     [
+      "move-frame-to-stand",
+      24,
+      62
+     ],
+     [
+      "insert-frame",
+      62,
+      83
+     ],
+     [
+      "approach-tool",
+      83,
+      83
+     ],
+     [
+      "move-tool-to-hook",
+      83,
+      83
+     ],
+     [
+      "hang-tool-and-retreat",
+      83,
+      237
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_36",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 181,
+      "detail": "atypical for 6 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.4,
+       0.2,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       1.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      114
+     ],
+     [
+      "approach-tool",
+      114,
+      147
+     ],
+     [
+      "move-tool-to-hook",
+      147,
+      177
+     ],
+     [
+      "hang-tool-and-retreat",
+      177,
+      266
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_44",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 223,
+      "detail": "atypical for 43 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.3,
+       0.0,
+       -22.7
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       0.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      144
+     ],
+     [
+      "approach-tool",
+      144,
+      183
+     ],
+     [
+      "move-tool-to-hook",
+      183,
+      213
+     ],
+     [
+      "hang-tool-and-retreat",
+      213,
+      262
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_56",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 87,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       5.8,
+       -35.2
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       19.0,
+       -92.0
+      ],
+      "knn_dist": 0.17757407754867605,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "y bin 9 (region 11)",
+       "z bin 2 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 88,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       31.4,
+       -23.5,
+       12.9
+      ],
+      "rel_rpy_deg": [
+       80.0,
+       16.0,
+       -97.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 24 (region 14)",
+       "y bin 22 (region 14)",
+       "z bin 18 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 88,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       31.4,
+       -23.5,
+       12.9
+      ],
+      "rel_rpy_deg": [
+       80.0,
+       16.0,
+       -97.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 24 (region 14)",
+       "y bin 22 (region 14)",
+       "z bin 18 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 88,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -23.5,
+       -7.6,
+       -37.5
+      ],
+      "rel_rpy_deg": [
+       -17.0,
+       -10.0,
+       165.0
+      ],
+      "knn_dist": 16.110488933128316,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 5 (region 6)",
+       "y bin 13 (region 11)",
+       "z bin 1 (region 11)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 88,
+      "detail": "false for 147 of 147 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       5.9,
+       -35.3
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       19.0,
+       -92.0
+      ],
+      "knn_dist": 6.862644852583368,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "y bin 9 (region 11)",
+       "z bin 2 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 92,
+      "detail": "atypical for 147 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -1.2,
+       1.6,
+       -8.8
+      ],
+      "rel_rpy_deg": [
+       162.0,
+       82.0,
+       62.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      34
+     ],
+     [
+      "move-frame-to-stand",
+      34,
+      66
+     ],
+     [
+      "insert-frame",
+      66,
+      88
+     ],
+     [
+      "approach-tool",
+      88,
+      88
+     ],
+     [
+      "move-tool-to-hook",
+      88,
+      88
+     ],
+     [
+      "hang-tool-and-retreat",
+      88,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_93",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 71,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -6.2,
+       4.5,
+       -35.2
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       18.0,
+       -98.0
+      ],
+      "knn_dist": 0.16229299939114017,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 9 (region 10)",
+       "y bin 10 (region 11)",
+       "z bin 2 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 72,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       30.3,
+       -28.7,
+       8.7
+      ],
+      "rel_rpy_deg": [
+       75.0,
+       17.0,
+       -101.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 24 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 17 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 72,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       30.3,
+       -28.7,
+       8.7
+      ],
+      "rel_rpy_deg": [
+       75.0,
+       17.0,
+       -101.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 24 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 17 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 72,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -28.7,
+       -6.3,
+       -35.3
+      ],
+      "rel_rpy_deg": [
+       -16.0,
+       -11.0,
+       163.0
+      ],
+      "knn_dist": 16.104202940935544,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 4 (region 6)",
+       "y bin 13 (region 11)",
+       "z bin 2 (region 11)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 72,
+      "detail": "false for 117 of 117 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -6.2,
+       4.4,
+       -35.1
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       18.0,
+       -98.0
+      ],
+      "knn_dist": 6.58686977433738,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 9 (region 10)",
+       "y bin 10 (region 11)",
+       "z bin 2 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 76,
+      "detail": "atypical for 117 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       5.8,
+       -0.6,
+       -20.3
+      ],
+      "rel_rpy_deg": [
+       22.0,
+       18.0,
+       -77.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      23
+     ],
+     [
+      "move-frame-to-stand",
+      23,
+      46
+     ],
+     [
+      "insert-frame",
+      46,
+      72
+     ],
+     [
+      "approach-tool",
+      72,
+      72
+     ],
+     [
+      "move-tool-to-hook",
+      72,
+      72
+     ],
+     [
+      "hang-tool-and-retreat",
+      72,
+      189
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_103",
+    "success": true,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 81,
+      "detail": "not true within 20 frames of the stage end (nearest: 46 frames away)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.5,
+       1.4,
+       -31.9
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       6.0,
+       -90.0
+      ],
+      "knn_dist": 0.06373110240607391,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 3 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 82,
+      "detail": "false for 36 of 36 frames in a row (tolerance 100% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.5,
+       1.5,
+       -31.9
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       6.0,
+       -91.0
+      ],
+      "knn_dist": 0.24928959045653842,
+      "knn_thr": 0.3459476128563502,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 3 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 118,
+      "detail": "false for 9 of 23 frames in a row (tolerance 54% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.6,
+       0.7,
+       -31.2
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       4.0,
+       -88.0
+      ],
+      "knn_dist": 1.629558436903388,
+      "knn_thr": 0.06579193669004851,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 3 (region 5)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      44
+     ],
+     [
+      "insert-frame",
+      44,
+      82
+     ],
+     [
+      "approach-tool",
+      82,
+      118
+     ],
+     [
+      "move-tool-to-hook",
+      118,
+      141
+     ],
+     [
+      "hang-tool-and-retreat",
+      141,
+      206
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_105",
+    "success": false,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      53
+     ],
+     [
+      "insert-frame",
+      53,
+      112
+     ],
+     [
+      "approach-tool",
+      112,
+      136
+     ],
+     [
+      "move-tool-to-hook",
+      136,
+      161
+     ],
+     [
+      "hang-tool-and-retreat",
+      161,
+      190
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_111",
+    "success": false,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      49
+     ],
+     [
+      "insert-frame",
+      49,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      130
+     ],
+     [
+      "move-tool-to-hook",
+      130,
+      158
+     ],
+     [
+      "hang-tool-and-retreat",
+      158,
+      203
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_125",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "approach-tool",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 112,
+      "detail": "false for 28 of 33 frames in a row (tolerance 100% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       0.6,
+       -28.9
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       3.0,
+       -90.0
+      ],
+      "knn_dist": 0.042066597693190586,
+      "knn_thr": 0.3459476128563502,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 3 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-frame-to-stand",
+      "kind": "typical pose",
+      "pred": "gripper_1->frame_1",
+      "pol": true,
+      "frame": 31,
+      "detail": "atypical for 25 frames in a row (normal demos: at most 5)",
+      "relation": "gripper_1->frame_1",
+      "rel_pos_cm": [
+       -3.0,
+       -0.1,
+       -0.9
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       0.0,
+       91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      22
+     ],
+     [
+      "move-frame-to-stand",
+      22,
+      51
+     ],
+     [
+      "insert-frame",
+      51,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      140
+     ],
+     [
+      "move-tool-to-hook",
+      140,
+      164
+     ],
+     [
+      "hang-tool-and-retreat",
+      164,
+      207
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_131",
+    "success": false,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      50
+     ],
+     [
+      "insert-frame",
+      50,
+      89
+     ],
+     [
+      "approach-tool",
+      89,
+      113
+     ],
+     [
+      "move-tool-to-hook",
+      113,
+      138
+     ],
+     [
+      "hang-tool-and-retreat",
+      138,
+      168
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_155",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      48
+     ],
+     [
+      "insert-frame",
+      48,
+      129
+     ],
+     [
+      "approach-tool",
+      129,
+      153
+     ],
+     [
+      "move-tool-to-hook",
+      153,
+      187
+     ],
+     [
+      "hang-tool-and-retreat",
+      187,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_168",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 84,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -6.9,
+       6.5,
+       -34.2
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       18.0,
+       -96.0
+      ],
+      "knn_dist": 0.19171618161776244,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 9 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 2 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 85,
+      "detail": "not true within 20 frames of the stage end (nearest: 79 frames away)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       28.3,
+       -27.5,
+       5.4
+      ],
+      "rel_rpy_deg": [
+       75.0,
+       19.0,
+       -101.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 23 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 16 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 85,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       28.3,
+       -27.5,
+       5.4
+      ],
+      "rel_rpy_deg": [
+       75.0,
+       19.0,
+       -101.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 23 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 16 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 85,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -27.6,
+       -2.8,
+       -33.8
+      ],
+      "rel_rpy_deg": [
+       -16.0,
+       -13.0,
+       161.0
+      ],
+      "knn_dist": 15.033047515913195,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 4 (region 6)",
+       "y bin 12 (region 11)",
+       "z bin 2 (region 11)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 85,
+      "detail": "false for 134 of 134 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -6.5,
+       6.9,
+       -34.1
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       18.0,
+       -96.0
+      ],
+      "knn_dist": 6.526205525705146,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 9 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 2 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 89,
+      "detail": "atypical for 134 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -1.3,
+       8.9,
+       -7.9
+      ],
+      "rel_rpy_deg": [
+       -58.0,
+       78.0,
+       -159.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      70
+     ],
+     [
+      "insert-frame",
+      70,
+      85
+     ],
+     [
+      "approach-tool",
+      85,
+      85
+     ],
+     [
+      "move-tool-to-hook",
+      85,
+      85
+     ],
+     [
+      "hang-tool-and-retreat",
+      85,
+      219
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_176",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 61,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -7.0,
+       5.2,
+       -36.5
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       19.0,
+       -92.0
+      ],
+      "knn_dist": 0.19489182732431204,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 9 (region 10)",
+       "y bin 10 (region 11)",
+       "z bin 2 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 62,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       30.7,
+       -27.3,
+       7.8
+      ],
+      "rel_rpy_deg": [
+       75.0,
+       20.0,
+       -103.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 24 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 17 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 62,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       30.7,
+       -27.3,
+       7.8
+      ],
+      "rel_rpy_deg": [
+       75.0,
+       20.0,
+       -103.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 24 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 17 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 62,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -27.3,
+       -5.5,
+       -36.3
+      ],
+      "rel_rpy_deg": [
+       -15.0,
+       -14.0,
+       160.0
+      ],
+      "knn_dist": 16.201106241728503,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 4 (region 6)",
+       "y bin 12 (region 11)",
+       "z bin 2 (region 11)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 62,
+      "detail": "false for 136 of 136 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -6.7,
+       5.4,
+       -36.6
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       19.0,
+       -92.0
+      ],
+      "knn_dist": 7.472638965996657,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 9 (region 10)",
+       "y bin 10 (region 11)",
+       "z bin 2 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 66,
+      "detail": "atypical for 136 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -7.2,
+       6.1,
+       -33.8
+      ],
+      "rel_rpy_deg": [
+       -16.0,
+       20.0,
+       -102.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      51
+     ],
+     [
+      "insert-frame",
+      51,
+      62
+     ],
+     [
+      "approach-tool",
+      62,
+      62
+     ],
+     [
+      "move-tool-to-hook",
+      62,
+      62
+     ],
+     [
+      "hang-tool-and-retreat",
+      62,
+      198
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_180",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 130,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       8.8,
+       -28.6,
+       -1.0
+      ],
+      "rel_rpy_deg": [
+       46.0,
+       10.0,
+       -119.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 17 (region 14)",
+       "y bin 23 (region 14)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 2 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 130,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       8.8,
+       -28.6,
+       -1.0
+      ],
+      "rel_rpy_deg": [
+       46.0,
+       10.0,
+       -119.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 17 (region 14)",
+       "y bin 23 (region 14)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 2 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 130,
+      "detail": "false for 106 of 106 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -10.0,
+       5.9,
+       -18.1
+      ],
+      "rel_rpy_deg": [
+       -13.0,
+       7.0,
+       -92.0
+      ],
+      "knn_dist": 4.242116672911551,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 8 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 6 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 108,
+      "detail": "atypical for 33 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.9,
+       9.1,
+       -19.7
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       25.0,
+       -104.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 134,
+      "detail": "atypical for 106 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.9,
+       7.1,
+       -13.5
+      ],
+      "rel_rpy_deg": [
+       -41.0,
+       15.0,
+       -120.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      58
+     ],
+     [
+      "insert-frame",
+      58,
+      130
+     ],
+     [
+      "approach-tool",
+      130,
+      130
+     ],
+     [
+      "move-tool-to-hook",
+      130,
+      130
+     ],
+     [
+      "hang-tool-and-retreat",
+      130,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_191",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 66,
+      "detail": "not true within 20 frames of the stage end (nearest: 69 frames away)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       31.4,
+       -27.5,
+       5.5
+      ],
+      "rel_rpy_deg": [
+       69.0,
+       30.0,
+       -109.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 24 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 16 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 3 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 66,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       31.4,
+       -27.5,
+       5.5
+      ],
+      "rel_rpy_deg": [
+       69.0,
+       30.0,
+       -109.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 24 (region 14)",
+       "y bin 23 (region 14)",
+       "z bin 16 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 3 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 66,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -27.6,
+       -6.2,
+       -34.8
+      ],
+      "rel_rpy_deg": [
+       -10.0,
+       -16.0,
+       149.0
+      ],
+      "knn_dist": 15.732209471232373,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 4 (region 6)",
+       "y bin 13 (region 11)",
+       "z bin 2 (region 11)",
+       "roll bin 7 (region 6)",
+       "yaw bin 10 (region 11)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 66,
+      "detail": "false for 4 of 142 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -6.5,
+       4.1,
+       -36.1
+      ],
+      "rel_rpy_deg": [
+       -11.0,
+       16.0,
+       -97.0
+      ],
+      "knn_dist": 7.078035020255431,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 9 (region 10)",
+       "y bin 10 (region 11)",
+       "z bin 2 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 70,
+      "detail": "atypical for 142 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -0.4,
+       3.6,
+       -25.8
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       26.0,
+       -93.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      47
+     ],
+     [
+      "insert-frame",
+      47,
+      66
+     ],
+     [
+      "approach-tool",
+      66,
+      66
+     ],
+     [
+      "move-tool-to-hook",
+      66,
+      66
+     ],
+     [
+      "hang-tool-and-retreat",
+      66,
+      208
+     ]
+    ],
+    "event": null
+   }
+  ],
+  "miss": [
+   {
+    "demo": "demo_0",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 333,
+      "detail": "not true within 20 frames of the stage end (nearest: 39 frames away)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -3.3,
+       3.9,
+       -0.2
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       -4.0,
+       176.0
+      ],
+      "knn_dist": 5.760959888961352,
+      "knn_thr": 1.3220794707923607,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 10 (region 6)",
+       "y bin 10 (region 11)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 315,
+      "detail": "atypical for 39 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -3.0,
+       3.2,
+       3.0
+      ],
+      "rel_rpy_deg": [
+       -18.0,
+       -10.0,
+       -174.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 338,
+      "detail": "atypical for 7 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.3,
+       -0.1,
+       -22.7
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       -1.0,
+       -91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      35
+     ],
+     [
+      "move-frame-to-stand",
+      35,
+      78
+     ],
+     [
+      "insert-frame",
+      78,
+      190
+     ],
+     [
+      "approach-tool",
+      190,
+      249
+     ],
+     [
+      "move-tool-to-hook",
+      249,
+      334
+     ],
+     [
+      "hang-tool-and-retreat",
+      334,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_5",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 213,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.9,
+       5.1,
+       -10.7
+      ],
+      "rel_rpy_deg": [
+       -24.0,
+       16.0,
+       -101.0
+      ],
+      "knn_dist": 10.756838937918705,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 10 (region 11)",
+       "z bin 8 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 214,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       3.1,
+       -42.7,
+       4.0
+      ],
+      "rel_rpy_deg": [
+       52.0,
+       20.0,
+       -127.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 15 (region 14)",
+       "y bin 28 (region 14)",
+       "z bin 15 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 2 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 214,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       3.1,
+       -42.7,
+       4.0
+      ],
+      "rel_rpy_deg": [
+       52.0,
+       20.0,
+       -127.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 15 (region 14)",
+       "y bin 28 (region 14)",
+       "z bin 15 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 2 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 214,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -42.6,
+       -5.0,
+       -5.0
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       -29.0,
+       147.0
+      ],
+      "knn_dist": 12.66780663521746,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 0 (region 6)",
+       "y bin 12 (region 11)",
+       "z bin 10 (region 11)",
+       "roll bin 7 (region 6)",
+       "yaw bin 10 (region 11)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 214,
+      "detail": "false for 127 of 127 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.8,
+       5.2,
+       -10.6
+      ],
+      "rel_rpy_deg": [
+       -24.0,
+       16.0,
+       -102.0
+      ],
+      "knn_dist": 10.712782694764096,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 10 (region 11)",
+       "z bin 8 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 136,
+      "detail": "atypical for 89 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -20.8,
+       2.5,
+       -36.9
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       1.0,
+       -98.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 218,
+      "detail": "atypical for 127 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -12.0,
+       14.0,
+       -4.8
+      ],
+      "rel_rpy_deg": [
+       -44.0,
+       28.0,
+       -155.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      77
+     ],
+     [
+      "insert-frame",
+      77,
+      214
+     ],
+     [
+      "approach-tool",
+      214,
+      214
+     ],
+     [
+      "move-tool-to-hook",
+      214,
+      214
+     ],
+     [
+      "hang-tool-and-retreat",
+      214,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_14",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 185,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.2,
+       -3.4,
+       -32.7
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -9.0,
+       -90.0
+      ],
+      "knn_dist": 0.8849199852705059,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "y bin 12 (region 11)",
+       "z bin 3 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 186,
+      "detail": "false for 40 of 40 frames in a row (tolerance 100% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.4,
+       -3.6,
+       -32.6
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -10.0,
+       -90.0
+      ],
+      "knn_dist": 1.0673205157646335,
+      "knn_thr": 0.3459476128563502,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "y bin 12 (region 11)",
+       "z bin 3 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "over all",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 233,
+      "detail": "false for 113 of 120 frames in a row (tolerance 100% of stage)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       -0.0,
+       0.2,
+       -4.5
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       3.0,
+       168.0
+      ],
+      "knn_dist": 0.8130205071965948,
+      "knn_thr": 3.5110957135078364,
+      "in_training_distribution": true,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "z bin 13 (region 14)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 226,
+      "detail": "false for 120 of 120 frames in a row (tolerance 54% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": 8.95069581103765,
+      "knn_thr": 0.06579193669004851,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 11 (region 10)",
+       "y bin 12 (region 11)",
+       "z bin 9 (region 5)",
+       "roll bin 4 (region 6)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 8 (region 4)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 345,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       0.8,
+       9.7,
+       10.1
+      ],
+      "rel_rpy_deg": [
+       90.0,
+       -67.0,
+       -90.0
+      ],
+      "knn_dist": 12.240478212601658,
+      "knn_thr": 5.138945135108188,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 11 (region 6)",
+       "y bin 8 (region 11)",
+       "z bin 14 (region 12)",
+       "roll bin 7 (region 6)",
+       "pitch bin 3 (region 5)",
+       "yaw bin 5 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 346,
+      "detail": "false for 8 of 8 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": 8.977549442838555,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 11 (region 10)",
+       "y bin 12 (region 11)",
+       "z bin 9 (region 5)",
+       "roll bin 4 (region 6)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 8 (region 4)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 175,
+      "detail": "atypical for 22 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       -4.1,
+       -32.5
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -12.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 206,
+      "detail": "atypical for 40 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.7,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 246,
+      "detail": "atypical for 120 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 246,
+      "detail": "atypical for 120 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       0.8,
+       9.7,
+       10.1
+      ],
+      "rel_rpy_deg": [
+       90.0,
+       -67.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "gripper_1->tool_1",
+      "pol": true,
+      "frame": 253,
+      "detail": "atypical for 113 frames in a row (normal demos: at most 20)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       2.0,
+       -22.3,
+       -25.1
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       16.0,
+       158.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 350,
+      "detail": "atypical for 8 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      31
+     ],
+     [
+      "move-frame-to-stand",
+      31,
+      65
+     ],
+     [
+      "insert-frame",
+      65,
+      186
+     ],
+     [
+      "approach-tool",
+      186,
+      226
+     ],
+     [
+      "move-tool-to-hook",
+      226,
+      346
+     ],
+     [
+      "hang-tool-and-retreat",
+      346,
+      354
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_21",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 279,
+      "detail": "not true within 20 frames of the stage end (nearest: 49 frames away)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -2.9,
+       5.4,
+       -1.9
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       -2.0,
+       156.0
+      ],
+      "knn_dist": 6.0345126476658795,
+      "knn_thr": 1.3220794707923607,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 10 (region 6)",
+       "y bin 10 (region 11)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 252,
+      "detail": "atypical for 48 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -4.9,
+       4.9,
+       3.0
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       -4.0,
+       -179.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      74
+     ],
+     [
+      "insert-frame",
+      74,
+      132
+     ],
+     [
+      "approach-tool",
+      132,
+      176
+     ],
+     [
+      "move-tool-to-hook",
+      176,
+      280
+     ],
+     [
+      "hang-tool-and-retreat",
+      280,
+      288
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_27",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 102,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.0,
+       -0.5,
+       -37.4
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -2.0,
+       -98.0
+      ],
+      "knn_dist": 0.39595103562336365,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 1 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 103,
+      "detail": "false for 41 of 41 frames in a row (tolerance 100% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       -0.4,
+       -37.4
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -2.0,
+       -98.0
+      ],
+      "knn_dist": 2.129252909990734,
+      "knn_thr": 0.3459476128563502,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 1 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 143,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       1.5,
+       -0.8,
+       -10.1
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       9.0,
+       173.0
+      ],
+      "knn_dist": 1.142312355525592,
+      "knn_thr": 1.903021091263731,
+      "in_training_distribution": true,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "z bin 11 (region 14)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 144,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       1.2,
+       -1.0,
+       -9.7
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       9.0,
+       173.0
+      ],
+      "knn_dist": 3.297146545488501,
+      "knn_thr": 0.5428848572214522,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "z bin 11 (region 14)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "over all",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 144,
+      "detail": "false for 76 of 76 frames in a row (tolerance 100% of stage)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       1.2,
+       -1.0,
+       -9.7
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       9.0,
+       173.0
+      ],
+      "knn_dist": 3.297146545488501,
+      "knn_thr": 0.5428848572214522,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "z bin 11 (region 14)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 144,
+      "detail": "false for 76 of 76 frames in a row (tolerance 54% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": 7.799885124061435,
+      "knn_thr": 0.06579193669004851,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 11 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 8 (region 5)",
+       "roll bin 4 (region 6)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 8 (region 4)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 219,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -0.3,
+       15.5,
+       7.5
+      ],
+      "rel_rpy_deg": [
+       92.0,
+       -58.0,
+       -91.0
+      ],
+      "knn_dist": 12.180520986637754,
+      "knn_thr": 5.138945135108188,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 11 (region 6)",
+       "y bin 7 (region 11)",
+       "z bin 13 (region 12)",
+       "roll bin 7 (region 6)",
+       "pitch bin 3 (region 5)",
+       "yaw bin 5 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 220,
+      "detail": "false for 15 of 15 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": 7.728618481217837,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 11 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 8 (region 5)",
+       "roll bin 4 (region 6)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 8 (region 4)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 123,
+      "detail": "atypical for 41 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 76 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 76 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -0.3,
+       15.5,
+       7.5
+      ],
+      "rel_rpy_deg": [
+       92.0,
+       -58.0,
+       -91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "gripper_1->tool_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 76 frames in a row (normal demos: at most 20)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       5.1,
+       -13.9,
+       -30.1
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       18.0,
+       146.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 224,
+      "detail": "atypical for 15 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      28
+     ],
+     [
+      "move-frame-to-stand",
+      28,
+      63
+     ],
+     [
+      "insert-frame",
+      63,
+      103
+     ],
+     [
+      "approach-tool",
+      103,
+      144
+     ],
+     [
+      "move-tool-to-hook",
+      144,
+      220
+     ],
+     [
+      "hang-tool-and-retreat",
+      220,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_32",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 141,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -25.5,
+       6.3,
+       -15.6
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       34.0,
+       -90.0
+      ],
+      "knn_dist": 10.915422508964927,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 4 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 7 (region 5)",
+       "roll bin 7 (region 6)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 142,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       -0.7,
+       -47.7,
+       5.3
+      ],
+      "rel_rpy_deg": [
+       60.0,
+       16.0,
+       -120.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "y bin -1 (region 14)",
+       "z bin 16 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 2 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 142,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       -0.7,
+       -47.7,
+       5.3
+      ],
+      "rel_rpy_deg": [
+       60.0,
+       16.0,
+       -120.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "y bin -1 (region 14)",
+       "z bin 16 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 2 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 142,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -45.5,
+       -4.9,
+       -21.3
+      ],
+      "rel_rpy_deg": [
+       -33.0,
+       -12.0,
+       166.0
+      ],
+      "knn_dist": 16.803244915040526,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin -1 (region 6)",
+       "y bin 12 (region 11)",
+       "z bin 5 (region 11)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 142,
+      "detail": "false for 95 of 95 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -25.6,
+       6.2,
+       -15.7
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       35.0,
+       -89.0
+      ],
+      "knn_dist": 11.402672269642714,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 4 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 7 (region 5)",
+       "roll bin 7 (region 6)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 95,
+      "detail": "atypical for 58 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -20.1,
+       6.3,
+       -34.6
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       9.0,
+       -100.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 146,
+      "detail": "atypical for 95 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -24.2,
+       1.0,
+       -11.3
+      ],
+      "rel_rpy_deg": [
+       -102.0,
+       82.0,
+       167.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      24
+     ],
+     [
+      "move-frame-to-stand",
+      24,
+      62
+     ],
+     [
+      "insert-frame",
+      62,
+      142
+     ],
+     [
+      "approach-tool",
+      142,
+      142
+     ],
+     [
+      "move-tool-to-hook",
+      142,
+      142
+     ],
+     [
+      "hang-tool-and-retreat",
+      142,
+      237
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_36",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 205,
+      "detail": "not true within 20 frames of the stage end (nearest: 27 frames away)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -11.9,
+       -4.1,
+       -3.1
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       30.0,
+       -157.0
+      ],
+      "knn_dist": 1.9675613927981526,
+      "knn_thr": 1.3220794707923607,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 8 (region 6)",
+       "y bin 12 (region 11)",
+       "z bin 10 (region 11)",
+       "roll bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 200,
+      "detail": "atypical for 26 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -12.9,
+       -3.5,
+       -2.2
+      ],
+      "rel_rpy_deg": [
+       -11.0,
+       21.0,
+       -160.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 236,
+      "detail": "atypical for 34 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.6,
+       -2.6,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       0.0,
+       -54.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      114
+     ],
+     [
+      "approach-tool",
+      114,
+      147
+     ],
+     [
+      "move-tool-to-hook",
+      147,
+      206
+     ],
+     [
+      "hang-tool-and-retreat",
+      206,
+      266
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_44",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 236,
+      "detail": "atypical for 28 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -13.3,
+       -2.2,
+       0.9
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       12.0,
+       -166.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      144
+     ],
+     [
+      "approach-tool",
+      144,
+      183
+     ],
+     [
+      "move-tool-to-hook",
+      183,
+      244
+     ],
+     [
+      "hang-tool-and-retreat",
+      244,
+      262
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_56",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 141,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -24.2,
+       4.0,
+       -8.5
+      ],
+      "rel_rpy_deg": [
+       -11.0,
+       48.0,
+       -88.0
+      ],
+      "knn_dist": 12.283467797725656,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 10 (region 11)",
+       "z bin 9 (region 5)",
+       "roll bin 7 (region 6)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 142,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       7.9,
+       -41.5,
+       12.6
+      ],
+      "rel_rpy_deg": [
+       58.0,
+       5.0,
+       -109.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 17 (region 14)",
+       "y bin 28 (region 14)",
+       "z bin 18 (region 14)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 142,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       7.9,
+       -41.5,
+       12.6
+      ],
+      "rel_rpy_deg": [
+       58.0,
+       5.0,
+       -109.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 17 (region 14)",
+       "y bin 28 (region 14)",
+       "z bin 18 (region 14)",
+       "pitch bin 4 (region 6)",
+       "yaw bin 3 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 142,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -41.3,
+       -10.1,
+       -16.6
+      ],
+      "rel_rpy_deg": [
+       -49.0,
+       -19.0,
+       -179.0
+      ],
+      "knn_dist": 14.501497352964765,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 0 (region 6)",
+       "y bin 14 (region 11)",
+       "z bin 7 (region 11)",
+       "roll bin 7 (region 6)",
+       "pitch bin 4 (region 5)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 142,
+      "detail": "false for 93 of 93 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -24.3,
+       3.1,
+       -8.5
+      ],
+      "rel_rpy_deg": [
+       -10.0,
+       51.0,
+       -87.0
+      ],
+      "knn_dist": 12.317731586398574,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 10 (region 11)",
+       "z bin 9 (region 5)",
+       "roll bin 7 (region 6)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 101,
+      "detail": "atypical for 52 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.1,
+       4.3,
+       -34.1
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       17.0,
+       -92.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 146,
+      "detail": "atypical for 93 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -23.0,
+       1.3,
+       -3.2
+      ],
+      "rel_rpy_deg": [
+       -94.0,
+       83.0,
+       175.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      34
+     ],
+     [
+      "move-frame-to-stand",
+      34,
+      66
+     ],
+     [
+      "insert-frame",
+      66,
+      142
+     ],
+     [
+      "approach-tool",
+      142,
+      142
+     ],
+     [
+      "move-tool-to-hook",
+      142,
+      142
+     ],
+     [
+      "hang-tool-and-retreat",
+      142,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_93",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 121,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -24.6,
+       4.1,
+       -17.6
+      ],
+      "rel_rpy_deg": [
+       9.0,
+       48.0,
+       -80.0
+      ],
+      "knn_dist": 10.176595311758792,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 10 (region 11)",
+       "z bin 6 (region 5)",
+       "roll bin 7 (region 6)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 122,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       8.1,
+       -47.9,
+       9.9
+      ],
+      "rel_rpy_deg": [
+       51.0,
+       6.0,
+       -107.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 17 (region 14)",
+       "y bin -1 (region 14)",
+       "z bin 17 (region 14)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 3 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 122,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       8.1,
+       -47.9,
+       9.9
+      ],
+      "rel_rpy_deg": [
+       51.0,
+       6.0,
+       -107.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 17 (region 14)",
+       "y bin -1 (region 14)",
+       "z bin 17 (region 14)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 3 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 122,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -43.9,
+       -6.9,
+       -29.0
+      ],
+      "rel_rpy_deg": [
+       -53.0,
+       -3.0,
+       178.0
+      ],
+      "knn_dist": 18.52125158160634,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 0 (region 6)",
+       "y bin 13 (region 11)",
+       "z bin 3 (region 11)",
+       "pitch bin 4 (region 5)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 122,
+      "detail": "false for 67 of 67 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -24.8,
+       3.5,
+       -16.9
+      ],
+      "rel_rpy_deg": [
+       10.0,
+       52.0,
+       -77.0
+      ],
+      "knn_dist": 10.78048325249181,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 10 (region 11)",
+       "z bin 7 (region 5)",
+       "roll bin 7 (region 6)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 85,
+      "detail": "atypical for 48 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -20.5,
+       8.8,
+       -34.1
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       16.0,
+       -100.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 126,
+      "detail": "atypical for 67 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -25.2,
+       0.2,
+       -11.3
+      ],
+      "rel_rpy_deg": [
+       98.0,
+       86.0,
+       9.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      23
+     ],
+     [
+      "move-frame-to-stand",
+      23,
+      46
+     ],
+     [
+      "insert-frame",
+      46,
+      122
+     ],
+     [
+      "approach-tool",
+      122,
+      122
+     ],
+     [
+      "move-tool-to-hook",
+      122,
+      122
+     ],
+     [
+      "hang-tool-and-retreat",
+      122,
+      189
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_103",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 81,
+      "detail": "not true within 20 frames of the stage end (nearest: 46 frames away)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.5,
+       1.4,
+       -31.9
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       6.0,
+       -90.0
+      ],
+      "knn_dist": 0.06373110240607391,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 3 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 82,
+      "detail": "false for 36 of 36 frames in a row (tolerance 100% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.5,
+       1.5,
+       -31.9
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       6.0,
+       -91.0
+      ],
+      "knn_dist": 0.24928959045653842,
+      "knn_thr": 0.3459476128563502,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 3 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 163,
+      "detail": "not true within 20 frames of the stage end (nearest: 21 frames away)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -13.0,
+       1.3,
+       2.5
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       -8.0,
+       176.0
+      ],
+      "knn_dist": 1.136921922422309,
+      "knn_thr": 1.3220794707923607,
+      "in_training_distribution": true,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 8 (region 6)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      44
+     ],
+     [
+      "insert-frame",
+      44,
+      82
+     ],
+     [
+      "approach-tool",
+      82,
+      118
+     ],
+     [
+      "move-tool-to-hook",
+      118,
+      164
+     ],
+     [
+      "hang-tool-and-retreat",
+      164,
+      206
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_105",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 185,
+      "detail": "not true within 20 frames of the stage end (nearest: 22 frames away)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -3.7,
+       -0.6,
+       1.8
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -0.0,
+       -177.0
+      ],
+      "knn_dist": 5.246072644448041,
+      "knn_thr": 1.3220794707923607,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 10 (region 6)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 185,
+      "detail": "atypical for 21 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -3.7,
+       -0.6,
+       1.8
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -0.0,
+       -177.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      53
+     ],
+     [
+      "insert-frame",
+      53,
+      112
+     ],
+     [
+      "approach-tool",
+      112,
+      136
+     ],
+     [
+      "move-tool-to-hook",
+      136,
+      186
+     ],
+     [
+      "hang-tool-and-retreat",
+      186,
+      190
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_111",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 186,
+      "detail": "not true within 20 frames of the stage end (nearest: 26 frames away)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -2.6,
+       6.2,
+       -2.1
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       -11.0,
+       167.0
+      ],
+      "knn_dist": 6.364921586556152,
+      "knn_thr": 1.3220794707923607,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 10 (region 6)",
+       "y bin 9 (region 11)",
+       "z bin 10 (region 11)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 180,
+      "detail": "atypical for 27 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -6.4,
+       5.5,
+       -0.3
+      ],
+      "rel_rpy_deg": [
+       -10.0,
+       -12.0,
+       -160.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      49
+     ],
+     [
+      "insert-frame",
+      49,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      130
+     ],
+     [
+      "move-tool-to-hook",
+      130,
+      187
+     ],
+     [
+      "hang-tool-and-retreat",
+      187,
+      203
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_125",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "approach-tool",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 112,
+      "detail": "false for 28 of 33 frames in a row (tolerance 100% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       0.6,
+       -28.9
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       3.0,
+       -90.0
+      ],
+      "knn_dist": 0.042066597693190586,
+      "knn_thr": 0.3459476128563502,
+      "in_training_distribution": true,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "z bin 3 (region 5)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "move-frame-to-stand",
+      "kind": "typical pose",
+      "pred": "gripper_1->frame_1",
+      "pol": true,
+      "frame": 31,
+      "detail": "atypical for 25 frames in a row (normal demos: at most 5)",
+      "relation": "gripper_1->frame_1",
+      "rel_pos_cm": [
+       -3.0,
+       -0.1,
+       -0.9
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       0.0,
+       91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 187,
+      "detail": "atypical for 22 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.8,
+       -2.4,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       0.0,
+       -57.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 165,
+      "detail": "atypical for 44 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -14.1,
+       -4.0,
+       1.8
+      ],
+      "rel_rpy_deg": [
+       -25.0,
+       -5.0,
+       -160.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 193,
+      "detail": "atypical for 18 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.8,
+       -2.4,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       0.0,
+       -57.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      22
+     ],
+     [
+      "move-frame-to-stand",
+      22,
+      51
+     ],
+     [
+      "insert-frame",
+      51,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      140
+     ],
+     [
+      "move-tool-to-hook",
+      140,
+      189
+     ],
+     [
+      "hang-tool-and-retreat",
+      189,
+      207
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_131",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 162,
+      "detail": "not true within 20 frames of the stage end (nearest: 23 frames away)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -3.4,
+       5.6,
+       -2.2
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -12.0,
+       168.0
+      ],
+      "knn_dist": 6.042603675962664,
+      "knn_thr": 1.3220794707923607,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 10 (region 6)",
+       "y bin 10 (region 11)",
+       "z bin 10 (region 11)",
+       "roll bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 161,
+      "detail": "atypical for 22 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -3.7,
+       5.7,
+       -2.0
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -12.0,
+       171.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      50
+     ],
+     [
+      "insert-frame",
+      50,
+      89
+     ],
+     [
+      "approach-tool",
+      89,
+      113
+     ],
+     [
+      "move-tool-to-hook",
+      113,
+      163
+     ],
+     [
+      "hang-tool-and-retreat",
+      163,
+      168
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_155",
+    "success": true,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 210,
+      "detail": "atypical for 31 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.3,
+       -3.1,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       0.0,
+       -47.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 225,
+      "detail": "atypical for 15 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.5,
+       -2.9,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       0.0,
+       -50.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      48
+     ],
+     [
+      "insert-frame",
+      48,
+      129
+     ],
+     [
+      "approach-tool",
+      129,
+      153
+     ],
+     [
+      "move-tool-to-hook",
+      153,
+      221
+     ],
+     [
+      "hang-tool-and-retreat",
+      221,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_168",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 144,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -23.2,
+       6.9,
+       -4.0
+      ],
+      "rel_rpy_deg": [
+       -33.0,
+       39.0,
+       -115.0
+      ],
+      "knn_dist": 13.614673483186284,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 10 (region 5)",
+       "roll bin 7 (region 6)",
+       "pitch bin 8 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 145,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       -1.7,
+       -44.6,
+       2.3
+      ],
+      "rel_rpy_deg": [
+       50.0,
+       17.0,
+       -122.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 13 (region 14)",
+       "y bin -1 (region 14)",
+       "z bin 15 (region 14)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 2 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 145,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       -1.7,
+       -44.6,
+       2.3
+      ],
+      "rel_rpy_deg": [
+       50.0,
+       17.0,
+       -122.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 13 (region 14)",
+       "y bin -1 (region 14)",
+       "z bin 15 (region 14)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 2 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 145,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -44.3,
+       -1.0,
+       0.2
+      ],
+      "rel_rpy_deg": [
+       -41.0,
+       -39.0,
+       165.0
+      ],
+      "knn_dist": 13.133078281615779,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 0 (region 6)",
+       "roll bin 7 (region 6)",
+       "pitch bin 4 (region 5)",
+       "yaw bin 10 (region 11)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 145,
+      "detail": "false for 74 of 74 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -22.5,
+       6.4,
+       -2.3
+      ],
+      "rel_rpy_deg": [
+       -38.0,
+       42.0,
+       -119.0
+      ],
+      "knn_dist": 13.8902545667212,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 10 (region 5)",
+       "roll bin 7 (region 6)",
+       "pitch bin 8 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 98,
+      "detail": "atypical for 58 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.9,
+       4.1,
+       -33.4
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       17.0,
+       -96.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 149,
+      "detail": "atypical for 74 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -20.9,
+       0.7,
+       2.3
+      ],
+      "rel_rpy_deg": [
+       -92.0,
+       62.0,
+       178.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      70
+     ],
+     [
+      "insert-frame",
+      70,
+      145
+     ],
+     [
+      "approach-tool",
+      145,
+      145
+     ],
+     [
+      "move-tool-to-hook",
+      145,
+      145
+     ],
+     [
+      "hang-tool-and-retreat",
+      145,
+      219
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_176",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 104,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -24.1,
+       7.7,
+       -6.6
+      ],
+      "rel_rpy_deg": [
+       -22.0,
+       40.0,
+       -103.0
+      ],
+      "knn_dist": 13.200845491111462,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 9 (region 5)",
+       "roll bin 7 (region 6)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 105,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       0.9,
+       -45.6,
+       2.6
+      ],
+      "rel_rpy_deg": [
+       51.0,
+       16.0,
+       -120.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "y bin -1 (region 14)",
+       "z bin 15 (region 14)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 2 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 105,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       0.9,
+       -45.6,
+       2.6
+      ],
+      "rel_rpy_deg": [
+       51.0,
+       16.0,
+       -120.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "y bin -1 (region 14)",
+       "z bin 15 (region 14)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 2 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 105,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -45.5,
+       -2.5,
+       -6.9
+      ],
+      "rel_rpy_deg": [
+       -37.0,
+       -30.0,
+       165.0
+      ],
+      "knn_dist": 14.107752896248472,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin -1 (region 6)",
+       "y bin 12 (region 11)",
+       "z bin 9 (region 11)",
+       "roll bin 7 (region 6)",
+       "pitch bin 4 (region 5)",
+       "yaw bin 10 (region 11)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 105,
+      "detail": "false for 93 of 93 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -24.3,
+       7.0,
+       -6.1
+      ],
+      "rel_rpy_deg": [
+       -22.0,
+       41.0,
+       -103.0
+      ],
+      "knn_dist": 13.25419335112823,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 9 (region 5)",
+       "roll bin 7 (region 6)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 74,
+      "detail": "atypical for 42 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.5,
+       4.5,
+       -32.2
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       20.0,
+       -93.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 109,
+      "detail": "atypical for 93 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.5,
+       1.2,
+       2.9
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       68.0,
+       177.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      51
+     ],
+     [
+      "insert-frame",
+      51,
+      105
+     ],
+     [
+      "approach-tool",
+      105,
+      105
+     ],
+     [
+      "move-tool-to-hook",
+      105,
+      105
+     ],
+     [
+      "hang-tool-and-retreat",
+      105,
+      198
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_180",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 130,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       8.8,
+       -28.6,
+       -1.0
+      ],
+      "rel_rpy_deg": [
+       46.0,
+       10.0,
+       -119.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 17 (region 14)",
+       "y bin 23 (region 14)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 2 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 130,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       8.8,
+       -28.6,
+       -1.0
+      ],
+      "rel_rpy_deg": [
+       46.0,
+       10.0,
+       -119.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 17 (region 14)",
+       "y bin 23 (region 14)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 2 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 130,
+      "detail": "false for 106 of 106 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -10.0,
+       5.9,
+       -18.1
+      ],
+      "rel_rpy_deg": [
+       -13.0,
+       7.0,
+       -92.0
+      ],
+      "knn_dist": 4.242116672911551,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 8 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 6 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 108,
+      "detail": "atypical for 33 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.9,
+       9.1,
+       -19.7
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       25.0,
+       -104.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 134,
+      "detail": "atypical for 106 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.9,
+       7.1,
+       -13.5
+      ],
+      "rel_rpy_deg": [
+       -41.0,
+       15.0,
+       -120.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      58
+     ],
+     [
+      "insert-frame",
+      58,
+      130
+     ],
+     [
+      "approach-tool",
+      130,
+      130
+     ],
+     [
+      "move-tool-to-hook",
+      130,
+      130
+     ],
+     [
+      "hang-tool-and-retreat",
+      130,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_191",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "at end",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 109,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -23.9,
+       8.7,
+       -18.9
+      ],
+      "rel_rpy_deg": [
+       -7.0,
+       27.0,
+       -91.0
+      ],
+      "knn_dist": 9.167241301671078,
+      "knn_thr": 0.6636918450384788,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 6 (region 5)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "at end",
+      "pred": "at-tool-grasp",
+      "pol": true,
+      "frame": 110,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       16.6,
+       -43.8,
+       3.4
+      ],
+      "rel_rpy_deg": [
+       59.0,
+       21.0,
+       -110.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_1",
+      "mismatch": [
+       "x bin 19 (region 14)",
+       "y bin 28 (region 14)",
+       "z bin 15 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 3 (region 1)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at start",
+      "pred": "holding-tool",
+      "pol": true,
+      "frame": 110,
+      "detail": "not true within 2 frames of the stage start (nearest: never)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       16.6,
+       -43.8,
+       3.4
+      ],
+      "rel_rpy_deg": [
+       59.0,
+       21.0,
+       -110.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_tool_2",
+      "mismatch": [
+       "x bin 19 (region 14)",
+       "y bin 28 (region 14)",
+       "z bin 15 (region 14)",
+       "roll bin 8 (region 7)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 3 (region 1)",
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "ang+grasp+pos"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "at end",
+      "pred": "tool-at-hook",
+      "pol": true,
+      "frame": 110,
+      "detail": "not true within 20 frames of the stage end (nearest: never)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -43.9,
+       -3.8,
+       -20.0
+      ],
+      "rel_rpy_deg": [
+       -22.0,
+       -19.0,
+       157.0
+      ],
+      "knn_dist": 15.77586704360654,
+      "knn_thr": 1.3069754057713538,
+      "in_training_distribution": false,
+      "nearest_region": "frame_tool_2",
+      "mismatch": [
+       "x bin 0 (region 6)",
+       "y bin 12 (region 11)",
+       "z bin 6 (region 11)",
+       "roll bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "over all",
+      "pred": "frame-in-stand",
+      "pol": true,
+      "frame": 110,
+      "detail": "false for 98 of 98 frames in a row (tolerance 0% of stage)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -23.7,
+       8.1,
+       -17.8
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       28.0,
+       -91.0
+      ],
+      "knn_dist": 10.53749663815468,
+      "knn_thr": 0.08823733587088312,
+      "in_training_distribution": false,
+      "nearest_region": "frame_stand_2",
+      "mismatch": [
+       "x bin 5 (region 10)",
+       "y bin 9 (region 11)",
+       "z bin 6 (region 5)",
+       "roll bin 7 (region 6)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 78,
+      "detail": "atypical for 43 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.7,
+       8.8,
+       -33.2
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       18.0,
+       -97.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 114,
+      "detail": "atypical for 98 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.3,
+       4.8,
+       -9.2
+      ],
+      "rel_rpy_deg": [
+       -36.0,
+       71.0,
+       -132.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      47
+     ],
+     [
+      "insert-frame",
+      47,
+      110
+     ],
+     [
+      "approach-tool",
+      110,
+      110
+     ],
+     [
+      "move-tool-to-hook",
+      110,
+      110
+     ],
+     [
+      "hang-tool-and-retreat",
+      110,
+      208
+     ]
+    ],
+    "event": null
+   }
+  ]
+ }
+}

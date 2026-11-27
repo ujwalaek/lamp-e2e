@@ -1,0 +1,78 @@
+===== ToolHang coarse_bins_d0 (08:50:58)
+labelled 180 training runs (1456s)
+false alarms on nominal held-out demos: 19/20
+drop: 20 rollouts, 18 really failed, detected 17/18
+miss: 20 rollouts, 19 really failed, detected 19/19
+   103  ('approach-tool', 'at end', 'at-tool-grasp', True)
+    92  ('move-tool-to-hook', 'over all', 'holding-tool', True)
+    90  ('insert-frame', 'over all', 'holding-frame', True)
+    52  ('move-frame-to-stand', 'over all', 'holding-frame', True)
+    43  ('approach-tool', 'over all', 'frame-in-stand', True)
+    43  ('move-tool-to-hook', 'at end', 'tool-at-hook', True)
+    38  ('move-frame-to-stand', 'at start', 'holding-frame', True)
+    31  ('move-tool-to-hook', 'at start', 'holding-tool', True)
+    30  ('insert-frame', 'at end', 'frame-in-stand', True)
+     5  ('move-tool-to-hook', 'over all', 'frame-in-stand', True)
+     5  ('hang-tool-and-retreat', 'over all', 'frame-in-stand', True)
+===== ToolHang coarse_bins_d1 (09:19:00)
+labelled 180 training runs (781s)
+false alarms on nominal held-out demos: 2/20
+drop: 20 rollouts, 18 really failed, detected 11/18
+miss: 20 rollouts, 19 really failed, detected 18/19
+    12  ('approach-tool', 'over all', 'frame-in-stand', True)
+     8  ('insert-frame', 'at end', 'frame-in-stand', True)
+     6  ('move-tool-to-hook', 'over all', 'holding-tool', True)
+     4  ('approach-tool', 'at end', 'at-tool-grasp', True)
+     2  ('move-tool-to-hook', 'at end', 'tool-at-hook', True)
+     1  ('move-tool-to-hook', 'at start', 'holding-tool', True)
+     1  ('move-tool-to-hook', 'over all', 'frame-in-stand', True)
+===== ToolHang coarse_gmm (09:37:02)
+labelled 180 training runs (1069s)
+learned likelihood thresholds: {'frame-above-stand': 12.02, 'holding-frame': -40.38, 'frame-in-stand': -44.88, 'at-tool-grasp': -33.2, 'holding-tool': -13.32, 'tool-at-hook': -21.91}
+false alarms on nominal held-out demos: 4/20
+drop: 20 rollouts, 18 really failed, detected 11/18
+miss: 20 rollouts, 19 really failed, detected 19/19
+     7  ('move-tool-to-hook', 'over all', 'holding-tool', True)
+     7  ('insert-frame', 'over all', 'holding-frame', True)
+     5  ('approach-tool', 'over all', 'frame-in-stand', True)
+     4  ('move-tool-to-hook', 'at end', 'tool-at-hook', True)
+     4  ('move-frame-to-stand', 'at end', 'frame-above-stand', True)
+     4  ('insert-frame', 'at start', 'frame-above-stand', True)
+     4  ('approach-tool', 'at end', 'at-tool-grasp', True)
+     2  ('move-tool-to-hook', 'at start', 'holding-tool', True)
+     2  ('insert-frame', 'at end', 'frame-in-stand', True)
+===== ToolHang coarse_density (10:02:03)
+labelled 180 training runs (406s)
+false alarms on nominal held-out demos: 1/20
+drop: 20 rollouts, 18 really failed, detected 13/18
+miss: 20 rollouts, 19 really failed, detected 18/19
+     1  ('approach-tool', 'typical pose', 'frame_1->stand_1', True)
+     1  ('move-tool-to-hook', 'typical pose', 'frame_1->tool_1', True)
+     1  ('move-tool-to-hook', 'typical pose', 'gripper_1->tool_1', True)
+     1  ('move-frame-to-stand', 'typical pose', 'frame_1->stand_1', True)
+     1  ('move-tool-to-hook', 'typical pose', 'frame_1->stand_1', True)
+===== ToolHang coarse_combined (10:17:29)
+labelled 180 training runs (566s)
+false alarms on nominal held-out demos: 2/20
+drop: 20 rollouts, 18 really failed, detected 13/18
+miss: 20 rollouts, 19 really failed, detected 19/19
+    12  ('approach-tool', 'over all', 'frame-in-stand', True)
+     8  ('insert-frame', 'at end', 'frame-in-stand', True)
+     6  ('move-tool-to-hook', 'over all', 'holding-tool', True)
+     4  ('approach-tool', 'at end', 'at-tool-grasp', True)
+     2  ('move-tool-to-hook', 'at end', 'tool-at-hook', True)
+     1  ('approach-tool', 'typical pose', 'frame_1->stand_1', True)
+     1  ('move-tool-to-hook', 'at start', 'holding-tool', True)
+     1  ('move-tool-to-hook', 'typical pose', 'frame_1->tool_1', True)
+     1  ('move-tool-to-hook', 'typical pose', 'gripper_1->tool_1', True)
+     1  ('move-frame-to-stand', 'typical pose', 'frame_1->stand_1', True)
+     1  ('move-tool-to-hook', 'over all', 'frame-in-stand', True)
+     1  ('move-tool-to-hook', 'typical pose', 'frame_1->stand_1', True)
+| Variant | False alarms (held-out normal) | drop: caught / early only / missed | miss: caught / early only / missed |
+|---|---|---|---|
+| coarse_bins_d0 | 19/20 | 12 / 5 / 1 (of 18) | 18 / 1 / 0 (of 19) |
+| coarse_bins_d1 | 2/20 | 9 / 2 / 7 (of 18) | 16 / 2 / 1 (of 19) |
+| coarse_gmm | 4/20 | 9 / 2 / 7 (of 18) | 18 / 1 / 0 (of 19) |
+| coarse_density | 1/20 | 11 / 2 / 5 (of 18) | 17 / 1 / 1 (of 19) |
+| coarse_combined | 2/20 | 11 / 2 / 5 (of 18) | 18 / 1 / 0 (of 19) |
+

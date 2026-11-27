@@ -101,6 +101,29 @@ class Labeller:
             return tuple(d2) + (grab,) in S
         return tuple(d1) + (grab,) in S or tuple(d2) + (grab,) in S
 
+    def scores(self, states, grounded):
+        """Graded version of membership: per LAMP predicate, the log-likelihood of the relative pose under the
+        region's GMM (Relation.mvg, which LAMP fits to samples inside the region's bins), maximised over the two
+        pose directions LAMP checks. -inf when the grasp sensor does not match the region's sensor values."""
+        uf, C = self.uf, self.Config
+        out = {}
+        for n, (r, g, a, b) in grounded.items():
+            sens = set(int(x[6]) for x in r.region)
+            X1, X2, ok = [], [], []
+            for s in states:
+                pa, pb = link_pose(C, s, a), link_pose(C, s, b)
+                X1.append(uf.get_relative_pose(pb, pa)); X2.append(uf.get_relative_pose(pa, pb))
+                grab = 1 if (s.grabbed_flag_1 and C.GRIPPER_NAME in (r.parameter1_type, r.parameter2_type)
+                             and s.grabbed_object_1 in (a, b)) else 0
+                ok.append(grab in sens)
+            if r.mvg is None:
+                out[n] = np.full(len(states), -np.inf)
+                continue
+            s2 = r.mvg.gaussian.score_samples(np.array(X2))
+            s1 = r.mvg.gaussian.score_samples(np.array(X1)) if r.parameter1_type != r.parameter2_type else s2
+            out[n] = np.where(np.array(ok), np.maximum(s1, s2), -np.inf)
+        return out
+
     def self_test(self, states, n=200):
         """Our membership with k=0 must equal LAMP's own evaluation."""
         _, grounded = self.label(states[:1])
@@ -127,11 +150,147 @@ def make_run(task, domain, d, lab, stride):
                held=[d["held"][t] for t in steps], flags=d["flags"])
     states, _ = convert.to_envstates(sub, 1, EnvState)
     lamp_true, grounded = lab.label(states)
-    truth = DUR.named_truth(domain, lamp_true)
     cmd = np.asarray(d["cmd"])[steps]
-    stages = DUR.segment(domain, sub["held"], cmd, truth)
-    return dict(states=states, lamp=lamp_true, truth=truth, stages=stages, held=sub["held"], cmd=cmd,
-                grounded=grounded)
+    run = dict(states=states, lamp=lamp_true, held=sub["held"], cmd=cmd, grounded=grounded)
+    if SCORE_MODE == "gmm":
+        sc = lab.scores(states, grounded)
+        run["named_scores"] = {name: (np.max([sc[m] for m in members], axis=0) if members
+                                      else np.full(len(states), -np.inf))
+                               for name, (_, members) in DUR.PREDICATES[domain].items()}
+        run["truth"], run["stages"] = None, None       # set by finalize() once thresholds are known
+        return run
+    run["truth"] = DUR.named_truth(domain, lamp_true)
+    run["stages"] = DUR.segment(domain, sub["held"], cmd, run["truth"])
+    return run
+
+
+SCORE_MODE = os.environ.get("LAMP_SCORE", "bins")
+# "bins"     : LAMP's in/out region test (optionally widened, LAMP_DILATE)
+# "gmm"      : graded log-likelihood under LAMP's own region GMMs, thresholds learned from normal demos
+# "density"  : graded 'how unusual is this pose for this stage', from a GMM fitted to the real training poses of each
+#              relevant pair in each stage (stages still come from LAMP's predicates + gripper commands)
+# "combined" : density checks + LAMP's stage conditions (bins), alarm if either fires
+
+
+class StageDensity:
+    """Per (stage, pair): a Gaussian mixture over the relative poses seen in that stage of the normal training demos
+    (features: position in 2 cm units, rotation matrix / 0.5, 'holding this object' flag). A frame is atypical when
+    its log-likelihood is below the 1st percentile of training frames. A run is flagged when a pair stays atypical
+    for longer than the longest atypical stretch any normal training demo had in that stage (capped at 1 s)."""
+
+    def __init__(self, Config, domain, runs, pct=1.0, max_k=6):
+        from sklearn.mixture import GaussianMixture
+        self.Config, self.domain = Config, domain
+        self.pairs = {st["name"]: sorted({DUR.PRED_PAIR[p] for _, p, _ in st["cond"]
+                                          if DUR.PREDICATES[domain][p][1]}) for st in DUR.STAGES[domain]}
+        self.gmm, self.tau, self.maxrun = {}, {}, {}
+        feats = {}
+        for di, r in enumerate(runs):
+            F = self.features(r)
+            for st, s, e in r["stages"]:
+                for p in self.pairs[st]:
+                    if e > s:
+                        feats.setdefault((st, p), []).append((di, F[p][s:e]))
+        for key, lst in feats.items():
+            X = np.vstack([x for _, x in lst])
+            if len(X) < 20:
+                continue
+            g = GaussianMixture(n_components=min(max_k, max(1, len(X) // 200)), covariance_type="full",
+                                reg_covar=1e-3, random_state=0).fit(X)
+            self.gmm[key] = g
+            sc = g.score_samples(X)
+            self.tau[key] = float(np.percentile(sc, pct))
+            runs_ = []
+            for _, x in lst:
+                runs_.append(DUR._longest_false_run(g.score_samples(x) >= self.tau[key]))
+            self.maxrun[key] = int(min(max(runs_), DUR.MAX_WINDOW))
+
+    def features(self, run):
+        import useful_functions as uf
+        out = {}
+        allp = sorted({p for v in self.pairs.values() for p in v})
+        for a, b in allp:
+            rows = []
+            for s in run["states"]:
+                rel = uf.get_relative_pose(link_pose(self.Config, s, a), link_pose(self.Config, s, b))
+                held = 1.0 if s.grabbed_object_1 == b else 0.0
+                rows.append(np.concatenate([np.array(rel[:3]) / 0.02,
+                                            R.from_rotvec(rel[3:]).as_matrix().ravel() / 0.5, [3.0 * held]]))
+            out[(a, b)] = np.array(rows)
+        return out
+
+    def check(self, run):
+        F = self.features(run)
+        viol = []
+        for st, s, e in run["stages"]:
+            for p in self.pairs[st]:
+                key = (st, p)
+                if key not in self.gmm or e <= s:
+                    continue
+                ok = self.gmm[key].score_samples(F[p][s:e]) >= self.tau[key]
+                L = DUR._longest_false_run(ok)
+                if L > self.maxrun[key]:
+                    first = s + DUR._first_false_run_start(ok, L)
+                    viol.append(dict(stage=st, kind="typical pose", pred="{}->{}".format(*p), pol=True,
+                                     frame=int(first + self.maxrun[key]),
+                                     detail="atypical for {} frames in a row (normal demos: at most {})".format(
+                                         L, self.maxrun[key])))
+        return viol
+SPLIT_PRED = {"Square": "nut-at-peg", "ToolHang": "frame-above-stand"}
+
+
+def finalize(domain, run, eps):
+    """GMM mode: threshold the graded scores into predicate truth, then segment into stages."""
+    run["truth"] = {p: run["named_scores"][p] >= eps.get(p, np.inf) for p in run["named_scores"]}
+    run["stages"] = DUR.segment(domain, run["held"], run["cmd"], run["truth"])
+    return run
+
+
+def calibrate_eps(domain, runs, q=2.0, flicker=5.0):
+    """Learn one likelihood threshold per predicate from NORMAL training demos only.
+    For every positive condition the predicate takes part in, each training demo contributes one value: the
+    best score within the boundary window (at start / at end), or the 'flicker'-th percentile of its scores
+    over the stage (over all). The threshold is the q-th percentile of those values, so about q% of normal
+    demos would violate each condition. The stage-splitting predicate is calibrated first, from the
+    gripper-command boundaries alone (it must hold around the release that ends its carry)."""
+    W = DUR.MAX_WINDOW
+    eps = {}
+    sp = SPLIT_PRED[domain]
+    vals = []
+    for r in runs:
+        blocks = DUR.carry_blocks(r["held"], r["cmd"])
+        if not blocks:
+            continue
+        s, e, _ = blocks[0]
+        v = r["named_scores"][sp]
+        vals.append(np.max(v[max(s, e - 1 - W):min(len(v), e - 1 + W + 1)]))
+    eps[sp] = float(np.percentile(vals, q))
+    for r in runs:
+        finalize(domain, r, eps)
+    per_pred = {}
+    for st in DUR.STAGES[domain]:
+        for kind, pred, pol in st["cond"]:
+            if not pol or pred == sp or not DUR.PREDICATES[domain][pred][1]:
+                continue
+            for r in runs:
+                name, s, e = [x for x in r["stages"] if x[0] == st["name"]][0]
+                v = r["named_scores"][pred]
+                if kind == "all":
+                    if e - s >= 3:
+                        per_pred.setdefault(pred, []).append(np.percentile(v[s:e], flicker))
+                else:
+                    b = s if kind == "start" else max(s, e - 1)
+                    per_pred.setdefault(pred, []).append(np.max(v[max(0, b - W):min(len(v), b + W + 1)]))
+    for p, vv in per_pred.items():
+        vv = [x for x in vv if np.isfinite(x)] or [-np.inf]
+        eps[p] = float(np.percentile(vv, q))
+    for p, (_, members) in DUR.PREDICATES[domain].items():
+        if p not in eps and members:      # only used in negative conditions: fall back to the split-free median rule
+            allv = np.concatenate([r["named_scores"][p][np.isfinite(r["named_scores"][p])] for r in runs])
+            eps[p] = float(np.percentile(allv, 50)) if len(allv) else np.inf
+    for r in runs:
+        finalize(domain, r, eps)
+    return eps
 
 
 def demo_from_hdf5(f, name, task):
@@ -143,9 +302,10 @@ def demo_from_hdf5(f, name, task):
 
 def demo_from_rollout(f, name, task, case):
     from rollout_video import rollout
-    rec, _, success, xml, _ = rollout(f, name, case, 1.0, 12, "agentview", 64, render=False)
+    rec, _, success, xml, _, event = rollout(f, name, case, 1.0, 12, "agentview", 64, render=False, return_event=True)
     d = convert.build_demo(task, rec["object"], rec["eef_pos"], rec["eef_quat"], rec["gq"], rec["cmd"], xml, True)
     d["cmd"] = rec["cmd"]
+    d["event"] = int(event)          # full-rate step at which the failure starts
     return d, success
 
 
@@ -228,6 +388,8 @@ def lab_grounded(lab, n):
 def explain(v, run, lab, dist, domain, Config):
     """Turn a violation into a diagnosis dict."""
     pred, pol, t = v["pred"], v["pol"], v["frame"]
+    if v.get("kind") == "duration":   # stage ran too long: no relation involved
+        return dict(v, relation=None, cause="stage took longer than any normal demo", in_training_distribution=None)
     t = min(t, len(run["states"]) - 1)
     sv = run["states"][t]
     a, b = DUR.PRED_PAIR[pred]
@@ -276,6 +438,10 @@ if __name__ == "__main__":
     ap.add_argument("--stride", type=int, default=None)
     ap.add_argument("--n_test", type=int, default=20)
     ap.add_argument("--n_train", type=int, default=180)
+    ap.add_argument("--mh", action="store_true",
+                    help="Square only: also test on robomimic's multi-human demos (excluding any identical to ph demos)")
+    ap.add_argument("--cases", default="drop miss",
+                    help="failure cases to test (physics rollouts): drop miss slip stall wrong_grasp wrong_peg")
     a = ap.parse_args()
     domain = convert.TASKS[a.task]["domain"]
     stride = a.stride or (1 if a.task == "square" else 2)
@@ -284,8 +450,10 @@ if __name__ == "__main__":
     tag = os.environ.get("DURATIVE_TAG", "")
     out_dir = os.path.join(os.path.dirname(HERE), "out", domain, "durative" + (("_" + tag) if tag else ""))
     os.makedirs(out_dir, exist_ok=True)
-    # raw demos and physics rollouts are cached once per task and shared by all variants
-    cache = os.path.join(os.path.dirname(HERE), "out", domain, "durative_runs_cache.pkl")
+    # raw demos and physics rollouts are cached once per task (and grasp-signal rule) and shared by all variants
+    gsuf = ("_motion" if os.environ.get("LAMP_GRASP") == "motion" else "") + \
+           ("_canon" if os.environ.get("LAMP_TOOL_CANON") == "1" else "")
+    cache = os.path.join(os.path.dirname(HERE), "out", domain, "durative_runs_cache{}.pkl".format(gsuf))
     if not os.path.exists(cache) and os.path.exists(os.path.join(out_dir, "runs_cache.pkl")):
         os.replace(os.path.join(out_dir, "runs_cache.pkl"), cache)
     if not os.path.exists(cache) and os.path.exists(os.path.join(os.path.dirname(out_dir), "durative", "runs_cache.pkl")):
@@ -300,39 +468,112 @@ if __name__ == "__main__":
         else:
             raw = {"train": {n: demo_from_hdf5(f, n, a.task) for n in train},
                    "nominal": {n: (demo_from_hdf5(f, n, a.task), True) for n in valid}}
-            for case in ("drop", "miss"):
-                raw[case] = {}
-                for n in valid:
-                    raw[case][n] = demo_from_rollout(f, n, a.task, case)
-                    print("rollout", case, n, "success" if raw[case][n][1] else "failed", flush=True)
+        fail_cases = a.cases.split()
+        changed = not os.path.exists(cache)
+        for case in fail_cases:
+            if case in raw:
+                continue
+            raw[case] = {}
+            for n in valid:
+                raw[case][n] = demo_from_rollout(f, n, a.task, case)
+                print("rollout", case, n, "success" if raw[case][n][1] else "failed", flush=True)
+            changed = True
+        if changed:
             pickle.dump(raw, open(cache, "wb"))
+    cases = ["nominal"] + fail_cases
+    if a.mh:
+        mh_cache = os.path.join(os.path.dirname(HERE), "out", domain, "durative_mh_cache.pkl")
+        if os.path.exists(mh_cache):
+            mh_raw = pickle.load(open(mh_cache, "rb"))
+        else:
+            import hashlib
+            key = lambda g: hashlib.md5(np.round(g["obs/object"][:20], 5).tobytes()).hexdigest() + str(g["actions"].shape[0])
+            mh_raw = {}
+            with h5py.File(path, "r") as fp, h5py.File(path.replace("/ph/", "/mh/"), "r") as fm:
+                ph_keys = {key(fp["data"][n]) for n in fp["data"]}
+                for grp in ("better", "okay", "worse"):
+                    names_g = sorted([x.decode() for x in fm["mask"][grp][:]], key=lambda s: int(s.split("_")[1]))
+                    mh_raw["mh_" + grp] = {}
+                    for n in names_g:
+                        if key(fm["data"][n]) in ph_keys:
+                            continue            # identical to a proficient-human demo: could be training data
+                        d = demo_from_hdf5(fm, n, a.task)
+                        ok = bool(convert.ground_truth(a.task, d, [d["T"] - 1])["nut_on_peg"][0])
+                        mh_raw["mh_" + grp][n] = (d, ok)
+            pickle.dump(mh_raw, open(mh_cache, "wb"))
+        raw.update(mh_raw)
+        cases += sorted(mh_raw)
+        print("multi-human test demos:", {k: len(v) for k, v in mh_raw.items()}, flush=True)
     print("data ready in {:.0f}s".format(time.time() - t0), flush=True)
 
+    if os.environ.get("LAMP_AUTO_MAP") == "1":
+        import useful_functions as uf
+        ref = {}
+        for key in lab.model.relations:
+            t1, t2 = key.split("_")
+            rel = []
+            for d in raw["train"].values():
+                P = convert.canonicalize_peg(d["poses"]) if os.environ.get("LAMP_PEG_SYMMETRY") == "1" else d["poses"]
+                if t1 + "_1" in P and t2 + "_1" in P:
+                    rel.append(uf.get_relative_pose(P[t1 + "_1"][-1], P[t2 + "_1"][-1])[:3])
+            if rel:
+                ref[key] = np.mean(rel, axis=0)
+        mapping = DUR.auto_map(domain, lab.model, ref)
+        print("automatic predicate mapping:", mapping, flush=True)
     train_runs = [make_run(a.task, domain, d, lab, stride) for d in raw["train"].values()]
     print("labelled {} training runs ({:.0f}s)".format(len(train_runs), time.time() - t0), flush=True)
     mism = sum(lab.self_test(r["states"], 60) for r in train_runs[:10])
     print("self-test: our region membership (no widening) vs LAMP's evaluate_in_ll_state: {} mismatches".format(mism),
           flush=True)
+    eps = None
+    if SCORE_MODE == "gmm":
+        eps = calibrate_eps(domain, train_runs)
+        print("learned likelihood thresholds:", {k: round(v, 2) for k, v in eps.items()}, flush=True)
     tol, dur = DUR.learn_tolerances(domain, train_runs)
     open(os.path.join(out_dir, "{}_durative.pddl".format(domain.lower())), "w").write(DUR.pddl(domain, tol, dur, 20.0 / stride))
     dist = Distribution(Config, domain, train_runs)
+    density = None
+    if SCORE_MODE in ("density", "combined"):
+        density = StageDensity(Config, domain, train_runs)
+        print("stage densities fitted: {}".format(len(density.gmm)), flush=True)
 
     # reliability of each condition on the TRAINING demos (all succeed)
+    def monitor(run):
+        """Violations according to SCORE_MODE (density checks are explained separately)."""
+        lamp_v = DUR.check(domain, run, tol, dur) if SCORE_MODE != "density" else []
+        if SCORE_MODE == "density" and os.environ.get("LAMP_DURATION_CHECK") == "1":
+            lamp_v = [v for v in DUR.check(domain, run, tol, dur) if v["kind"] == "duration"]
+        dens_v = density.check(run) if density is not None else []
+        return lamp_v, dens_v
+
     train_viol = {}
     for r in train_runs:
-        for v in DUR.check(domain, r, tol):
+        lv, dv = monitor(r)
+        for v in lv + dv:
             k = (v["stage"], v["kind"], v["pred"], v["pol"])
             train_viol[k] = train_viol.get(k, 0) + 1
 
     results = {}
-    for case in ("nominal", "drop", "miss"):
+    for case in cases:
         results[case] = []
         for n, (d, success) in raw[case].items():
             run = make_run(a.task, domain, d, lab, stride)
-            viol = DUR.check(domain, run, tol)
-            diag = [explain(v, run, lab, dist, domain, Config) for v in viol]
+            if SCORE_MODE == "gmm":
+                finalize(domain, run, eps)
+            lv, dv = monitor(run)
+            viol = lv + dv
+            diag = [explain(v, run, lab, dist, domain, Config) for v in lv]
+            for v in dv:
+                a_, b_ = v["pred"].split("->")
+                sv = run["states"][min(v["frame"], len(run["states"]) - 1)]
+                rel = lab.uf.get_relative_pose(link_pose(Config, sv, a_), link_pose(Config, sv, b_))
+                diag.append(dict(v, relation=v["pred"], rel_pos_cm=np.round(np.array(rel[:3]) * 100, 1).tolist(),
+                                 rel_rpy_deg=np.round(np.degrees(R.from_rotvec(rel[3:]).as_euler("xyz")), 0).tolist(),
+                                 knn_dist=None, knn_thr=None, in_training_distribution=False,
+                                 cause="pose atypical for this stage"))
             results[case].append(dict(demo=n, success=bool(success), flagged=bool(viol), violations=diag,
-                                      stages=[(s, int(x), int(y)) for s, x, y in run["stages"]]))
+                                      stages=[(s, int(x), int(y)) for s, x, y in run["stages"]],
+                                      event=(int(d["event"]) // stride) if "event" in d else None))
         print("evaluated", case, "({:.0f}s)".format(time.time() - t0), flush=True)
 
     def js(o):
@@ -342,7 +583,9 @@ if __name__ == "__main__":
             return bool(o)
         return str(o)
 
-    summary = {"tolerances": {"|".join(map(str, k)): v for k, v in tol.items()},
+    summary = {"score_mode": SCORE_MODE, "thresholds": eps,
+               "predicates": {k: v[1] for k, v in DUR.PREDICATES[domain].items()},
+               "tolerances": {"|".join(map(str, k)): v for k, v in tol.items()},
                "durations_frames": dur, "stride": stride,
                "train_violations": {"|".join(map(str, k)): v for k, v in train_viol.items()},
                "results": results}

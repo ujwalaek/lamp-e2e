@@ -75,7 +75,12 @@ def tool_hang():
     pairs_obj = [("stand", "frame"), ("stand", "tool"), ("frame", "tool")]
     disc = {frozenset(p): grip for p in pairs_grip}
     disc.update({frozenset(p): obj for p in pairs_obj})
-    return _common(["gripper", "stand", "frame", "tool"], ["frame", "tool"], pairs_grip, pairs_obj, disc)
+    cfg = _common(["gripper", "stand", "frame", "tool"], ["frame", "tool"], pairs_grip, pairs_obj, disc)
+    # optional per-pair threshold for frame-tool: the hung tool's position spreads over 2-3 bins, so no bin reaches
+    # the 0.9 used for the other pairs
+    if os.environ.get("LAMP_THETA_FRAME_TOOL"):
+        cfg["EVAL_THRESHOLDING_VALUES"][frozenset(("frame", "tool"))] = float(os.environ["LAMP_THETA_FRAME_TOOL"])
+    return cfg
 
 
 CONFIGS = {"Square": square, "ToolHang": tool_hang}

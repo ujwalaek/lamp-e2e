@@ -1,0 +1,4036 @@
+{
+ "score_mode": "density",
+ "thresholds": null,
+ "predicates": {
+  "holding-frame": [
+   "gripper_frame_1"
+  ],
+  "frame-above-stand": [
+   "frame_stand_1",
+   "frame_stand_3"
+  ],
+  "frame-in-stand": [
+   "frame_stand_2"
+  ],
+  "at-tool-grasp": [
+   "gripper_tool_1"
+  ],
+  "holding-tool": [
+   "gripper_tool_2"
+  ],
+  "tool-at-hook": [
+   "frame_tool_2"
+  ],
+  "tool-on-hook": []
+ },
+ "tolerances": {
+  "approach-frame|all|holding-frame|False": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-frame-to-stand|start|holding-frame|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-frame-to-stand|all|holding-frame|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-frame-to-stand|end|frame-above-stand|True": {
+   "value": 1.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "insert-frame|start|frame-above-stand|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "insert-frame|all|holding-frame|True": {
+   "value": 0.15441176470588236,
+   "train_never": 0,
+   "n": 180
+  },
+  "insert-frame|end|frame-in-stand|True": {
+   "value": 63.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "approach-tool|all|frame-in-stand|True": {
+   "value": 1.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "approach-tool|end|at-tool-grasp|True": {
+   "value": 72.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-tool-to-hook|start|holding-tool|True": {
+   "value": 2.0,
+   "train_never": 1,
+   "n": 180
+  },
+  "move-tool-to-hook|all|holding-tool|True": {
+   "value": 1.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-tool-to-hook|all|frame-in-stand|True": {
+   "value": 0.5396825396825397,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-tool-to-hook|end|tool-at-hook|True": {
+   "value": 113.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "hang-tool-and-retreat|all|frame-in-stand|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "hang-tool-and-retreat|end|tool-on-hook|True": {
+   "value": Infinity,
+   "train_never": 180,
+   "n": 180
+  }
+ },
+ "durations_frames": {
+  "approach-frame": [
+   8.0,
+   81.0
+  ],
+  "move-frame-to-stand": [
+   8.0,
+   172.5
+  ],
+  "insert-frame": [
+   11.5,
+   238.5
+  ],
+  "approach-tool": [
+   10.5,
+   111.0
+  ],
+  "move-tool-to-hook": [
+   14.0,
+   351.0
+  ],
+  "hang-tool-and-retreat": [
+   2.0,
+   97.5
+  ]
+ },
+ "stride": 2,
+ "train_violations": {
+  "approach-tool|typical pose|frame_1->stand_1|True": 1,
+  "move-tool-to-hook|typical pose|frame_1->tool_1|True": 1,
+  "move-tool-to-hook|typical pose|gripper_1->tool_1|True": 1,
+  "move-frame-to-stand|typical pose|frame_1->stand_1|True": 1,
+  "move-tool-to-hook|typical pose|frame_1->stand_1|True": 1
+ },
+ "results": {
+  "nominal": [
+   {
+    "demo": "demo_0",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      35
+     ],
+     [
+      "move-frame-to-stand",
+      35,
+      78
+     ],
+     [
+      "insert-frame",
+      78,
+      190
+     ],
+     [
+      "approach-tool",
+      190,
+      249
+     ],
+     [
+      "move-tool-to-hook",
+      249,
+      334
+     ],
+     [
+      "hang-tool-and-retreat",
+      334,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_5",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      77
+     ],
+     [
+      "insert-frame",
+      77,
+      214
+     ],
+     [
+      "approach-tool",
+      214,
+      255
+     ],
+     [
+      "move-tool-to-hook",
+      255,
+      326
+     ],
+     [
+      "hang-tool-and-retreat",
+      326,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_14",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      31
+     ],
+     [
+      "move-frame-to-stand",
+      31,
+      65
+     ],
+     [
+      "insert-frame",
+      65,
+      186
+     ],
+     [
+      "approach-tool",
+      186,
+      226
+     ],
+     [
+      "move-tool-to-hook",
+      226,
+      346
+     ],
+     [
+      "hang-tool-and-retreat",
+      346,
+      354
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_21",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      73
+     ],
+     [
+      "insert-frame",
+      73,
+      132
+     ],
+     [
+      "approach-tool",
+      132,
+      176
+     ],
+     [
+      "move-tool-to-hook",
+      176,
+      280
+     ],
+     [
+      "hang-tool-and-retreat",
+      280,
+      288
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_27",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      28
+     ],
+     [
+      "move-frame-to-stand",
+      28,
+      64
+     ],
+     [
+      "insert-frame",
+      64,
+      103
+     ],
+     [
+      "approach-tool",
+      103,
+      144
+     ],
+     [
+      "move-tool-to-hook",
+      144,
+      220
+     ],
+     [
+      "hang-tool-and-retreat",
+      220,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_32",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      24
+     ],
+     [
+      "move-frame-to-stand",
+      24,
+      62
+     ],
+     [
+      "insert-frame",
+      62,
+      142
+     ],
+     [
+      "approach-tool",
+      142,
+      182
+     ],
+     [
+      "move-tool-to-hook",
+      182,
+      232
+     ],
+     [
+      "hang-tool-and-retreat",
+      232,
+      237
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_36",
+    "success": true,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 240,
+      "detail": "atypical for 21 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.4,
+       1.3,
+       -22.5
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -0.0,
+       -107.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      114
+     ],
+     [
+      "approach-tool",
+      114,
+      147
+     ],
+     [
+      "move-tool-to-hook",
+      147,
+      262
+     ],
+     [
+      "hang-tool-and-retreat",
+      262,
+      266
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_44",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      144
+     ],
+     [
+      "approach-tool",
+      144,
+      183
+     ],
+     [
+      "move-tool-to-hook",
+      183,
+      244
+     ],
+     [
+      "hang-tool-and-retreat",
+      244,
+      262
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_56",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      34
+     ],
+     [
+      "move-frame-to-stand",
+      34,
+      66
+     ],
+     [
+      "insert-frame",
+      66,
+      142
+     ],
+     [
+      "approach-tool",
+      142,
+      178
+     ],
+     [
+      "move-tool-to-hook",
+      178,
+      219
+     ],
+     [
+      "hang-tool-and-retreat",
+      219,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_93",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      23
+     ],
+     [
+      "move-frame-to-stand",
+      23,
+      46
+     ],
+     [
+      "insert-frame",
+      46,
+      122
+     ],
+     [
+      "approach-tool",
+      122,
+      148
+     ],
+     [
+      "move-tool-to-hook",
+      148,
+      183
+     ],
+     [
+      "hang-tool-and-retreat",
+      183,
+      189
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_103",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      44
+     ],
+     [
+      "insert-frame",
+      44,
+      82
+     ],
+     [
+      "approach-tool",
+      82,
+      118
+     ],
+     [
+      "move-tool-to-hook",
+      118,
+      164
+     ],
+     [
+      "hang-tool-and-retreat",
+      164,
+      206
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_105",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      53
+     ],
+     [
+      "insert-frame",
+      53,
+      112
+     ],
+     [
+      "approach-tool",
+      112,
+      136
+     ],
+     [
+      "move-tool-to-hook",
+      136,
+      186
+     ],
+     [
+      "hang-tool-and-retreat",
+      186,
+      190
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_111",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      49
+     ],
+     [
+      "insert-frame",
+      49,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      130
+     ],
+     [
+      "move-tool-to-hook",
+      130,
+      187
+     ],
+     [
+      "hang-tool-and-retreat",
+      187,
+      203
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_125",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      22
+     ],
+     [
+      "move-frame-to-stand",
+      22,
+      50
+     ],
+     [
+      "insert-frame",
+      50,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      140
+     ],
+     [
+      "move-tool-to-hook",
+      140,
+      189
+     ],
+     [
+      "hang-tool-and-retreat",
+      189,
+      207
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_131",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      50
+     ],
+     [
+      "insert-frame",
+      50,
+      89
+     ],
+     [
+      "approach-tool",
+      89,
+      113
+     ],
+     [
+      "move-tool-to-hook",
+      113,
+      163
+     ],
+     [
+      "hang-tool-and-retreat",
+      163,
+      168
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_155",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      47
+     ],
+     [
+      "insert-frame",
+      47,
+      129
+     ],
+     [
+      "approach-tool",
+      129,
+      153
+     ],
+     [
+      "move-tool-to-hook",
+      153,
+      221
+     ],
+     [
+      "hang-tool-and-retreat",
+      221,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_168",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      70
+     ],
+     [
+      "insert-frame",
+      70,
+      145
+     ],
+     [
+      "approach-tool",
+      145,
+      169
+     ],
+     [
+      "move-tool-to-hook",
+      169,
+      211
+     ],
+     [
+      "hang-tool-and-retreat",
+      211,
+      219
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_176",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      52
+     ],
+     [
+      "insert-frame",
+      52,
+      105
+     ],
+     [
+      "approach-tool",
+      105,
+      129
+     ],
+     [
+      "move-tool-to-hook",
+      129,
+      166
+     ],
+     [
+      "hang-tool-and-retreat",
+      166,
+      198
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_180",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      58
+     ],
+     [
+      "insert-frame",
+      58,
+      130
+     ],
+     [
+      "approach-tool",
+      130,
+      158
+     ],
+     [
+      "move-tool-to-hook",
+      158,
+      221
+     ],
+     [
+      "hang-tool-and-retreat",
+      221,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_191",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      47
+     ],
+     [
+      "insert-frame",
+      47,
+      110
+     ],
+     [
+      "approach-tool",
+      110,
+      138
+     ],
+     [
+      "move-tool-to-hook",
+      138,
+      200
+     ],
+     [
+      "hang-tool-and-retreat",
+      200,
+      208
+     ]
+    ],
+    "event": null
+   }
+  ],
+  "drop": [
+   {
+    "demo": "demo_0",
+    "success": false,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      35
+     ],
+     [
+      "move-frame-to-stand",
+      35,
+      78
+     ],
+     [
+      "insert-frame",
+      78,
+      190
+     ],
+     [
+      "approach-tool",
+      190,
+      249
+     ],
+     [
+      "move-tool-to-hook",
+      249,
+      292
+     ],
+     [
+      "hang-tool-and-retreat",
+      292,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_5",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 127,
+      "detail": "atypical for 218 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.3,
+       0.9,
+       -37.1
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       1.0,
+       -98.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      77
+     ],
+     [
+      "insert-frame",
+      77,
+      123
+     ],
+     [
+      "approach-tool",
+      123,
+      123
+     ],
+     [
+      "move-tool-to-hook",
+      123,
+      123
+     ],
+     [
+      "hang-tool-and-retreat",
+      123,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_14",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 175,
+      "detail": "atypical for 22 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       -4.1,
+       -32.5
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -12.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 206,
+      "detail": "atypical for 40 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.7,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 246,
+      "detail": "atypical for 60 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 246,
+      "detail": "atypical for 60 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       0.8,
+       9.7,
+       10.1
+      ],
+      "rel_rpy_deg": [
+       90.0,
+       -67.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "gripper_1->tool_1",
+      "pol": true,
+      "frame": 253,
+      "detail": "atypical for 53 frames in a row (normal demos: at most 20)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       2.0,
+       -22.3,
+       -25.1
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       16.0,
+       158.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 290,
+      "detail": "atypical for 68 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      31
+     ],
+     [
+      "move-frame-to-stand",
+      31,
+      65
+     ],
+     [
+      "insert-frame",
+      65,
+      186
+     ],
+     [
+      "approach-tool",
+      186,
+      226
+     ],
+     [
+      "move-tool-to-hook",
+      226,
+      286
+     ],
+     [
+      "hang-tool-and-retreat",
+      286,
+      354
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_21",
+    "success": false,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      74
+     ],
+     [
+      "insert-frame",
+      74,
+      132
+     ],
+     [
+      "approach-tool",
+      132,
+      176
+     ],
+     [
+      "move-tool-to-hook",
+      176,
+      228
+     ],
+     [
+      "hang-tool-and-retreat",
+      228,
+      288
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_27",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "approach-tool",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 123,
+      "detail": "atypical for 41 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 38 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 38 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -0.3,
+       15.5,
+       7.5
+      ],
+      "rel_rpy_deg": [
+       92.0,
+       -58.0,
+       -91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "gripper_1->tool_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 38 frames in a row (normal demos: at most 20)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       5.1,
+       -13.9,
+       -30.1
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       18.0,
+       146.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 186,
+      "detail": "atypical for 53 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      28
+     ],
+     [
+      "move-frame-to-stand",
+      28,
+      63
+     ],
+     [
+      "insert-frame",
+      63,
+      103
+     ],
+     [
+      "approach-tool",
+      103,
+      144
+     ],
+     [
+      "move-tool-to-hook",
+      144,
+      182
+     ],
+     [
+      "hang-tool-and-retreat",
+      182,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_32",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 87,
+      "detail": "atypical for 154 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.8,
+       3.0,
+       -32.3
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       10.0,
+       -87.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      24
+     ],
+     [
+      "move-frame-to-stand",
+      24,
+      62
+     ],
+     [
+      "insert-frame",
+      62,
+      83
+     ],
+     [
+      "approach-tool",
+      83,
+      83
+     ],
+     [
+      "move-tool-to-hook",
+      83,
+      83
+     ],
+     [
+      "hang-tool-and-retreat",
+      83,
+      237
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_36",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 181,
+      "detail": "atypical for 6 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.4,
+       0.2,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       1.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      114
+     ],
+     [
+      "approach-tool",
+      114,
+      147
+     ],
+     [
+      "move-tool-to-hook",
+      147,
+      177
+     ],
+     [
+      "hang-tool-and-retreat",
+      177,
+      266
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_44",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 223,
+      "detail": "atypical for 43 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.3,
+       0.0,
+       -22.7
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       0.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      144
+     ],
+     [
+      "approach-tool",
+      144,
+      183
+     ],
+     [
+      "move-tool-to-hook",
+      183,
+      213
+     ],
+     [
+      "hang-tool-and-retreat",
+      213,
+      262
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_56",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 92,
+      "detail": "atypical for 147 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -1.2,
+       1.6,
+       -8.8
+      ],
+      "rel_rpy_deg": [
+       162.0,
+       82.0,
+       62.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      34
+     ],
+     [
+      "move-frame-to-stand",
+      34,
+      66
+     ],
+     [
+      "insert-frame",
+      66,
+      88
+     ],
+     [
+      "approach-tool",
+      88,
+      88
+     ],
+     [
+      "move-tool-to-hook",
+      88,
+      88
+     ],
+     [
+      "hang-tool-and-retreat",
+      88,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_93",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 76,
+      "detail": "atypical for 117 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       5.8,
+       -0.6,
+       -20.3
+      ],
+      "rel_rpy_deg": [
+       22.0,
+       18.0,
+       -77.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      23
+     ],
+     [
+      "move-frame-to-stand",
+      23,
+      46
+     ],
+     [
+      "insert-frame",
+      46,
+      72
+     ],
+     [
+      "approach-tool",
+      72,
+      72
+     ],
+     [
+      "move-tool-to-hook",
+      72,
+      72
+     ],
+     [
+      "hang-tool-and-retreat",
+      72,
+      189
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_103",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      44
+     ],
+     [
+      "insert-frame",
+      44,
+      82
+     ],
+     [
+      "approach-tool",
+      82,
+      118
+     ],
+     [
+      "move-tool-to-hook",
+      118,
+      141
+     ],
+     [
+      "hang-tool-and-retreat",
+      141,
+      206
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_105",
+    "success": false,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      53
+     ],
+     [
+      "insert-frame",
+      53,
+      112
+     ],
+     [
+      "approach-tool",
+      112,
+      136
+     ],
+     [
+      "move-tool-to-hook",
+      136,
+      161
+     ],
+     [
+      "hang-tool-and-retreat",
+      161,
+      190
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_111",
+    "success": false,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      49
+     ],
+     [
+      "insert-frame",
+      49,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      130
+     ],
+     [
+      "move-tool-to-hook",
+      130,
+      158
+     ],
+     [
+      "hang-tool-and-retreat",
+      158,
+      203
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_125",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-frame-to-stand",
+      "kind": "typical pose",
+      "pred": "gripper_1->frame_1",
+      "pol": true,
+      "frame": 31,
+      "detail": "atypical for 25 frames in a row (normal demos: at most 5)",
+      "relation": "gripper_1->frame_1",
+      "rel_pos_cm": [
+       -3.0,
+       -0.1,
+       -0.9
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       0.0,
+       91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      22
+     ],
+     [
+      "move-frame-to-stand",
+      22,
+      51
+     ],
+     [
+      "insert-frame",
+      51,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      140
+     ],
+     [
+      "move-tool-to-hook",
+      140,
+      164
+     ],
+     [
+      "hang-tool-and-retreat",
+      164,
+      207
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_131",
+    "success": false,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      50
+     ],
+     [
+      "insert-frame",
+      50,
+      89
+     ],
+     [
+      "approach-tool",
+      89,
+      113
+     ],
+     [
+      "move-tool-to-hook",
+      113,
+      138
+     ],
+     [
+      "hang-tool-and-retreat",
+      138,
+      168
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_155",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      48
+     ],
+     [
+      "insert-frame",
+      48,
+      129
+     ],
+     [
+      "approach-tool",
+      129,
+      153
+     ],
+     [
+      "move-tool-to-hook",
+      153,
+      187
+     ],
+     [
+      "hang-tool-and-retreat",
+      187,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_168",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 89,
+      "detail": "atypical for 134 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -1.3,
+       8.9,
+       -7.9
+      ],
+      "rel_rpy_deg": [
+       -58.0,
+       78.0,
+       -159.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      70
+     ],
+     [
+      "insert-frame",
+      70,
+      85
+     ],
+     [
+      "approach-tool",
+      85,
+      85
+     ],
+     [
+      "move-tool-to-hook",
+      85,
+      85
+     ],
+     [
+      "hang-tool-and-retreat",
+      85,
+      219
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_176",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 66,
+      "detail": "atypical for 136 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -7.2,
+       6.1,
+       -33.8
+      ],
+      "rel_rpy_deg": [
+       -16.0,
+       20.0,
+       -102.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      51
+     ],
+     [
+      "insert-frame",
+      51,
+      62
+     ],
+     [
+      "approach-tool",
+      62,
+      62
+     ],
+     [
+      "move-tool-to-hook",
+      62,
+      62
+     ],
+     [
+      "hang-tool-and-retreat",
+      62,
+      198
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_180",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 108,
+      "detail": "atypical for 33 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.9,
+       9.1,
+       -19.7
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       25.0,
+       -104.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 134,
+      "detail": "atypical for 106 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.9,
+       7.1,
+       -13.5
+      ],
+      "rel_rpy_deg": [
+       -41.0,
+       15.0,
+       -120.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      58
+     ],
+     [
+      "insert-frame",
+      58,
+      130
+     ],
+     [
+      "approach-tool",
+      130,
+      130
+     ],
+     [
+      "move-tool-to-hook",
+      130,
+      130
+     ],
+     [
+      "hang-tool-and-retreat",
+      130,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_191",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 70,
+      "detail": "atypical for 142 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -0.4,
+       3.6,
+       -25.8
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       26.0,
+       -93.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      47
+     ],
+     [
+      "insert-frame",
+      47,
+      66
+     ],
+     [
+      "approach-tool",
+      66,
+      66
+     ],
+     [
+      "move-tool-to-hook",
+      66,
+      66
+     ],
+     [
+      "hang-tool-and-retreat",
+      66,
+      208
+     ]
+    ],
+    "event": null
+   }
+  ],
+  "miss": [
+   {
+    "demo": "demo_0",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 315,
+      "detail": "atypical for 39 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -3.0,
+       3.2,
+       3.0
+      ],
+      "rel_rpy_deg": [
+       -18.0,
+       -10.0,
+       -174.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 338,
+      "detail": "atypical for 7 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.3,
+       -0.1,
+       -22.7
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       -1.0,
+       -91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      35
+     ],
+     [
+      "move-frame-to-stand",
+      35,
+      78
+     ],
+     [
+      "insert-frame",
+      78,
+      190
+     ],
+     [
+      "approach-tool",
+      190,
+      249
+     ],
+     [
+      "move-tool-to-hook",
+      249,
+      334
+     ],
+     [
+      "hang-tool-and-retreat",
+      334,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_5",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 136,
+      "detail": "atypical for 89 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -20.8,
+       2.5,
+       -36.9
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       1.0,
+       -98.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 218,
+      "detail": "atypical for 127 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -12.0,
+       14.0,
+       -4.8
+      ],
+      "rel_rpy_deg": [
+       -44.0,
+       28.0,
+       -155.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      77
+     ],
+     [
+      "insert-frame",
+      77,
+      214
+     ],
+     [
+      "approach-tool",
+      214,
+      214
+     ],
+     [
+      "move-tool-to-hook",
+      214,
+      214
+     ],
+     [
+      "hang-tool-and-retreat",
+      214,
+      341
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_14",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 175,
+      "detail": "atypical for 22 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -5.1,
+       -4.1,
+       -32.5
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -12.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "approach-tool",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 206,
+      "detail": "atypical for 40 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.7,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 246,
+      "detail": "atypical for 120 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 246,
+      "detail": "atypical for 120 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       0.8,
+       9.7,
+       10.1
+      ],
+      "rel_rpy_deg": [
+       90.0,
+       -67.0,
+       -90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "gripper_1->tool_1",
+      "pol": true,
+      "frame": 253,
+      "detail": "atypical for 113 frames in a row (normal demos: at most 20)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       2.0,
+       -22.3,
+       -25.1
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       16.0,
+       158.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 350,
+      "detail": "atypical for 8 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.8,
+       -3.1,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       -90.0,
+       3.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      31
+     ],
+     [
+      "move-frame-to-stand",
+      31,
+      65
+     ],
+     [
+      "insert-frame",
+      65,
+      186
+     ],
+     [
+      "approach-tool",
+      186,
+      226
+     ],
+     [
+      "move-tool-to-hook",
+      226,
+      346
+     ],
+     [
+      "hang-tool-and-retreat",
+      346,
+      354
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_21",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 252,
+      "detail": "atypical for 48 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -4.9,
+       4.9,
+       3.0
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       -4.0,
+       -179.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      33
+     ],
+     [
+      "move-frame-to-stand",
+      33,
+      74
+     ],
+     [
+      "insert-frame",
+      74,
+      132
+     ],
+     [
+      "approach-tool",
+      132,
+      176
+     ],
+     [
+      "move-tool-to-hook",
+      176,
+      280
+     ],
+     [
+      "hang-tool-and-retreat",
+      280,
+      288
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_27",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "approach-tool",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 123,
+      "detail": "atypical for 41 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 76 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 76 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -0.3,
+       15.5,
+       7.5
+      ],
+      "rel_rpy_deg": [
+       92.0,
+       -58.0,
+       -91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "gripper_1->tool_1",
+      "pol": true,
+      "frame": 164,
+      "detail": "atypical for 76 frames in a row (normal demos: at most 20)",
+      "relation": "gripper_1->tool_1",
+      "rel_pos_cm": [
+       5.1,
+       -13.9,
+       -30.1
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       18.0,
+       146.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 224,
+      "detail": "atypical for 15 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       1.0,
+       6.2,
+       -13.4
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       -4.0,
+       90.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      28
+     ],
+     [
+      "move-frame-to-stand",
+      28,
+      63
+     ],
+     [
+      "insert-frame",
+      63,
+      103
+     ],
+     [
+      "approach-tool",
+      103,
+      144
+     ],
+     [
+      "move-tool-to-hook",
+      144,
+      220
+     ],
+     [
+      "hang-tool-and-retreat",
+      220,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_32",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 95,
+      "detail": "atypical for 58 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -20.1,
+       6.3,
+       -34.6
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       9.0,
+       -100.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 146,
+      "detail": "atypical for 95 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -24.2,
+       1.0,
+       -11.3
+      ],
+      "rel_rpy_deg": [
+       -102.0,
+       82.0,
+       167.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      24
+     ],
+     [
+      "move-frame-to-stand",
+      24,
+      62
+     ],
+     [
+      "insert-frame",
+      62,
+      142
+     ],
+     [
+      "approach-tool",
+      142,
+      142
+     ],
+     [
+      "move-tool-to-hook",
+      142,
+      142
+     ],
+     [
+      "hang-tool-and-retreat",
+      142,
+      237
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_36",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 200,
+      "detail": "atypical for 26 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -12.9,
+       -3.5,
+       -2.2
+      ],
+      "rel_rpy_deg": [
+       -11.0,
+       21.0,
+       -160.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 236,
+      "detail": "atypical for 34 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.6,
+       -2.6,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       0.0,
+       -54.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      114
+     ],
+     [
+      "approach-tool",
+      114,
+      147
+     ],
+     [
+      "move-tool-to-hook",
+      147,
+      206
+     ],
+     [
+      "hang-tool-and-retreat",
+      206,
+      266
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_44",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 236,
+      "detail": "atypical for 28 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -13.3,
+       -2.2,
+       0.9
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       12.0,
+       -166.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      59
+     ],
+     [
+      "insert-frame",
+      59,
+      144
+     ],
+     [
+      "approach-tool",
+      144,
+      183
+     ],
+     [
+      "move-tool-to-hook",
+      183,
+      244
+     ],
+     [
+      "hang-tool-and-retreat",
+      244,
+      262
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_56",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 101,
+      "detail": "atypical for 52 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.1,
+       4.3,
+       -34.1
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       17.0,
+       -92.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 146,
+      "detail": "atypical for 93 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -23.0,
+       1.3,
+       -3.2
+      ],
+      "rel_rpy_deg": [
+       -94.0,
+       83.0,
+       175.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      34
+     ],
+     [
+      "move-frame-to-stand",
+      34,
+      66
+     ],
+     [
+      "insert-frame",
+      66,
+      142
+     ],
+     [
+      "approach-tool",
+      142,
+      142
+     ],
+     [
+      "move-tool-to-hook",
+      142,
+      142
+     ],
+     [
+      "hang-tool-and-retreat",
+      142,
+      235
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_93",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 85,
+      "detail": "atypical for 48 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -20.5,
+       8.8,
+       -34.1
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       16.0,
+       -100.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 126,
+      "detail": "atypical for 67 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -25.2,
+       0.2,
+       -11.3
+      ],
+      "rel_rpy_deg": [
+       98.0,
+       86.0,
+       9.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      23
+     ],
+     [
+      "move-frame-to-stand",
+      23,
+      46
+     ],
+     [
+      "insert-frame",
+      46,
+      122
+     ],
+     [
+      "approach-tool",
+      122,
+      122
+     ],
+     [
+      "move-tool-to-hook",
+      122,
+      122
+     ],
+     [
+      "hang-tool-and-retreat",
+      122,
+      189
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_103",
+    "success": false,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      44
+     ],
+     [
+      "insert-frame",
+      44,
+      82
+     ],
+     [
+      "approach-tool",
+      82,
+      118
+     ],
+     [
+      "move-tool-to-hook",
+      118,
+      164
+     ],
+     [
+      "hang-tool-and-retreat",
+      164,
+      206
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_105",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 185,
+      "detail": "atypical for 21 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -3.7,
+       -0.6,
+       1.8
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -0.0,
+       -177.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      53
+     ],
+     [
+      "insert-frame",
+      53,
+      112
+     ],
+     [
+      "approach-tool",
+      112,
+      136
+     ],
+     [
+      "move-tool-to-hook",
+      136,
+      186
+     ],
+     [
+      "hang-tool-and-retreat",
+      186,
+      190
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_111",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 180,
+      "detail": "atypical for 27 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -6.4,
+       5.5,
+       -0.3
+      ],
+      "rel_rpy_deg": [
+       -10.0,
+       -12.0,
+       -160.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      49
+     ],
+     [
+      "insert-frame",
+      49,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      130
+     ],
+     [
+      "move-tool-to-hook",
+      130,
+      187
+     ],
+     [
+      "hang-tool-and-retreat",
+      187,
+      203
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_125",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-frame-to-stand",
+      "kind": "typical pose",
+      "pred": "gripper_1->frame_1",
+      "pol": true,
+      "frame": 31,
+      "detail": "atypical for 25 frames in a row (normal demos: at most 5)",
+      "relation": "gripper_1->frame_1",
+      "rel_pos_cm": [
+       -3.0,
+       -0.1,
+       -0.9
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       0.0,
+       91.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 187,
+      "detail": "atypical for 22 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.8,
+       -2.4,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       0.0,
+       -57.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 165,
+      "detail": "atypical for 44 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -14.1,
+       -4.0,
+       1.8
+      ],
+      "rel_rpy_deg": [
+       -25.0,
+       -5.0,
+       -160.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 193,
+      "detail": "atypical for 18 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.8,
+       -2.4,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       0.0,
+       -57.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      22
+     ],
+     [
+      "move-frame-to-stand",
+      22,
+      51
+     ],
+     [
+      "insert-frame",
+      51,
+      107
+     ],
+     [
+      "approach-tool",
+      107,
+      140
+     ],
+     [
+      "move-tool-to-hook",
+      140,
+      189
+     ],
+     [
+      "hang-tool-and-retreat",
+      189,
+      207
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_131",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->tool_1",
+      "pol": true,
+      "frame": 161,
+      "detail": "atypical for 22 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->tool_1",
+      "rel_pos_cm": [
+       -3.7,
+       5.7,
+       -2.0
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -12.0,
+       171.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      20
+     ],
+     [
+      "move-frame-to-stand",
+      20,
+      50
+     ],
+     [
+      "insert-frame",
+      50,
+      89
+     ],
+     [
+      "approach-tool",
+      89,
+      113
+     ],
+     [
+      "move-tool-to-hook",
+      113,
+      163
+     ],
+     [
+      "hang-tool-and-retreat",
+      163,
+      168
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_155",
+    "success": true,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-tool-to-hook",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 210,
+      "detail": "atypical for 31 frames in a row (normal demos: at most 20)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.3,
+       -3.1,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       0.0,
+       -47.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 225,
+      "detail": "atypical for 15 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -3.5,
+       -2.9,
+       -22.6
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       0.0,
+       -50.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      48
+     ],
+     [
+      "insert-frame",
+      48,
+      129
+     ],
+     [
+      "approach-tool",
+      129,
+      153
+     ],
+     [
+      "move-tool-to-hook",
+      153,
+      221
+     ],
+     [
+      "hang-tool-and-retreat",
+      221,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_168",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 98,
+      "detail": "atypical for 58 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.9,
+       4.1,
+       -33.4
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       17.0,
+       -96.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 149,
+      "detail": "atypical for 74 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -20.9,
+       0.7,
+       2.3
+      ],
+      "rel_rpy_deg": [
+       -92.0,
+       62.0,
+       178.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      26
+     ],
+     [
+      "move-frame-to-stand",
+      26,
+      70
+     ],
+     [
+      "insert-frame",
+      70,
+      145
+     ],
+     [
+      "approach-tool",
+      145,
+      145
+     ],
+     [
+      "move-tool-to-hook",
+      145,
+      145
+     ],
+     [
+      "hang-tool-and-retreat",
+      145,
+      219
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_176",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 74,
+      "detail": "atypical for 42 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.5,
+       4.5,
+       -32.2
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       20.0,
+       -93.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 109,
+      "detail": "atypical for 93 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.5,
+       1.2,
+       2.9
+      ],
+      "rel_rpy_deg": [
+       -91.0,
+       68.0,
+       177.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      19
+     ],
+     [
+      "move-frame-to-stand",
+      19,
+      51
+     ],
+     [
+      "insert-frame",
+      51,
+      105
+     ],
+     [
+      "approach-tool",
+      105,
+      105
+     ],
+     [
+      "move-tool-to-hook",
+      105,
+      105
+     ],
+     [
+      "hang-tool-and-retreat",
+      105,
+      198
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_180",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 108,
+      "detail": "atypical for 33 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.9,
+       9.1,
+       -19.7
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       25.0,
+       -104.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 134,
+      "detail": "atypical for 106 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -4.9,
+       7.1,
+       -13.5
+      ],
+      "rel_rpy_deg": [
+       -41.0,
+       15.0,
+       -120.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      27
+     ],
+     [
+      "move-frame-to-stand",
+      27,
+      58
+     ],
+     [
+      "insert-frame",
+      58,
+      130
+     ],
+     [
+      "approach-tool",
+      130,
+      130
+     ],
+     [
+      "move-tool-to-hook",
+      130,
+      130
+     ],
+     [
+      "hang-tool-and-retreat",
+      130,
+      236
+     ]
+    ],
+    "event": null
+   },
+   {
+    "demo": "demo_191",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-frame",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 78,
+      "detail": "atypical for 43 frames in a row (normal demos: at most 11)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.7,
+       8.8,
+       -33.2
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       18.0,
+       -97.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     },
+     {
+      "stage": "hang-tool-and-retreat",
+      "kind": "typical pose",
+      "pred": "frame_1->stand_1",
+      "pol": true,
+      "frame": 114,
+      "detail": "atypical for 98 frames in a row (normal demos: at most 4)",
+      "relation": "frame_1->stand_1",
+      "rel_pos_cm": [
+       -21.3,
+       4.8,
+       -9.2
+      ],
+      "rel_rpy_deg": [
+       -36.0,
+       71.0,
+       -132.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "cause": "pose atypical for this stage"
+     }
+    ],
+    "stages": [
+     [
+      "approach-frame",
+      0,
+      21
+     ],
+     [
+      "move-frame-to-stand",
+      21,
+      47
+     ],
+     [
+      "insert-frame",
+      47,
+      110
+     ],
+     [
+      "approach-tool",
+      110,
+      110
+     ],
+     [
+      "move-tool-to-hook",
+      110,
+      110
+     ],
+     [
+      "hang-tool-and-retreat",
+      110,
+      208
+     ]
+    ],
+    "event": null
+   }
+  ]
+ }
+}

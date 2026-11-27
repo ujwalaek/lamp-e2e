@@ -1,0 +1,8117 @@
+{
+ "score_mode": "bins",
+ "thresholds": null,
+ "tolerances": {
+  "approach-nut|all|holding|False": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "approach-nut|end|ready-to-grasp|True": {
+   "value": 1.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-nut-to-peg|start|holding|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-nut-to-peg|all|holding|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "move-nut-to-peg|end|nut-at-peg|True": {
+   "value": 1.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "insert-nut|start|nut-at-peg|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "insert-nut|all|holding|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "insert-nut|end|nut-at-peg|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "release-and-retreat|start|nut-at-peg|True": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "release-and-retreat|all|nut-at-peg|True": {
+   "value": 0.24324324324324326,
+   "train_never": 0,
+   "n": 180
+  },
+  "release-and-retreat|end|nut-on-peg|True": {
+   "value": 12.0,
+   "train_never": 0,
+   "n": 180
+  },
+  "release-and-retreat|end|holding|False": {
+   "value": 0.0,
+   "train_never": 0,
+   "n": 180
+  }
+ },
+ "durations_frames": {
+  "approach-nut": [
+   16.0,
+   159.0
+  ],
+  "move-nut-to-peg": [
+   17.0,
+   121.5
+  ],
+  "insert-nut": [
+   7.0,
+   169.5
+  ],
+  "release-and-retreat": [
+   2.5,
+   87.0
+  ]
+ },
+ "stride": 1,
+ "train_violations": {},
+ "results": {
+  "nominal": [
+   {
+    "demo": "demo_0",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      86
+     ],
+     [
+      "insert-nut",
+      86,
+      116
+     ],
+     [
+      "release-and-retreat",
+      116,
+      127
+     ]
+    ]
+   },
+   {
+    "demo": "demo_5",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      40
+     ],
+     [
+      "move-nut-to-peg",
+      40,
+      85
+     ],
+     [
+      "insert-nut",
+      85,
+      131
+     ],
+     [
+      "release-and-retreat",
+      131,
+      144
+     ]
+    ]
+   },
+   {
+    "demo": "demo_14",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      39
+     ],
+     [
+      "move-nut-to-peg",
+      39,
+      86
+     ],
+     [
+      "insert-nut",
+      86,
+      133
+     ],
+     [
+      "release-and-retreat",
+      133,
+      152
+     ]
+    ]
+   },
+   {
+    "demo": "demo_21",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      61
+     ],
+     [
+      "move-nut-to-peg",
+      61,
+      134
+     ],
+     [
+      "insert-nut",
+      134,
+      168
+     ],
+     [
+      "release-and-retreat",
+      168,
+      179
+     ]
+    ]
+   },
+   {
+    "demo": "demo_27",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      71
+     ],
+     [
+      "move-nut-to-peg",
+      71,
+      121
+     ],
+     [
+      "insert-nut",
+      121,
+      162
+     ],
+     [
+      "release-and-retreat",
+      162,
+      180
+     ]
+    ]
+   },
+   {
+    "demo": "demo_32",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      107
+     ],
+     [
+      "insert-nut",
+      107,
+      131
+     ],
+     [
+      "release-and-retreat",
+      131,
+      142
+     ]
+    ]
+   },
+   {
+    "demo": "demo_36",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      72
+     ],
+     [
+      "move-nut-to-peg",
+      72,
+      110
+     ],
+     [
+      "insert-nut",
+      110,
+      136
+     ],
+     [
+      "release-and-retreat",
+      136,
+      147
+     ]
+    ]
+   },
+   {
+    "demo": "demo_44",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      84
+     ],
+     [
+      "insert-nut",
+      84,
+      115
+     ],
+     [
+      "release-and-retreat",
+      115,
+      125
+     ]
+    ]
+   },
+   {
+    "demo": "demo_56",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      51
+     ],
+     [
+      "move-nut-to-peg",
+      51,
+      97
+     ],
+     [
+      "insert-nut",
+      97,
+      116
+     ],
+     [
+      "release-and-retreat",
+      116,
+      129
+     ]
+    ]
+   },
+   {
+    "demo": "demo_93",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      81
+     ],
+     [
+      "move-nut-to-peg",
+      81,
+      133
+     ],
+     [
+      "insert-nut",
+      133,
+      159
+     ],
+     [
+      "release-and-retreat",
+      159,
+      171
+     ]
+    ]
+   },
+   {
+    "demo": "demo_103",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      56
+     ],
+     [
+      "move-nut-to-peg",
+      56,
+      116
+     ],
+     [
+      "insert-nut",
+      116,
+      147
+     ],
+     [
+      "release-and-retreat",
+      147,
+      158
+     ]
+    ]
+   },
+   {
+    "demo": "demo_105",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      63
+     ],
+     [
+      "move-nut-to-peg",
+      63,
+      111
+     ],
+     [
+      "insert-nut",
+      111,
+      143
+     ],
+     [
+      "release-and-retreat",
+      143,
+      154
+     ]
+    ]
+   },
+   {
+    "demo": "demo_111",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      50
+     ],
+     [
+      "move-nut-to-peg",
+      50,
+      93
+     ],
+     [
+      "insert-nut",
+      93,
+      119
+     ],
+     [
+      "release-and-retreat",
+      119,
+      130
+     ]
+    ]
+   },
+   {
+    "demo": "demo_125",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      103
+     ],
+     [
+      "insert-nut",
+      103,
+      132
+     ],
+     [
+      "release-and-retreat",
+      132,
+      144
+     ]
+    ]
+   },
+   {
+    "demo": "demo_131",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      50
+     ],
+     [
+      "move-nut-to-peg",
+      50,
+      98
+     ],
+     [
+      "insert-nut",
+      98,
+      125
+     ],
+     [
+      "release-and-retreat",
+      125,
+      136
+     ]
+    ]
+   },
+   {
+    "demo": "demo_155",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      68
+     ],
+     [
+      "move-nut-to-peg",
+      68,
+      115
+     ],
+     [
+      "insert-nut",
+      115,
+      138
+     ],
+     [
+      "release-and-retreat",
+      138,
+      149
+     ]
+    ]
+   },
+   {
+    "demo": "demo_168",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      90
+     ],
+     [
+      "move-nut-to-peg",
+      90,
+      134
+     ],
+     [
+      "insert-nut",
+      134,
+      158
+     ],
+     [
+      "release-and-retreat",
+      158,
+      169
+     ]
+    ]
+   },
+   {
+    "demo": "demo_176",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      58
+     ],
+     [
+      "move-nut-to-peg",
+      58,
+      97
+     ],
+     [
+      "insert-nut",
+      97,
+      114
+     ],
+     [
+      "release-and-retreat",
+      114,
+      122
+     ]
+    ]
+   },
+   {
+    "demo": "demo_180",
+    "success": true,
+    "flagged": false,
+    "violations": [],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      101
+     ],
+     [
+      "insert-nut",
+      101,
+      159
+     ],
+     [
+      "release-and-retreat",
+      159,
+      184
+     ]
+    ]
+   },
+   {
+    "demo": "demo_191",
+    "success": true,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-nut",
+      "kind": "over all",
+      "pred": "holding",
+      "pol": true,
+      "frame": 108,
+      "detail": "false for 31 of 59 frames in a row (tolerance 0% of stage)",
+      "relation": "gripper_1->nut_1",
+      "rel_pos_cm": [
+       -5.3,
+       -0.2,
+       0.4
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       7.0,
+       1.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_nut_1",
+      "mismatch": [
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "grasp flag"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 147,
+      "detail": "not true within 0 frames of the stage start (nearest: 1 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.4,
+       -0.6,
+       2.1
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       -1.0,
+       2.0
+      ],
+      "knn_dist": 2.824992716152057,
+      "knn_thr": 0.8587025950025782,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [],
+      "cause": ""
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "holding",
+      "pol": false,
+      "frame": 147,
+      "detail": "not true within 0 frames of the stage end (nearest: 1 frames away)",
+      "relation": "gripper_1->nut_1",
+      "rel_pos_cm": [
+       -6.6,
+       -4.0,
+       -13.3
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       6.0,
+       18.0
+      ],
+      "knn_dist": 6.208901621328294,
+      "knn_thr": 0.7192503494066264,
+      "in_training_distribution": false,
+      "cause": "inside region it should not be in"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      40
+     ],
+     [
+      "move-nut-to-peg",
+      40,
+      88
+     ],
+     [
+      "insert-nut",
+      88,
+      147
+     ],
+     [
+      "release-and-retreat",
+      147,
+      147
+     ]
+    ]
+   }
+  ],
+  "drop": [
+   {
+    "demo": "demo_0",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 81,
+      "detail": "not true within 1 frames of the stage end (nearest: 5 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -7.5,
+       -0.7,
+       -11.6
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       2.0,
+       -10.0
+      ],
+      "knn_dist": 0.7239124470054147,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 3 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 82,
+      "detail": "not true within 0 frames of the stage start (nearest: 4 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -6.4,
+       -1.2,
+       -11.6
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       2.0,
+       -9.0
+      ],
+      "knn_dist": 2.7504974913892726,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 8 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 82,
+      "detail": "not true within 0 frames of the stage end (nearest: 4 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -6.4,
+       -1.2,
+       -11.6
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       2.0,
+       -9.0
+      ],
+      "knn_dist": 2.7504974913892726,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 8 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 82,
+      "detail": "not true within 0 frames of the stage start (nearest: 4 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -6.4,
+       -1.2,
+       -11.6
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       2.0,
+       -9.0
+      ],
+      "knn_dist": 2.7504974913892726,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 8 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      82
+     ],
+     [
+      "insert-nut",
+      82,
+      82
+     ],
+     [
+      "release-and-retreat",
+      82,
+      127
+     ]
+    ]
+   },
+   {
+    "demo": "demo_5",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 84,
+      "detail": "not true within 1 frames of the stage end (nearest: 2 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.1,
+       -4.2,
+       -15.9
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       -6.0,
+       19.0
+      ],
+      "knn_dist": 0.4808836754077991,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin 9 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 85,
+      "detail": "not true within 0 frames of the stage start (nearest: 1 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.8,
+       -3.2,
+       -16.0
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       -6.0,
+       17.0
+      ],
+      "knn_dist": 2.2579063496898,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 9 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 85,
+      "detail": "not true within 0 frames of the stage end (nearest: 1 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.8,
+       -3.2,
+       -16.0
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       -6.0,
+       17.0
+      ],
+      "knn_dist": 2.2579063496898,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 9 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 85,
+      "detail": "not true within 0 frames of the stage start (nearest: 1 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.8,
+       -3.2,
+       -16.0
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       -6.0,
+       17.0
+      ],
+      "knn_dist": 2.2579063496898,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 9 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 93,
+      "detail": "false for 51 of 59 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.1,
+       6.2,
+       -5.0
+      ],
+      "rel_rpy_deg": [
+       61.0,
+       -8.0,
+       3.0
+      ],
+      "knn_dist": 2.5681303019968587,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 4 (region 7)",
+       "roll bin 8 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 143,
+      "detail": "not true within 12 frames of the stage end (nearest: 51 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.7,
+       7.1,
+       -4.8
+      ],
+      "rel_rpy_deg": [
+       69.0,
+       -12.0,
+       -6.0
+      ],
+      "knn_dist": 3.0639735663609957,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin 3 (region 7)",
+       "z bin 6 (region 8)",
+       "roll bin 8 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      40
+     ],
+     [
+      "move-nut-to-peg",
+      40,
+      85
+     ],
+     [
+      "insert-nut",
+      85,
+      85
+     ],
+     [
+      "release-and-retreat",
+      85,
+      144
+     ]
+    ]
+   },
+   {
+    "demo": "demo_14",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 94,
+      "detail": "false for 58 of 66 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.1,
+       6.5,
+       -5.8
+      ],
+      "rel_rpy_deg": [
+       57.0,
+       -11.0,
+       7.0
+      ],
+      "knn_dist": 2.425823929352798,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 4 (region 7)",
+       "roll bin 8 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 151,
+      "detail": "not true within 12 frames of the stage end (nearest: 58 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       4.9,
+       6.0,
+       -5.2
+      ],
+      "rel_rpy_deg": [
+       69.0,
+       -26.0,
+       -25.0
+      ],
+      "knn_dist": 3.250257384206048,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 9 (region 7)",
+       "y bin 4 (region 7)",
+       "z bin 6 (region 8)",
+       "roll bin 8 (region 6)",
+       "pitch bin 5 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      39
+     ],
+     [
+      "move-nut-to-peg",
+      39,
+      86
+     ],
+     [
+      "insert-nut",
+      86,
+      86
+     ],
+     [
+      "release-and-retreat",
+      86,
+      152
+     ]
+    ]
+   },
+   {
+    "demo": "demo_21",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 113,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -24.5,
+       2.6,
+       -9.9
+      ],
+      "rel_rpy_deg": [
+       3.0,
+       5.0,
+       15.0
+      ],
+      "knn_dist": 0.9681183588324327,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 114,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -23.2,
+       2.9,
+       -10.4
+      ],
+      "rel_rpy_deg": [
+       3.0,
+       5.0,
+       14.0
+      ],
+      "knn_dist": 10.67917119980615,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 114,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -23.2,
+       2.9,
+       -10.4
+      ],
+      "rel_rpy_deg": [
+       3.0,
+       5.0,
+       14.0
+      ],
+      "knn_dist": 10.67917119980615,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 114,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -23.2,
+       2.9,
+       -10.4
+      ],
+      "rel_rpy_deg": [
+       3.0,
+       5.0,
+       14.0
+      ],
+      "knn_dist": 10.67917119980615,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 114,
+      "detail": "false for 65 of 65 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -23.2,
+       2.9,
+       -10.4
+      ],
+      "rel_rpy_deg": [
+       3.0,
+       5.0,
+       14.0
+      ],
+      "knn_dist": 10.67917119980615,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 178,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -10.3,
+       1.6,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       10.0
+      ],
+      "knn_dist": 4.890055443581625,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 2 (region 7)",
+       "y bin 6 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      61
+     ],
+     [
+      "move-nut-to-peg",
+      61,
+      114
+     ],
+     [
+      "insert-nut",
+      114,
+      114
+     ],
+     [
+      "release-and-retreat",
+      114,
+      179
+     ]
+    ]
+   },
+   {
+    "demo": "demo_27",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 115,
+      "detail": "not true within 1 frames of the stage end (nearest: 6 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.4,
+       -6.4,
+       -13.7
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       5.0,
+       -5.0
+      ],
+      "knn_dist": 0.5158117537029494,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 10 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 116,
+      "detail": "not true within 0 frames of the stage start (nearest: 5 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.2,
+       -5.7,
+       -13.8
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       5.0,
+       -5.0
+      ],
+      "knn_dist": 2.423886107138257,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin 10 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 116,
+      "detail": "not true within 0 frames of the stage end (nearest: 5 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.2,
+       -5.7,
+       -13.8
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       5.0,
+       -5.0
+      ],
+      "knn_dist": 2.423886107138257,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin 10 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 116,
+      "detail": "not true within 0 frames of the stage start (nearest: 5 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.2,
+       -5.7,
+       -13.8
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       5.0,
+       -5.0
+      ],
+      "knn_dist": 2.423886107138257,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin 10 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 162,
+      "detail": "false for 18 of 64 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.0,
+       3.5,
+       -9.6
+      ],
+      "rel_rpy_deg": [
+       32.0,
+       34.0,
+       -4.0
+      ],
+      "knn_dist": 2.2417876276802713,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 5 (region 7)",
+       "roll bin 7 (region 6)",
+       "pitch bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 179,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -2.5,
+       -0.2,
+       -4.9
+      ],
+      "rel_rpy_deg": [
+       65.0,
+       -37.0,
+       15.0
+      ],
+      "knn_dist": 2.8253992381877295,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "z bin 6 (region 8)",
+       "roll bin 8 (region 6)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      71
+     ],
+     [
+      "move-nut-to-peg",
+      71,
+      116
+     ],
+     [
+      "insert-nut",
+      116,
+      116
+     ],
+     [
+      "release-and-retreat",
+      116,
+      180
+     ]
+    ]
+   },
+   {
+    "demo": "demo_32",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 88,
+      "detail": "not true within 1 frames of the stage end (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -7.6,
+       1.5,
+       -10.0
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       4.0,
+       -0.0
+      ],
+      "knn_dist": 0.40280694998855066,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 3 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 89,
+      "detail": "not true within 0 frames of the stage start (nearest: 6 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -6.8,
+       1.1,
+       -10.1
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       4.0,
+       0.0
+      ],
+      "knn_dist": 2.7248694851308675,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 89,
+      "detail": "not true within 0 frames of the stage end (nearest: 6 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -6.8,
+       1.1,
+       -10.1
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       4.0,
+       0.0
+      ],
+      "knn_dist": 2.7248694851308675,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 89,
+      "detail": "not true within 0 frames of the stage start (nearest: 6 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -6.8,
+       1.1,
+       -10.1
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       4.0,
+       0.0
+      ],
+      "knn_dist": 2.7248694851308675,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 97,
+      "detail": "false for 45 of 53 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       3.3,
+       0.5,
+       -9.5
+      ],
+      "rel_rpy_deg": [
+       -11.0,
+       -40.0,
+       7.0
+      ],
+      "knn_dist": 1.610995338046382,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 9 (region 7)",
+       "pitch bin 5 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 141,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       7.6,
+       1.4,
+       -3.2
+      ],
+      "rel_rpy_deg": [
+       -62.0,
+       -82.0,
+       62.0
+      ],
+      "knn_dist": 4.101223949726067,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 6 (region 7)",
+       "z bin 6 (region 8)",
+       "pitch bin 3 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      89
+     ],
+     [
+      "insert-nut",
+      89,
+      89
+     ],
+     [
+      "release-and-retreat",
+      89,
+      142
+     ]
+    ]
+   },
+   {
+    "demo": "demo_36",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 103,
+      "detail": "not true within 1 frames of the stage end (nearest: 8 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.2,
+       -10.1,
+       -11.9
+      ],
+      "rel_rpy_deg": [
+       2.0,
+       3.0,
+       8.0
+      ],
+      "knn_dist": 0.3307154823056171,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 12 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 104,
+      "detail": "not true within 0 frames of the stage start (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.4,
+       -8.8,
+       -12.0
+      ],
+      "rel_rpy_deg": [
+       3.0,
+       3.0,
+       8.0
+      ],
+      "knn_dist": 3.610063880167641,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 11 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 104,
+      "detail": "not true within 0 frames of the stage end (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.4,
+       -8.8,
+       -12.0
+      ],
+      "rel_rpy_deg": [
+       3.0,
+       3.0,
+       8.0
+      ],
+      "knn_dist": 3.610063880167641,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 11 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 104,
+      "detail": "not true within 0 frames of the stage start (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.4,
+       -8.8,
+       -12.0
+      ],
+      "rel_rpy_deg": [
+       3.0,
+       3.0,
+       8.0
+      ],
+      "knn_dist": 3.610063880167641,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 11 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 113,
+      "detail": "false for 34 of 43 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.1,
+       5.1,
+       -8.0
+      ],
+      "rel_rpy_deg": [
+       54.0,
+       5.0,
+       6.0
+      ],
+      "knn_dist": 1.713326363678642,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 4 (region 7)",
+       "roll bin 8 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 146,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.7,
+       1.4,
+       -3.3
+      ],
+      "rel_rpy_deg": [
+       90.0,
+       1.0,
+       -0.0
+      ],
+      "knn_dist": 3.006616033476456,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "y bin 6 (region 7)",
+       "z bin 6 (region 8)",
+       "roll bin 9 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      72
+     ],
+     [
+      "move-nut-to-peg",
+      72,
+      104
+     ],
+     [
+      "insert-nut",
+      104,
+      104
+     ],
+     [
+      "release-and-retreat",
+      104,
+      147
+     ]
+    ]
+   },
+   {
+    "demo": "demo_44",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 80,
+      "detail": "not true within 1 frames of the stage end (nearest: 4 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -5.9,
+       2.0,
+       -11.4
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       3.0,
+       -2.0
+      ],
+      "knn_dist": 0.35179975624789855,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 81,
+      "detail": "not true within 0 frames of the stage start (nearest: 3 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -5.2,
+       1.5,
+       -11.6
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       3.0,
+       -0.0
+      ],
+      "knn_dist": 2.4200068500173075,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 81,
+      "detail": "not true within 0 frames of the stage end (nearest: 3 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -5.2,
+       1.5,
+       -11.6
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       3.0,
+       -0.0
+      ],
+      "knn_dist": 2.4200068500173075,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 81,
+      "detail": "not true within 0 frames of the stage start (nearest: 3 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -5.2,
+       1.5,
+       -11.6
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       3.0,
+       -0.0
+      ],
+      "knn_dist": 2.4200068500173075,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 89,
+      "detail": "false for 36 of 44 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       6.3,
+       -0.1,
+       -6.1
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       -58.0,
+       7.0
+      ],
+      "knn_dist": 2.5100529743756748,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 10 (region 7)",
+       "pitch bin 4 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 124,
+      "detail": "not true within 12 frames of the stage end (nearest: 36 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       7.0,
+       -0.1,
+       -4.7
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       -68.0,
+       9.0
+      ],
+      "knn_dist": 3.1588445702455386,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 10 (region 7)",
+       "z bin 6 (region 8)",
+       "pitch bin 4 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      81
+     ],
+     [
+      "insert-nut",
+      81,
+      81
+     ],
+     [
+      "release-and-retreat",
+      81,
+      125
+     ]
+    ]
+   },
+   {
+    "demo": "demo_56",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 82,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       9.8,
+       -14.7,
+       -11.1
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       -9.0,
+       -44.0
+      ],
+      "knn_dist": 0.5041681031369625,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 12 (region 7)",
+       "y bin 14 (region 7)",
+       "yaw bin 5 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 83,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       8.5,
+       -13.9,
+       -11.3
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       -2.0,
+       44.0
+      ],
+      "knn_dist": 7.1453999227941205,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 14 (region 7)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 83,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       8.5,
+       -13.9,
+       -11.3
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       -2.0,
+       44.0
+      ],
+      "knn_dist": 7.1453999227941205,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 14 (region 7)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 83,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       8.5,
+       -13.9,
+       -11.3
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       -2.0,
+       44.0
+      ],
+      "knn_dist": 7.1453999227941205,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 14 (region 7)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 83,
+      "detail": "false for 46 of 46 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       8.5,
+       -13.9,
+       -11.3
+      ],
+      "rel_rpy_deg": [
+       -9.0,
+       -2.0,
+       44.0
+      ],
+      "knn_dist": 7.1453999227941205,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 14 (region 7)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 128,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.1,
+       -6.8,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       29.0
+      ],
+      "knn_dist": 3.3297553237728605,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      51
+     ],
+     [
+      "move-nut-to-peg",
+      51,
+      83
+     ],
+     [
+      "insert-nut",
+      83,
+      83
+     ],
+     [
+      "release-and-retreat",
+      83,
+      129
+     ]
+    ]
+   },
+   {
+    "demo": "demo_93",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 119,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -8.7,
+       -12.6,
+       -15.7
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       7.0,
+       -14.0
+      ],
+      "knn_dist": 0.2690331799802945,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 3 (region 7)",
+       "y bin 13 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 120,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -8.3,
+       -11.8,
+       -15.9
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       8.0,
+       -13.0
+      ],
+      "knn_dist": 6.4359214780509335,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 3 (region 7)",
+       "y bin 13 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 120,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -8.3,
+       -11.8,
+       -15.9
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       8.0,
+       -13.0
+      ],
+      "knn_dist": 6.4359214780509335,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 3 (region 7)",
+       "y bin 13 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 120,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -8.3,
+       -11.8,
+       -15.9
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       8.0,
+       -13.0
+      ],
+      "knn_dist": 6.4359214780509335,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 3 (region 7)",
+       "y bin 13 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 120,
+      "detail": "false for 51 of 51 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -8.3,
+       -11.8,
+       -15.9
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       8.0,
+       -13.0
+      ],
+      "knn_dist": 6.4359214780509335,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 3 (region 7)",
+       "y bin 13 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 170,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.3,
+       -6.9,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       -0.0,
+       -4.0
+      ],
+      "knn_dist": 3.17751913860219,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      81
+     ],
+     [
+      "move-nut-to-peg",
+      81,
+      120
+     ],
+     [
+      "insert-nut",
+      120,
+      120
+     ],
+     [
+      "release-and-retreat",
+      120,
+      171
+     ]
+    ]
+   },
+   {
+    "demo": "demo_103",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 100,
+      "detail": "not true within 1 frames of the stage end (nearest: 8 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.5,
+       8.0,
+       -13.3
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       -2.0,
+       -5.0
+      ],
+      "knn_dist": 0.4720430470669495,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 3 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 101,
+      "detail": "not true within 0 frames of the stage start (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.5,
+       7.6,
+       -13.6
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -2.0,
+       -5.0
+      ],
+      "knn_dist": 3.3160049009640318,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 3 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 101,
+      "detail": "not true within 0 frames of the stage end (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.5,
+       7.6,
+       -13.6
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -2.0,
+       -5.0
+      ],
+      "knn_dist": 3.3160049009640318,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 3 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 101,
+      "detail": "not true within 0 frames of the stage start (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.5,
+       7.6,
+       -13.6
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -2.0,
+       -5.0
+      ],
+      "knn_dist": 3.3160049009640318,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 3 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 109,
+      "detail": "false for 49 of 57 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       3.7,
+       -2.1,
+       -8.5
+      ],
+      "rel_rpy_deg": [
+       -49.0,
+       -32.0,
+       9.0
+      ],
+      "knn_dist": 2.3743073350565815,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 9 (region 7)",
+       "y bin 8 (region 7)",
+       "roll bin 5 (region 6)",
+       "pitch bin 5 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 157,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       2.3,
+       0.6,
+       -5.3
+      ],
+      "rel_rpy_deg": [
+       -60.0,
+       -33.0,
+       10.0
+      ],
+      "knn_dist": 2.500522184688969,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "z bin 6 (region 8)",
+       "roll bin 4 (region 6)",
+       "pitch bin 5 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      56
+     ],
+     [
+      "move-nut-to-peg",
+      56,
+      101
+     ],
+     [
+      "insert-nut",
+      101,
+      101
+     ],
+     [
+      "release-and-retreat",
+      101,
+      158
+     ]
+    ]
+   },
+   {
+    "demo": "demo_105",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 102,
+      "detail": "not true within 1 frames of the stage end (nearest: 8 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -3.4,
+       -5.9,
+       -12.1
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       6.0,
+       22.0
+      ],
+      "knn_dist": 0.7362502209721346,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 10 (region 7)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 103,
+      "detail": "not true within 0 frames of the stage start (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -3.4,
+       -5.4,
+       -13.0
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       7.0,
+       22.0
+      ],
+      "knn_dist": 2.585338965618678,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 10 (region 7)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 103,
+      "detail": "not true within 0 frames of the stage end (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -3.4,
+       -5.4,
+       -13.0
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       7.0,
+       22.0
+      ],
+      "knn_dist": 2.585338965618678,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 10 (region 7)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 103,
+      "detail": "not true within 0 frames of the stage start (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -3.4,
+       -5.4,
+       -13.0
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       7.0,
+       22.0
+      ],
+      "knn_dist": 2.585338965618678,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 10 (region 7)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 114,
+      "detail": "false for 40 of 51 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       6.4,
+       4.2,
+       -4.9
+      ],
+      "rel_rpy_deg": [
+       67.0,
+       -47.0,
+       -35.0
+      ],
+      "knn_dist": 3.030785852303992,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 10 (region 7)",
+       "y bin 5 (region 7)",
+       "roll bin 7 (region 6)",
+       "pitch bin 4 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 153,
+      "detail": "not true within 12 frames of the stage end (nearest: 40 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       6.8,
+       1.4,
+       -3.6
+      ],
+      "rel_rpy_deg": [
+       90.0,
+       40.0,
+       -0.0
+      ],
+      "knn_dist": 4.602648322778627,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 10 (region 7)",
+       "y bin 6 (region 7)",
+       "z bin 6 (region 8)",
+       "roll bin 9 (region 6)",
+       "pitch bin 7 (region 6)",
+       "yaw bin 5 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      63
+     ],
+     [
+      "move-nut-to-peg",
+      63,
+      103
+     ],
+     [
+      "insert-nut",
+      103,
+      103
+     ],
+     [
+      "release-and-retreat",
+      103,
+      154
+     ]
+    ]
+   },
+   {
+    "demo": "demo_111",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 83,
+      "detail": "not true within 1 frames of the stage end (nearest: 8 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -10.9,
+       -0.2,
+       -14.5
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       1.0,
+       0.0
+      ],
+      "knn_dist": 0.7830868063079446,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 2 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 84,
+      "detail": "not true within 0 frames of the stage start (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -10.0,
+       -0.5,
+       -14.6
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       1.0,
+       1.0
+      ],
+      "knn_dist": 4.421015214640645,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 2 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 84,
+      "detail": "not true within 0 frames of the stage end (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -10.0,
+       -0.5,
+       -14.6
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       1.0,
+       1.0
+      ],
+      "knn_dist": 4.421015214640645,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 2 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 84,
+      "detail": "not true within 0 frames of the stage start (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -10.0,
+       -0.5,
+       -14.6
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       1.0,
+       1.0
+      ],
+      "knn_dist": 4.421015214640645,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 2 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 92,
+      "detail": "false for 38 of 46 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       3.4,
+       -0.6,
+       -7.5
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -61.0,
+       -1.0
+      ],
+      "knn_dist": 2.217789613988462,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 9 (region 7)",
+       "pitch bin 4 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 129,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       2.7,
+       -0.6,
+       -5.7
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       -68.0,
+       -1.0
+      ],
+      "knn_dist": 2.5226068573369407,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "z bin 6 (region 8)",
+       "pitch bin 4 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      50
+     ],
+     [
+      "move-nut-to-peg",
+      50,
+      84
+     ],
+     [
+      "insert-nut",
+      84,
+      84
+     ],
+     [
+      "release-and-retreat",
+      84,
+      130
+     ]
+    ]
+   },
+   {
+    "demo": "demo_125",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 89,
+      "detail": "not true within 1 frames of the stage end (nearest: 9 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       9.7,
+       6.5,
+       -15.9
+      ],
+      "rel_rpy_deg": [
+       4.0,
+       -9.0,
+       -29.0
+      ],
+      "knn_dist": 0.47258084297858766,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 12 (region 7)",
+       "y bin 4 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 5 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 90,
+      "detail": "not true within 0 frames of the stage start (nearest: 8 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       8.8,
+       6.1,
+       -16.2
+      ],
+      "rel_rpy_deg": [
+       4.0,
+       -9.0,
+       -27.0
+      ],
+      "knn_dist": 4.772493811443963,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 4 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 5 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 90,
+      "detail": "not true within 0 frames of the stage end (nearest: 8 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       8.8,
+       6.1,
+       -16.2
+      ],
+      "rel_rpy_deg": [
+       4.0,
+       -9.0,
+       -27.0
+      ],
+      "knn_dist": 4.772493811443963,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 4 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 5 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 90,
+      "detail": "not true within 0 frames of the stage start (nearest: 8 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       8.8,
+       6.1,
+       -16.2
+      ],
+      "rel_rpy_deg": [
+       4.0,
+       -9.0,
+       -27.0
+      ],
+      "knn_dist": 4.772493811443963,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 4 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 5 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 100,
+      "detail": "false for 44 of 54 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.1,
+       -3.1,
+       -6.8
+      ],
+      "rel_rpy_deg": [
+       -64.0,
+       0.0,
+       -18.0
+      ],
+      "knn_dist": 1.502220558857537,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 9 (region 7)",
+       "roll bin 4 (region 6)",
+       "yaw bin 5 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 143,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.0,
+       0.4,
+       -4.6
+      ],
+      "rel_rpy_deg": [
+       -67.0,
+       -5.0,
+       -2.0
+      ],
+      "knn_dist": 1.4831634876545978,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "z bin 6 (region 8)",
+       "roll bin 4 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      90
+     ],
+     [
+      "insert-nut",
+      90,
+      90
+     ],
+     [
+      "release-and-retreat",
+      90,
+      144
+     ]
+    ]
+   },
+   {
+    "demo": "demo_131",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 86,
+      "detail": "not true within 1 frames of the stage end (nearest: 8 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       3.2,
+       11.9,
+       -16.4
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       -3.0,
+       -4.0
+      ],
+      "knn_dist": 0.7713161862485514,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 9 (region 7)",
+       "y bin 1 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 87,
+      "detail": "not true within 0 frames of the stage start (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       2.9,
+       10.9,
+       -16.6
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       -3.0,
+       -3.0
+      ],
+      "knn_dist": 5.557053539275171,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin 2 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 87,
+      "detail": "not true within 0 frames of the stage end (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       2.9,
+       10.9,
+       -16.6
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       -3.0,
+       -3.0
+      ],
+      "knn_dist": 5.557053539275171,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin 2 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 87,
+      "detail": "not true within 0 frames of the stage start (nearest: 7 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       2.9,
+       10.9,
+       -16.6
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       -3.0,
+       -3.0
+      ],
+      "knn_dist": 5.557053539275171,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin 2 (region 7)",
+       "z bin 3 (region 4)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 95,
+      "detail": "false for 41 of 49 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.4,
+       -2.5,
+       -8.4
+      ],
+      "rel_rpy_deg": [
+       -52.0,
+       0.0,
+       -4.0
+      ],
+      "knn_dist": 1.354474484012715,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin 8 (region 7)",
+       "roll bin 4 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 135,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.4,
+       1.2,
+       -4.7
+      ],
+      "rel_rpy_deg": [
+       -60.0,
+       -1.0,
+       -1.0
+      ],
+      "knn_dist": 2.013395332169294,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin 6 (region 7)",
+       "z bin 6 (region 8)",
+       "roll bin 4 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      50
+     ],
+     [
+      "move-nut-to-peg",
+      50,
+      87
+     ],
+     [
+      "insert-nut",
+      87,
+      87
+     ],
+     [
+      "release-and-retreat",
+      87,
+      136
+     ]
+    ]
+   },
+   {
+    "demo": "demo_155",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 102,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.7,
+       17.2,
+       -12.6
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -2.0,
+       9.0
+      ],
+      "knn_dist": 0.5423234111278276,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 103,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.3,
+       16.0,
+       -12.6
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -2.0,
+       8.0
+      ],
+      "knn_dist": 6.947929334286214,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 103,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.3,
+       16.0,
+       -12.6
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -2.0,
+       8.0
+      ],
+      "knn_dist": 6.947929334286214,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 103,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.3,
+       16.0,
+       -12.6
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -2.0,
+       8.0
+      ],
+      "knn_dist": 6.947929334286214,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 103,
+      "detail": "false for 46 of 46 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.3,
+       16.0,
+       -12.6
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       -2.0,
+       8.0
+      ],
+      "knn_dist": 6.947929334286214,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 148,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.9,
+       6.4,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       -0.0,
+       -2.0
+      ],
+      "knn_dist": 2.983739003655905,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 4 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      68
+     ],
+     [
+      "move-nut-to-peg",
+      68,
+      103
+     ],
+     [
+      "insert-nut",
+      103,
+      103
+     ],
+     [
+      "release-and-retreat",
+      103,
+      149
+     ]
+    ]
+   },
+   {
+    "demo": "demo_168",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 123,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -5.0,
+       -11.3,
+       -11.0
+      ],
+      "rel_rpy_deg": [
+       4.0,
+       5.0,
+       -6.0
+      ],
+      "knn_dist": 0.6564777930570346,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 13 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 124,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.1,
+       -10.2,
+       -11.0
+      ],
+      "rel_rpy_deg": [
+       4.0,
+       6.0,
+       -6.0
+      ],
+      "knn_dist": 4.4764066843348305,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 12 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 124,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.1,
+       -10.2,
+       -11.0
+      ],
+      "rel_rpy_deg": [
+       4.0,
+       6.0,
+       -6.0
+      ],
+      "knn_dist": 4.4764066843348305,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 12 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 124,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.1,
+       -10.2,
+       -11.0
+      ],
+      "rel_rpy_deg": [
+       4.0,
+       6.0,
+       -6.0
+      ],
+      "knn_dist": 4.4764066843348305,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 12 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 124,
+      "detail": "false for 45 of 45 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.1,
+       -10.2,
+       -11.0
+      ],
+      "rel_rpy_deg": [
+       4.0,
+       6.0,
+       -6.0
+      ],
+      "knn_dist": 4.4764066843348305,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 12 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 168,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       4.6,
+       -6.4,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       13.0
+      ],
+      "knn_dist": 3.62541305286903,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 9 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      90
+     ],
+     [
+      "move-nut-to-peg",
+      90,
+      124
+     ],
+     [
+      "insert-nut",
+      124,
+      124
+     ],
+     [
+      "release-and-retreat",
+      124,
+      169
+     ]
+    ]
+   },
+   {
+    "demo": "demo_176",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 85,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -14.6,
+       1.0,
+       -11.1
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       5.0,
+       3.0
+      ],
+      "knn_dist": 0.41000081135973004,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 86,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -13.4,
+       1.0,
+       -11.4
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       6.0,
+       3.0
+      ],
+      "knn_dist": 5.943294057394288,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 86,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -13.4,
+       1.0,
+       -11.4
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       6.0,
+       3.0
+      ],
+      "knn_dist": 5.943294057394288,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 86,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -13.4,
+       1.0,
+       -11.4
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       6.0,
+       3.0
+      ],
+      "knn_dist": 5.943294057394288,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 86,
+      "detail": "false for 36 of 36 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -13.4,
+       1.0,
+       -11.4
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       6.0,
+       3.0
+      ],
+      "knn_dist": 5.943294057394288,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 121,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -7.1,
+       -0.4,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       -0.0,
+       -2.0
+      ],
+      "knn_dist": 3.2608298480595646,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 3 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      58
+     ],
+     [
+      "move-nut-to-peg",
+      58,
+      86
+     ],
+     [
+      "insert-nut",
+      86,
+      86
+     ],
+     [
+      "release-and-retreat",
+      86,
+      122
+     ]
+    ]
+   },
+   {
+    "demo": "demo_180",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 108,
+      "detail": "false for 76 of 81 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       4.2,
+       -2.2,
+       -10.7
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       -21.0,
+       21.0
+      ],
+      "knn_dist": 2.0270211014626263,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 9 (region 7)",
+       "y bin 8 (region 7)",
+       "pitch bin 5 (region 6)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 183,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       4.1,
+       -1.6,
+       -5.1
+      ],
+      "rel_rpy_deg": [
+       11.0,
+       -74.0,
+       -2.0
+      ],
+      "knn_dist": 3.0500910217973485,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 9 (region 7)",
+       "y bin 8 (region 7)",
+       "z bin 6 (region 8)",
+       "pitch bin 4 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      101
+     ],
+     [
+      "insert-nut",
+      101,
+      103
+     ],
+     [
+      "release-and-retreat",
+      103,
+      184
+     ]
+    ]
+   },
+   {
+    "demo": "demo_191",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 73,
+      "detail": "not true within 1 frames of the stage end (nearest: 9 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       8.5,
+       -10.0,
+       -17.2
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       -6.0,
+       35.0
+      ],
+      "knn_dist": 0.5790348529331026,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 12 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 74,
+      "detail": "not true within 0 frames of the stage start (nearest: 8 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       7.8,
+       -8.9,
+       -17.9
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       -6.0,
+       32.0
+      ],
+      "knn_dist": 6.511940291918139,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 11 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 74,
+      "detail": "not true within 0 frames of the stage end (nearest: 8 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       7.8,
+       -8.9,
+       -17.9
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       -6.0,
+       32.0
+      ],
+      "knn_dist": 6.511940291918139,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 11 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 74,
+      "detail": "not true within 0 frames of the stage start (nearest: 8 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       7.8,
+       -8.9,
+       -17.9
+      ],
+      "rel_rpy_deg": [
+       -5.0,
+       -6.0,
+       32.0
+      ],
+      "knn_dist": 6.511940291918139,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 11 (region 7)",
+       "y bin 11 (region 7)",
+       "z bin 3 (region 4)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 86,
+      "detail": "false for 61 of 73 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -5.9,
+       -0.7,
+       -6.9
+      ],
+      "rel_rpy_deg": [
+       35.0,
+       55.0,
+       40.0
+      ],
+      "knn_dist": 3.2749110778578503,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "pitch bin 8 (region 6)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 146,
+      "detail": "not true within 12 frames of the stage end (nearest: 61 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -7.4,
+       -0.8,
+       -3.8
+      ],
+      "rel_rpy_deg": [
+       70.0,
+       67.0,
+       72.0
+      ],
+      "knn_dist": 4.602206701532854,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 3 (region 7)",
+       "z bin 6 (region 8)",
+       "roll bin 7 (region 6)",
+       "pitch bin 8 (region 6)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      40
+     ],
+     [
+      "move-nut-to-peg",
+      40,
+      74
+     ],
+     [
+      "insert-nut",
+      74,
+      74
+     ],
+     [
+      "release-and-retreat",
+      74,
+      147
+     ]
+    ]
+   }
+  ],
+  "miss": [
+   {
+    "demo": "demo_0",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 115,
+      "detail": "not true within 0 frames of the stage end (nearest: 28 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.7,
+       8.1,
+       -1.4
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -1.0,
+       -1.0
+      ],
+      "knn_dist": 4.212750482531258,
+      "knn_thr": 0.8587025950025782,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 3 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 116,
+      "detail": "not true within 0 frames of the stage start (nearest: 29 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.8,
+       8.3,
+       -0.8
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -1.0,
+       -1.0
+      ],
+      "knn_dist": 4.398732853732648,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 3 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 116,
+      "detail": "false for 11 of 11 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.8,
+       8.3,
+       -0.8
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -1.0,
+       -1.0
+      ],
+      "knn_dist": 4.398732853732648,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 3 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 126,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -5.1,
+       8.8,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       0.0,
+       -2.0
+      ],
+      "knn_dist": 4.725102158836143,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 3 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      86
+     ],
+     [
+      "insert-nut",
+      86,
+      116
+     ],
+     [
+      "release-and-retreat",
+      116,
+      127
+     ]
+    ]
+   },
+   {
+    "demo": "demo_5",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 130,
+      "detail": "not true within 0 frames of the stage end (nearest: 42 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -14.3,
+       -6.0,
+       3.8
+      ],
+      "rel_rpy_deg": [
+       2.0,
+       7.0,
+       4.0
+      ],
+      "knn_dist": 8.302761195855787,
+      "knn_thr": 0.8587025950025782,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 10 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 131,
+      "detail": "not true within 0 frames of the stage start (nearest: 43 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -14.3,
+       -6.0,
+       3.8
+      ],
+      "rel_rpy_deg": [
+       2.0,
+       7.0,
+       4.0
+      ],
+      "knn_dist": 7.481632418657211,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 10 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 131,
+      "detail": "false for 13 of 13 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -14.3,
+       -6.0,
+       3.8
+      ],
+      "rel_rpy_deg": [
+       2.0,
+       7.0,
+       4.0
+      ],
+      "knn_dist": 7.481632418657211,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 10 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 143,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.0,
+       -5.7,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       -0.0,
+       4.0
+      ],
+      "knn_dist": 7.670263684462093,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      40
+     ],
+     [
+      "move-nut-to-peg",
+      40,
+      86
+     ],
+     [
+      "insert-nut",
+      86,
+      131
+     ],
+     [
+      "release-and-retreat",
+      131,
+      144
+     ]
+    ]
+   },
+   {
+    "demo": "demo_14",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 132,
+      "detail": "not true within 0 frames of the stage end (nearest: 42 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -11.3,
+       -7.3,
+       3.3
+      ],
+      "rel_rpy_deg": [
+       2.0,
+       6.0,
+       12.0
+      ],
+      "knn_dist": 7.317073350657834,
+      "knn_thr": 0.8587025950025782,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 1 (region 7)",
+       "y bin 11 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 133,
+      "detail": "not true within 0 frames of the stage start (nearest: 43 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -11.3,
+       -7.3,
+       3.3
+      ],
+      "rel_rpy_deg": [
+       2.0,
+       6.0,
+       12.0
+      ],
+      "knn_dist": 6.429674401607191,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 1 (region 7)",
+       "y bin 11 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 133,
+      "detail": "false for 19 of 19 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -11.3,
+       -7.3,
+       3.3
+      ],
+      "rel_rpy_deg": [
+       2.0,
+       6.0,
+       12.0
+      ],
+      "knn_dist": 6.429674401607191,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 1 (region 7)",
+       "y bin 11 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 151,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -11.8,
+       -7.2,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       12.0
+      ],
+      "knn_dist": 6.5144750547574946,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 1 (region 7)",
+       "y bin 11 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      39
+     ],
+     [
+      "move-nut-to-peg",
+      39,
+      86
+     ],
+     [
+      "insert-nut",
+      86,
+      133
+     ],
+     [
+      "release-and-retreat",
+      133,
+      152
+     ]
+    ]
+   },
+   {
+    "demo": "demo_21",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 167,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       1.1,
+       15.2,
+       -9.7
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       3.0,
+       -7.0
+      ],
+      "knn_dist": 0.7010260187386627,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 8 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 168,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.8,
+       15.4,
+       -9.1
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       3.0,
+       -6.0
+      ],
+      "knn_dist": 6.265213872046891,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 168,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.8,
+       15.4,
+       -9.1
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       3.0,
+       -6.0
+      ],
+      "knn_dist": 6.265213872046891,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 168,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.8,
+       15.4,
+       -9.1
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       3.0,
+       -6.0
+      ],
+      "knn_dist": 6.265213872046891,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 168,
+      "detail": "false for 11 of 11 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       0.8,
+       15.4,
+       -9.1
+      ],
+      "rel_rpy_deg": [
+       -6.0,
+       3.0,
+       -6.0
+      ],
+      "knn_dist": 6.265213872046891,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 178,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.1,
+       16.7,
+       2.1
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       0.0,
+       -5.0
+      ],
+      "knn_dist": 7.95534839805015,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      61
+     ],
+     [
+      "move-nut-to-peg",
+      61,
+      168
+     ],
+     [
+      "insert-nut",
+      168,
+      168
+     ],
+     [
+      "release-and-retreat",
+      168,
+      179
+     ]
+    ]
+   },
+   {
+    "demo": "demo_27",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 161,
+      "detail": "not true within 0 frames of the stage end (nearest: 40 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -12.8,
+       -0.7,
+       -2.1
+      ],
+      "rel_rpy_deg": [
+       12.0,
+       4.0,
+       -3.0
+      ],
+      "knn_dist": 5.81756152292951,
+      "knn_thr": 0.8587025950025782,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 162,
+      "detail": "not true within 0 frames of the stage start (nearest: 41 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -13.0,
+       -1.0,
+       -2.2
+      ],
+      "rel_rpy_deg": [
+       11.0,
+       3.0,
+       -3.0
+      ],
+      "knn_dist": 5.8548416114163695,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 162,
+      "detail": "false for 18 of 18 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -13.0,
+       -1.0,
+       -2.2
+      ],
+      "rel_rpy_deg": [
+       11.0,
+       3.0,
+       -3.0
+      ],
+      "knn_dist": 5.8548416114163695,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 179,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -12.7,
+       -1.7,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       -1.0
+      ],
+      "knn_dist": 6.0774173075037625,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 1 (region 7)",
+       "y bin 8 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      71
+     ],
+     [
+      "move-nut-to-peg",
+      71,
+      120
+     ],
+     [
+      "insert-nut",
+      120,
+      162
+     ],
+     [
+      "release-and-retreat",
+      162,
+      180
+     ]
+    ]
+   },
+   {
+    "demo": "demo_32",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 130,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.2,
+       12.9,
+       -3.8
+      ],
+      "rel_rpy_deg": [
+       -1.0,
+       3.0,
+       4.0
+      ],
+      "knn_dist": 2.700784477456809,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 131,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.5,
+       13.0,
+       -3.5
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       3.0,
+       4.0
+      ],
+      "knn_dist": 5.4770828623725505,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 131,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.5,
+       13.0,
+       -3.5
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       3.0,
+       4.0
+      ],
+      "knn_dist": 5.4770828623725505,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 131,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.5,
+       13.0,
+       -3.5
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       3.0,
+       4.0
+      ],
+      "knn_dist": 5.4770828623725505,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 131,
+      "detail": "false for 11 of 11 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -0.5,
+       13.0,
+       -3.5
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       3.0,
+       4.0
+      ],
+      "knn_dist": 5.4770828623725505,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "y bin 1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 141,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.3,
+       13.5,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       3.0
+      ],
+      "knn_dist": 6.387231756210838,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      131
+     ],
+     [
+      "insert-nut",
+      131,
+      131
+     ],
+     [
+      "release-and-retreat",
+      131,
+      142
+     ]
+    ]
+   },
+   {
+    "demo": "demo_36",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 135,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.7,
+       -2.9,
+       -3.4
+      ],
+      "rel_rpy_deg": [
+       13.0,
+       6.0,
+       2.0
+      ],
+      "knn_dist": 2.3971694222927518,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 8 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 136,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.8,
+       -3.1,
+       -3.5
+      ],
+      "rel_rpy_deg": [
+       13.0,
+       5.0,
+       2.0
+      ],
+      "knn_dist": 7.131585223995701,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 9 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 136,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.8,
+       -3.1,
+       -3.5
+      ],
+      "rel_rpy_deg": [
+       13.0,
+       5.0,
+       2.0
+      ],
+      "knn_dist": 7.131585223995701,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 9 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 136,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.8,
+       -3.1,
+       -3.5
+      ],
+      "rel_rpy_deg": [
+       13.0,
+       5.0,
+       2.0
+      ],
+      "knn_dist": 7.131585223995701,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 9 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 136,
+      "detail": "false for 11 of 11 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.8,
+       -3.1,
+       -3.5
+      ],
+      "rel_rpy_deg": [
+       13.0,
+       5.0,
+       2.0
+      ],
+      "knn_dist": 7.131585223995701,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 9 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 146,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.5,
+       -4.6,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       4.0
+      ],
+      "knn_dist": 7.7511885768771505,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 9 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      72
+     ],
+     [
+      "move-nut-to-peg",
+      72,
+      136
+     ],
+     [
+      "insert-nut",
+      136,
+      136
+     ],
+     [
+      "release-and-retreat",
+      136,
+      147
+     ]
+    ]
+   },
+   {
+    "demo": "demo_44",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-nut",
+      "kind": "over all",
+      "pred": "holding",
+      "pol": true,
+      "frame": 91,
+      "detail": "false for 24 of 30 frames in a row (tolerance 0% of stage)",
+      "relation": "gripper_1->nut_1",
+      "rel_pos_cm": [
+       6.3,
+       1.0,
+       -5.6
+      ],
+      "rel_rpy_deg": [
+       36.0,
+       -2.0,
+       -178.0
+      ],
+      "knn_dist": 2.3339250623759242,
+      "knn_thr": 0.7192503494066264,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_nut_2",
+      "mismatch": [
+       "z bin 12 (region 14)",
+       "pitch bin 4 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 114,
+      "detail": "not true within 0 frames of the stage end (nearest: 24 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.7,
+       10.5,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       9.0
+      ],
+      "knn_dist": 5.412222023067668,
+      "knn_thr": 0.8587025950025782,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 2 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 115,
+      "detail": "not true within 0 frames of the stage start (nearest: 25 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.7,
+       10.5,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       9.0
+      ],
+      "knn_dist": 4.9746646604519,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 2 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 115,
+      "detail": "false for 10 of 10 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.7,
+       10.5,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       9.0
+      ],
+      "knn_dist": 4.9746646604519,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 2 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 124,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.7,
+       10.5,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       9.0
+      ],
+      "knn_dist": 4.974664691834172,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 2 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      85
+     ],
+     [
+      "insert-nut",
+      85,
+      115
+     ],
+     [
+      "release-and-retreat",
+      115,
+      125
+     ]
+    ]
+   },
+   {
+    "demo": "demo_56",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 115,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -14.2,
+       -7.3,
+       -1.9
+      ],
+      "rel_rpy_deg": [
+       3.0,
+       -0.0,
+       6.0
+      ],
+      "knn_dist": 4.080215900362314,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 11 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 116,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -14.2,
+       -7.6,
+       -1.4
+      ],
+      "rel_rpy_deg": [
+       2.0,
+       -0.0,
+       6.0
+      ],
+      "knn_dist": 7.487211851107464,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 11 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 116,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -14.2,
+       -7.6,
+       -1.4
+      ],
+      "rel_rpy_deg": [
+       2.0,
+       -0.0,
+       6.0
+      ],
+      "knn_dist": 7.487211851107464,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 11 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 116,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -14.2,
+       -7.6,
+       -1.4
+      ],
+      "rel_rpy_deg": [
+       2.0,
+       -0.0,
+       6.0
+      ],
+      "knn_dist": 7.487211851107464,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 11 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 116,
+      "detail": "false for 13 of 13 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -14.2,
+       -7.6,
+       -1.4
+      ],
+      "rel_rpy_deg": [
+       2.0,
+       -0.0,
+       6.0
+      ],
+      "knn_dist": 7.487211851107464,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 11 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 128,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.3,
+       -9.1,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       6.0
+      ],
+      "knn_dist": 8.50669571928648,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 12 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      51
+     ],
+     [
+      "move-nut-to-peg",
+      51,
+      116
+     ],
+     [
+      "insert-nut",
+      116,
+      116
+     ],
+     [
+      "release-and-retreat",
+      116,
+      129
+     ]
+    ]
+   },
+   {
+    "demo": "demo_93",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 158,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -19.3,
+       -1.0,
+       -6.3
+      ],
+      "rel_rpy_deg": [
+       8.0,
+       1.0,
+       -6.0
+      ],
+      "knn_dist": 1.024576146077509,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": true,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 159,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -19.2,
+       -0.9,
+       -6.2
+      ],
+      "rel_rpy_deg": [
+       8.0,
+       1.0,
+       -6.0
+      ],
+      "knn_dist": 8.471520260973875,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 159,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -19.2,
+       -0.9,
+       -6.2
+      ],
+      "rel_rpy_deg": [
+       8.0,
+       1.0,
+       -6.0
+      ],
+      "knn_dist": 8.471520260973875,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 159,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -19.2,
+       -0.9,
+       -6.2
+      ],
+      "rel_rpy_deg": [
+       8.0,
+       1.0,
+       -6.0
+      ],
+      "knn_dist": 8.471520260973875,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 159,
+      "detail": "false for 12 of 12 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -19.2,
+       -0.9,
+       -6.2
+      ],
+      "rel_rpy_deg": [
+       8.0,
+       1.0,
+       -6.0
+      ],
+      "knn_dist": 8.471520260973875,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 170,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -19.3,
+       -1.9,
+       2.1
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       -6.0
+      ],
+      "knn_dist": 9.41866531830335,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 8 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      81
+     ],
+     [
+      "move-nut-to-peg",
+      81,
+      159
+     ],
+     [
+      "insert-nut",
+      159,
+      159
+     ],
+     [
+      "release-and-retreat",
+      159,
+      171
+     ]
+    ]
+   },
+   {
+    "demo": "demo_103",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 146,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       16.2,
+       -0.8,
+       -7.5
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       4.0,
+       -4.0
+      ],
+      "knn_dist": 4.8454227601451985,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 147,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       16.3,
+       -0.6,
+       -7.1
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       4.0,
+       -4.0
+      ],
+      "knn_dist": 6.605531588617332,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 147,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       16.3,
+       -0.6,
+       -7.1
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       4.0,
+       -4.0
+      ],
+      "knn_dist": 6.605531588617332,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 147,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       16.3,
+       -0.6,
+       -7.1
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       4.0,
+       -4.0
+      ],
+      "knn_dist": 6.605531588617332,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 147,
+      "detail": "false for 11 of 11 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       16.3,
+       -0.6,
+       -7.1
+      ],
+      "rel_rpy_deg": [
+       -8.0,
+       4.0,
+       -4.0
+      ],
+      "knn_dist": 6.605531588617332,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 157,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       16.2,
+       -0.0,
+       2.1
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       -0.0,
+       -6.0
+      ],
+      "knn_dist": 7.695157683293616,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      56
+     ],
+     [
+      "move-nut-to-peg",
+      56,
+      147
+     ],
+     [
+      "insert-nut",
+      147,
+      147
+     ],
+     [
+      "release-and-retreat",
+      147,
+      158
+     ]
+    ]
+   },
+   {
+    "demo": "demo_105",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 142,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.3,
+       15.4,
+       -4.1
+      ],
+      "rel_rpy_deg": [
+       10.0,
+       2.0,
+       9.0
+      ],
+      "knn_dist": 3.086390047114056,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 143,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.4,
+       15.1,
+       -3.7
+      ],
+      "rel_rpy_deg": [
+       10.0,
+       2.0,
+       9.0
+      ],
+      "knn_dist": 6.625679162437853,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 143,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.4,
+       15.1,
+       -3.7
+      ],
+      "rel_rpy_deg": [
+       10.0,
+       2.0,
+       9.0
+      ],
+      "knn_dist": 6.625679162437853,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 143,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.4,
+       15.1,
+       -3.7
+      ],
+      "rel_rpy_deg": [
+       10.0,
+       2.0,
+       9.0
+      ],
+      "knn_dist": 6.625679162437853,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 143,
+      "detail": "false for 11 of 11 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -4.4,
+       15.1,
+       -3.7
+      ],
+      "rel_rpy_deg": [
+       10.0,
+       2.0,
+       9.0
+      ],
+      "knn_dist": 6.625679162437853,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 153,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -5.0,
+       14.2,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       7.0
+      ],
+      "knn_dist": 7.195338680798037,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      63
+     ],
+     [
+      "move-nut-to-peg",
+      63,
+      143
+     ],
+     [
+      "insert-nut",
+      143,
+      143
+     ],
+     [
+      "release-and-retreat",
+      143,
+      154
+     ]
+    ]
+   },
+   {
+    "demo": "demo_111",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 118,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -2.7,
+       15.7,
+       -4.6
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       -7.0,
+       -0.0
+      ],
+      "knn_dist": 3.070182086081604,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 119,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -2.7,
+       15.5,
+       -4.5
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       -7.0,
+       -1.0
+      ],
+      "knn_dist": 6.657212912779251,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 119,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -2.7,
+       15.5,
+       -4.5
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       -7.0,
+       -1.0
+      ],
+      "knn_dist": 6.657212912779251,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 119,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -2.7,
+       15.5,
+       -4.5
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       -7.0,
+       -1.0
+      ],
+      "knn_dist": 6.657212912779251,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 119,
+      "detail": "false for 11 of 11 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -2.7,
+       15.5,
+       -4.5
+      ],
+      "rel_rpy_deg": [
+       -3.0,
+       -7.0,
+       -1.0
+      ],
+      "knn_dist": 6.657212912779251,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 129,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -3.2,
+       15.6,
+       2.1
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       0.0,
+       -1.0
+      ],
+      "knn_dist": 7.607943544096721,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 5 (region 7)",
+       "y bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      50
+     ],
+     [
+      "move-nut-to-peg",
+      50,
+      119
+     ],
+     [
+      "insert-nut",
+      119,
+      119
+     ],
+     [
+      "release-and-retreat",
+      119,
+      130
+     ]
+    ]
+   },
+   {
+    "demo": "demo_125",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 131,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       16.3,
+       2.7,
+       -2.0
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       -1.0,
+       -10.0
+      ],
+      "knn_dist": 4.28657063096458,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 6 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 132,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       16.6,
+       2.6,
+       -1.7
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -1.0,
+       -10.0
+      ],
+      "knn_dist": 7.264088066325156,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 6 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 132,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       16.6,
+       2.6,
+       -1.7
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -1.0,
+       -10.0
+      ],
+      "knn_dist": 7.264088066325156,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 6 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 132,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       16.6,
+       2.6,
+       -1.7
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -1.0,
+       -10.0
+      ],
+      "knn_dist": 7.264088066325156,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 6 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 132,
+      "detail": "false for 12 of 12 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       16.6,
+       2.6,
+       -1.7
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -1.0,
+       -10.0
+      ],
+      "knn_dist": 7.264088066325156,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 6 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 143,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       17.8,
+       2.1,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       -0.0,
+       -11.0
+      ],
+      "knn_dist": 8.603026217633042,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 6 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      132
+     ],
+     [
+      "insert-nut",
+      132,
+      132
+     ],
+     [
+      "release-and-retreat",
+      132,
+      144
+     ]
+    ]
+   },
+   {
+    "demo": "demo_131",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 124,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       15.1,
+       1.0,
+       -5.1
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       3.0,
+       -10.0
+      ],
+      "knn_dist": 4.187348988883438,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 14 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 125,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       15.1,
+       1.0,
+       -4.8
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       3.0,
+       -10.0
+      ],
+      "knn_dist": 6.210652551734876,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 14 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 125,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       15.1,
+       1.0,
+       -4.8
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       3.0,
+       -10.0
+      ],
+      "knn_dist": 6.210652551734876,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 14 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 125,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       15.1,
+       1.0,
+       -4.8
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       3.0,
+       -10.0
+      ],
+      "knn_dist": 6.210652551734876,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 14 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 125,
+      "detail": "false for 11 of 11 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       15.1,
+       1.0,
+       -4.8
+      ],
+      "rel_rpy_deg": [
+       -4.0,
+       3.0,
+       -10.0
+      ],
+      "knn_dist": 6.210652551734876,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 14 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 135,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       15.6,
+       0.6,
+       2.1
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       -0.0,
+       -11.0
+      ],
+      "knn_dist": 7.441841867740113,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      50
+     ],
+     [
+      "move-nut-to-peg",
+      50,
+      125
+     ],
+     [
+      "insert-nut",
+      125,
+      125
+     ],
+     [
+      "release-and-retreat",
+      125,
+      136
+     ]
+    ]
+   },
+   {
+    "demo": "demo_155",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 137,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       14.8,
+       5.7,
+       -5.9
+      ],
+      "rel_rpy_deg": [
+       5.0,
+       2.0,
+       6.0
+      ],
+      "knn_dist": 2.819544067747772,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 14 (region 7)",
+       "y bin 4 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 138,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       14.9,
+       5.7,
+       -5.7
+      ],
+      "rel_rpy_deg": [
+       5.0,
+       2.0,
+       6.0
+      ],
+      "knn_dist": 6.185364787468035,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 14 (region 7)",
+       "y bin 4 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 138,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       14.9,
+       5.7,
+       -5.7
+      ],
+      "rel_rpy_deg": [
+       5.0,
+       2.0,
+       6.0
+      ],
+      "knn_dist": 6.185364787468035,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 14 (region 7)",
+       "y bin 4 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 138,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       14.9,
+       5.7,
+       -5.7
+      ],
+      "rel_rpy_deg": [
+       5.0,
+       2.0,
+       6.0
+      ],
+      "knn_dist": 6.185364787468035,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 14 (region 7)",
+       "y bin 4 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 138,
+      "detail": "false for 11 of 11 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       14.9,
+       5.7,
+       -5.7
+      ],
+      "rel_rpy_deg": [
+       5.0,
+       2.0,
+       6.0
+      ],
+      "knn_dist": 6.185364787468035,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 14 (region 7)",
+       "y bin 4 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 148,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       15.3,
+       4.2,
+       2.1
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       7.0
+      ],
+      "knn_dist": 7.556842616887568,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 5 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      68
+     ],
+     [
+      "move-nut-to-peg",
+      68,
+      138
+     ],
+     [
+      "insert-nut",
+      138,
+      138
+     ],
+     [
+      "release-and-retreat",
+      138,
+      149
+     ]
+    ]
+   },
+   {
+    "demo": "demo_168",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 157,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.4,
+       -7.3,
+       -3.5
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       2.0,
+       2.0
+      ],
+      "knn_dist": 3.4656459309818497,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 11 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 158,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.6,
+       -7.1,
+       -3.8
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       2.0,
+       2.0
+      ],
+      "knn_dist": 7.6110163062143625,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 11 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 158,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.6,
+       -7.1,
+       -3.8
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       2.0,
+       2.0
+      ],
+      "knn_dist": 7.6110163062143625,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 11 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 158,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.6,
+       -7.1,
+       -3.8
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       2.0,
+       2.0
+      ],
+      "knn_dist": 7.6110163062143625,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 11 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 158,
+      "detail": "false for 11 of 11 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -15.6,
+       -7.1,
+       -3.8
+      ],
+      "rel_rpy_deg": [
+       6.0,
+       2.0,
+       2.0
+      ],
+      "knn_dist": 7.6110163062143625,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 11 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 168,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -16.0,
+       -5.7,
+       2.1
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       0.0,
+       1.0
+      ],
+      "knn_dist": 8.146482905153315,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin -1 (region 7)",
+       "y bin 10 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      90
+     ],
+     [
+      "move-nut-to-peg",
+      90,
+      158
+     ],
+     [
+      "insert-nut",
+      158,
+      158
+     ],
+     [
+      "release-and-retreat",
+      158,
+      169
+     ]
+    ]
+   },
+   {
+    "demo": "demo_176",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 113,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.1,
+       14.0,
+       -2.8
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -2.0,
+       -0.0
+      ],
+      "knn_dist": 3.3281711759332673,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 114,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.4,
+       13.9,
+       -2.2
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -2.0,
+       -0.0
+      ],
+      "knn_dist": 6.150445875409955,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 114,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.4,
+       13.9,
+       -2.2
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -2.0,
+       -0.0
+      ],
+      "knn_dist": 6.150445875409955,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 114,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.4,
+       13.9,
+       -2.2
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -2.0,
+       -0.0
+      ],
+      "knn_dist": 6.150445875409955,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 114,
+      "detail": "false for 8 of 8 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -1.4,
+       13.9,
+       -2.2
+      ],
+      "rel_rpy_deg": [
+       -2.0,
+       -2.0,
+       -0.0
+      ],
+      "knn_dist": 6.150445875409955,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_2",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 121,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -2.4,
+       14.7,
+       2.4
+      ],
+      "rel_rpy_deg": [
+       1.0,
+       0.0,
+       -2.0
+      ],
+      "knn_dist": 7.05667673022247,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 6 (region 7)",
+       "y bin 0 (region 7)"
+      ],
+      "cause": "position only"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      58
+     ],
+     [
+      "move-nut-to-peg",
+      58,
+      114
+     ],
+     [
+      "insert-nut",
+      114,
+      114
+     ],
+     [
+      "release-and-retreat",
+      114,
+      122
+     ]
+    ]
+   },
+   {
+    "demo": "demo_180",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 158,
+      "detail": "not true within 0 frames of the stage end (nearest: 50 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -5.3,
+       -6.0,
+       0.5
+      ],
+      "rel_rpy_deg": [
+       13.0,
+       0.0,
+       21.0
+      ],
+      "knn_dist": 4.389922021167735,
+      "knn_thr": 0.8587025950025782,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 159,
+      "detail": "not true within 0 frames of the stage start (nearest: 51 frames away)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -5.2,
+       -6.0,
+       0.5
+      ],
+      "rel_rpy_deg": [
+       13.0,
+       0.0,
+       21.0
+      ],
+      "knn_dist": 3.779282431998667,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "over all",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 159,
+      "detail": "false for 25 of 25 frames in a row (tolerance 24% of stage)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -5.2,
+       -6.0,
+       0.5
+      ],
+      "rel_rpy_deg": [
+       13.0,
+       0.0,
+       21.0
+      ],
+      "knn_dist": 3.779282431998667,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 183,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -6.2,
+       -5.5,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       18.0
+      ],
+      "knn_dist": 3.8313208754321386,
+      "knn_thr": 1.0560240038825306,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 4 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)",
+       "yaw bin 7 (region 6)"
+      ],
+      "cause": "position and rotation"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      48
+     ],
+     [
+      "move-nut-to-peg",
+      48,
+      101
+     ],
+     [
+      "insert-nut",
+      101,
+      159
+     ],
+     [
+      "release-and-retreat",
+      159,
+      184
+     ]
+    ]
+   },
+   {
+    "demo": "demo_191",
+    "success": false,
+    "flagged": true,
+    "violations": [
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "over all",
+      "pred": "holding",
+      "pol": true,
+      "frame": 108,
+      "detail": "false for 31 of 107 frames in a row (tolerance 0% of stage)",
+      "relation": "gripper_1->nut_1",
+      "rel_pos_cm": [
+       -5.3,
+       0.0,
+       0.2
+      ],
+      "rel_rpy_deg": [
+       0.0,
+       7.0,
+       0.0
+      ],
+      "knn_dist": null,
+      "knn_thr": null,
+      "in_training_distribution": false,
+      "nearest_region": "gripper_nut_1",
+      "mismatch": [
+       "grasp sensor 0 (region 1)"
+      ],
+      "cause": "grasp flag"
+     },
+     {
+      "stage": "move-nut-to-peg",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 146,
+      "detail": "not true within 1 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -13.7,
+       -7.0,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       7.0
+      ],
+      "knn_dist": 4.684046672795236,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 147,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -13.7,
+       -7.0,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       7.0
+      ],
+      "knn_dist": 4.684046672795236,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "insert-nut",
+      "kind": "at end",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 147,
+      "detail": "not true within 0 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -13.7,
+       -7.0,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       7.0
+      ],
+      "knn_dist": 4.684046672795236,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at start",
+      "pred": "nut-at-peg",
+      "pol": true,
+      "frame": 147,
+      "detail": "not true within 0 frames of the stage start (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -13.7,
+       -7.0,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       7.0
+      ],
+      "knn_dist": 4.684046672795236,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "nut-on-peg",
+      "pol": true,
+      "frame": 147,
+      "detail": "not true within 12 frames of the stage end (nearest: never)",
+      "relation": "nut_1->peg_1",
+      "rel_pos_cm": [
+       -13.7,
+       -7.0,
+       2.0
+      ],
+      "rel_rpy_deg": [
+       -0.0,
+       -0.0,
+       7.0
+      ],
+      "knn_dist": 4.684046672795236,
+      "knn_thr": 2.213658613003545,
+      "in_training_distribution": false,
+      "nearest_region": "nut_peg_1",
+      "mismatch": [
+       "x bin 0 (region 7)",
+       "y bin 10 (region 7)",
+       "z bin 7 (region 8)"
+      ],
+      "cause": "position only"
+     },
+     {
+      "stage": "release-and-retreat",
+      "kind": "at end",
+      "pred": "holding",
+      "pol": false,
+      "frame": 147,
+      "detail": "not true within 0 frames of the stage end (nearest: 1 frames away)",
+      "relation": "gripper_1->nut_1",
+      "rel_pos_cm": [
+       -2.8,
+       -5.1,
+       -3.8
+      ],
+      "rel_rpy_deg": [
+       13.0,
+       11.0,
+       16.0
+      ],
+      "knn_dist": 3.0795018179686764,
+      "knn_thr": 0.5056813832471974,
+      "in_training_distribution": false,
+      "cause": "inside region it should not be in"
+     }
+    ],
+    "stages": [
+     [
+      "approach-nut",
+      0,
+      40
+     ],
+     [
+      "move-nut-to-peg",
+      40,
+      147
+     ],
+     [
+      "insert-nut",
+      147,
+      147
+     ],
+     [
+      "release-and-retreat",
+      147,
+      147
+     ]
+    ]
+   }
+  ]
+ }
+}

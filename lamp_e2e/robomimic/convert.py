@@ -93,6 +93,57 @@ def canonicalize_peg(poses):
     return poses
 
 
+# Tool Hang, LAMP_TOOL_CANON=1: the hung tool sits ~172 deg from the frame's orientation, right at the rotation-vector
+# wrap point, so its rotation flips sign between demos and LAMP never learns 'tool on hook'. The tool frame is
+# right-multiplied by the inverse of the average hung orientation (measured on the 180 training demos by
+# tool_canon.py), so hanging reads as ~23 deg instead of ~172 deg. Same idea as the gripper's tool_frame.
+TOOL_CANON_Q = [0.616931, -0.047497, -0.785577, 0.002871]   # xyzw
+
+
+def canonicalize_tool(poses):
+    if "tool_1" not in poses:
+        return poses
+    t = poses["tool_1"].copy()
+    t[:, 3:] = (R.from_rotvec(t[:, 3:]) * R.from_quat(TOOL_CANON_Q)).as_rotvec()
+    poses = dict(poses)
+    poses["tool_1"] = t
+    return poses
+
+
+FOLLOW_TOL = 0.02     # m: object counts as 'moving with the gripper' if its position in the gripper frame drifts < 2 cm
+FOLLOW_LAG = 5        # frames over which the drift is measured (0.25 s at 20 Hz)
+SETTLE = 10           # frames after closing during which the grasp may settle before 'following' is required
+
+
+def held_by_motion(poses, graspable, rel_dist, closed, gap):
+    """Grasp signal from the object moving with the gripper (LAMP_GRASP=motion), instead of 'gripper closed near
+    the object'. A grasp starts when the gripper closes (fingers not fully shut) with an object within GRASP_DIST;
+    it continues only while that object's position in the gripper frame stays within FOLLOW_TOL over FOLLOW_LAG
+    frames, or while the gripper itself is not moving (nothing to follow). It ends when the gripper opens or the
+    object stops following (e.g. it slipped out, or the gripper re-closed next to an object it is not carrying)."""
+    T = len(closed)
+    G = poses["gripper_1"]
+    Rg = R.from_rotvec(G[:, 3:])
+    rel = {n: Rg.inv().apply(poses[n][:, :3] - G[:, :3]) for n in graspable}
+    held, since = [None] * T, 0
+    for t in range(T):
+        if not closed[t] or gap[t] < MIN_GAP:
+            continue
+        prev = held[t - 1] if t > 0 else None
+        if prev is not None:
+            since += 1
+            k = max(0, t - FOLLOW_LAG)
+            drift = np.linalg.norm(rel[prev][t] - rel[prev][k])
+            gripper_moved = np.linalg.norm(G[t, :3] - G[k, :3]) > 0.005
+            if since <= SETTLE or drift < FOLLOW_TOL or not gripper_moved:
+                held[t] = prev
+            continue
+        name = min(graspable, key=lambda n: rel_dist[n][t])
+        if rel_dist[name][t] < GRASP_DIST and (t == 0 or not closed[t - 1] or since == 0):
+            held[t], since = name, 0
+    return held
+
+
 def build_demo(task, o, eef_pos, eq, gq, gripper_cmd, model_file, tool_frame=False):
     """Arrays (as recorded by robomimic, or live from robosuite) -> LAMP-ready demo dict."""
     spec = TASKS[task]
@@ -109,8 +160,16 @@ def build_demo(task, o, eef_pos, eq, gq, gripper_cmd, model_file, tool_frame=Fal
         rel_dist[name] = np.linalg.norm(o[:, 14 * k:14 * k + 3], axis=1)
     for name, body in spec["fixed"].items():
         poses[name] = np.repeat(fixed_body_pose(model_file, body)[None], T, axis=0)
+    if os.environ.get("LAMP_TOOL_CANON") == "1":
+        poses = canonicalize_tool(poses)
     closed = np.asarray(gripper_cmd) > 0
     gap = gq[:, 0] - gq[:, 1]
+    if os.environ.get("LAMP_GRASP") == "motion":
+        held = held_by_motion(poses, spec["graspable"], rel_dist, closed, gap)
+        flags = o[:, 42:44] if task == "tool_hang" else None
+        if os.environ.get("LAMP_PEG_SYMMETRY") == "1":
+            poses = canonicalize_peg(poses)
+        return dict(T=T, poses=poses, held=held, flags=flags)
     held = [None] * T
     for t in range(T):
         if not closed[t] or gap[t] < MIN_GAP:
@@ -125,6 +184,22 @@ def build_demo(task, o, eef_pos, eq, gq, gripper_cmd, model_file, tool_frame=Fal
     if os.environ.get("LAMP_PEG_SYMMETRY") == "1":
         poses = canonicalize_peg(poses)
     return dict(T=T, poses=poses, held=held, flags=flags)
+
+
+def mh_split(ph_path):
+    """Square multi-human (other operators) demos that are not copies of a proficient-human demo, split per operator
+    group: even positions -> training (mixed-operator experiment, LAMP_MH_TRAIN=1), odd positions -> test.
+    Returns {group: (train_names, test_names)}."""
+    import hashlib
+    key = lambda g: hashlib.md5(np.round(g["obs/object"][:20], 5).tobytes()).hexdigest() + str(g["actions"].shape[0])
+    out = {}
+    with h5py.File(ph_path, "r") as fp, h5py.File(ph_path.replace("/ph/", "/mh/"), "r") as fm:
+        ph_keys = {key(fp["data"][n]) for n in fp["data"]}
+        for grp in ("better", "okay", "worse"):
+            names = sorted([x.decode() for x in fm["mask"][grp][:]], key=lambda s: int(s.split("_")[1]))
+            names = [n for n in names if key(fm["data"][n]) not in ph_keys]
+            out[grp] = (names[0::2], names[1::2])
+    return out
 
 
 def grasp_segments(held):
@@ -229,6 +304,13 @@ if __name__ == "__main__":
 
     objects = ["gripper_1"] + list(spec["objects"]) + list(spec["fixed"])
     tr = [to_envstates(demos[n], stride, EnvState)[0] for n in train]
+    if os.environ.get("LAMP_MH_TRAIN") == "1":
+        # mixed-operator training: add half of each other-operator group (the other half stays for testing)
+        ph_path = os.path.join(a.data_root, spec["file"])
+        with h5py.File(ph_path.replace("/ph/", "/mh/"), "r") as fm:
+            for grp, (mtr, _) in mh_split(ph_path).items():
+                tr += [to_envstates(load_demo(fm["data"][n], a.task, a.tool_frame), stride, EnvState)[0] for n in mtr]
+                print("added {} '{}' other-operator demos to training".format(len(mtr), grp))
     save_env(Config, "env1", tr, objects)
 
     te, gts = [], []

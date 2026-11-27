@@ -94,6 +94,55 @@ STAGES = {
 CARRIES = {"Square": ["nut_1"], "ToolHang": ["frame_1", "tool_1"]}
 
 
+def auto_map(domain, model, ref_final, near=(0.03, 0.05)):
+    """Map LAMP's numbered regions to named predicates automatically (LAMP_AUTO_MAP=1), so a re-learned model
+    with different numbering is interpreted the same way. Uses each region's grasp-sensor value and the distance of
+    its centre from where the second object ends up relative to the first in normal training demos (ref_final:
+    'type1_type2' -> mean final relative position, metres).
+      gripper-object regions : sensor 1 -> holding, sensor 0 -> at grasp pose
+      object-object regions  : centre within `near` of the final pose -> goal relation (seated / inserted / on hook),
+                               otherwise -> approach relation (above / lined up); ToolHang frame-tool regions far
+                               from the hook (> 15 cm, e.g. tool lying on the table) are not used
+    Returns {name: members} and writes it into PREDICATES."""
+    regions = {}
+    for key, d in model.relations.items():
+        for cr, r in d.items():
+            if cr == 0:
+                continue
+            reg = np.array(r.region)
+            bins = r.discretizer.get_bins(True)
+            centre = np.array([np.mean([(bins[i]["bin_start"][j] + bins[i]["bin_end"][j]) / 2 for j in reg[:, i]])
+                               for i in range(3)])
+            regions["{}_{}".format(key, cr)] = (key, set(int(x) for x in reg[:, 6]), centre)
+
+    def sel(key, rule):
+        return sorted(n for n, (k, sens, c) in regions.items() if k == key and rule(sens, c))
+
+    def dist(key, c):
+        return np.linalg.norm(c - np.asarray(ref_final[key])) if key in ref_final else np.inf
+
+    m = {}
+    if domain == "Square":
+        m["holding"] = sel("gripper_nut", lambda s, c: 1 in s)
+        m["at-grasp-pose"] = sel("gripper_nut", lambda s, c: s == {0})
+        m["nut-on-peg"] = sel("nut_peg", lambda s, c: dist("nut_peg", c) <= near[0])
+        m["nut-above-peg"] = sel("nut_peg", lambda s, c: dist("nut_peg", c) > near[0])
+        m["nut-at-peg"] = sorted(m["nut-on-peg"] + m["nut-above-peg"])
+        m["ready-to-grasp"] = sorted(m["holding"] + m["at-grasp-pose"])
+    else:
+        m["holding-frame"] = sel("gripper_frame", lambda s, c: 1 in s)
+        m["frame-in-stand"] = sel("frame_stand", lambda s, c: dist("frame_stand", c) <= near[1])
+        m["frame-above-stand"] = sel("frame_stand", lambda s, c: dist("frame_stand", c) > near[1])
+        m["at-tool-grasp"] = sel("gripper_tool", lambda s, c: s == {0})
+        m["holding-tool"] = sel("gripper_tool", lambda s, c: 1 in s)
+        m["tool-on-hook"] = sel("frame_tool", lambda s, c: dist("frame_tool", c) <= near[1])
+        m["tool-at-hook"] = sel("frame_tool", lambda s, c: near[1] < dist("frame_tool", c) <= 0.15)
+    for name, members in m.items():
+        desc = PREDICATES[domain][name][0].replace(" (NOT LEARNED)", "")
+        PREDICATES[domain][name] = (desc if members else desc + " (NOT LEARNED)", members)
+    return m
+
+
 def named_truth(domain, lamp_true):
     """lamp_true: dict LAMP-predicate-name -> bool array (T,). Returns named predicate -> bool array."""
     T = len(next(iter(lamp_true.values())))
@@ -117,6 +166,10 @@ def carry_blocks(held, cmd):
             s = t
         if not c and s is not None:
             objs = [h for h in held[s:t] if h]
+            # with the motion-based grasp signal, a closed interval only counts as a carry if the object was really
+            # held for at least half of it (e.g. re-closing the gripper next to the seated nut is not a carry)
+            if os.environ.get("LAMP_GRASP") == "motion" and len(objs) < 0.5 * (t - s):
+                objs = []
             if objs:
                 o = max(set(objs), key=objs.count)
                 if blocks and blocks[-1][2] == o:
@@ -176,7 +229,12 @@ def _offset(v, boundary, kind):
 
 
 # ----------------------------------------------------------------------------- learning tolerances
-def learn_tolerances(domain, runs, pct=95):
+TOL_PCT = float(os.environ.get("LAMP_TOL_PCT", "95"))   # 95 (original runs) or 100 (= max over normal demos, capped)
+MAX_FLICKER = 0.25                                       # over all: never allow a condition to be off for >25% of a stage
+
+
+def learn_tolerances(domain, runs, pct=None):
+    pct = TOL_PCT if pct is None else pct
     """runs: list of dicts with 'truth' (named -> bool array) and 'stages'. Returns per (stage, cond) tolerance
     and per-stage duration bounds, all learned from successful training demos."""
     tol, dur = {}, {}
@@ -210,9 +268,18 @@ def learn_tolerances(domain, runs, pct=95):
 MAX_WINDOW = 20      # frames (1 s at 20 Hz): at start / at end must hold within this distance of the boundary
 
 
-def check(domain, run, tol):
-    """Return list of violations: dicts with stage, kind, predicate, frame, detail."""
+def check(domain, run, tol, dur=None):
+    """Return list of violations: dicts with stage, kind, predicate, frame, detail.
+    With dur (stage-duration bounds learned from normal demos) and LAMP_DURATION_CHECK=1, a stage that runs longer
+    than its upper bound is also a violation (catches stalls)."""
     out = []
+    if dur is not None and os.environ.get("LAMP_DURATION_CHECK") == "1":
+        for name, s, e in run["stages"]:
+            hi = dur[name][1]
+            if e - s > hi:
+                out.append(dict(stage=name, kind="duration", pred="stage-duration", pol=True, frame=int(s + hi),
+                                detail="stage lasted {} frames, longer than any normal demo allows ({:.0f})".format(
+                                    e - s, hi)))
     for st in STAGES[domain]:
         seg = [x for x in run["stages"] if x[0] == st["name"]][0]
         s, e = seg[1], seg[2]
@@ -225,7 +292,7 @@ def check(domain, run, tol):
                 if e <= s:
                     continue
                 L = _longest_false_run(v[s:e])
-                if L / (e - s) > t and L > 2:
+                if L / (e - s) > min(t, MAX_FLICKER) and L > 2:
                     first = s + _first_false_run_start(v[s:e], L)
                     out.append(dict(stage=st["name"], kind="over all", pred=pred, pol=pol, frame=int(first),
                                     detail="false for {} of {} frames in a row (tolerance {:.0%} of stage)".format(

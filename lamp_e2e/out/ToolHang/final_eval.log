@@ -1,0 +1,54 @@
+== re-learn ToolHang LAMP model with the motion grasp signal (10:54:30)
+saved env1: 180 demos, 10204 states
+saved env9: 20 demos, 1145 states
+saved env8: 40 demos, 2289 states
+  gripper_frame: 1 RCR(s)
+  gripper_stand: 0 RCR(s)
+  gripper_tool: 2 RCR(s)
+  frame_stand: 3 RCR(s)
+  frame_tool: 3 RCR(s)
+  stand_tool: 0 RCR(s)
+#abstract transitions: 180  #lifted actions: 84
+gripper_frame_1: 1 bins | sensor [1] | pos x [-4.5,-1.5] y [-1.5,+1.5] z [-1.5,+1.5] cm | angle-bin sets r[4] p[4] y[8]
+gripper_tool_1: 1 bins | sensor [1] | pos x [-1.5,+1.5] y [-1.5,+1.5] z [-1.5,+1.5] cm | angle-bin sets r[6] p[8] y[6]
+gripper_tool_2: 1 bins | sensor [0] | pos x [-1.5,+1.5] y [-1.5,+1.5] z [-1.5,+1.5] cm | angle-bin sets r[6] p[8] y[6]
+frame_stand_1: 1 bins | sensor [0] | pos x [-5.8,-1.9] y [-1.9,+1.9] z [-32.8,-28.9] cm | angle-bin sets r[6] p[6] y[3]
+frame_stand_2: 2 bins | sensor [0] | pos x [-5.8,-1.9] y [-1.9,+1.9] z [-25.1,-21.2] cm | angle-bin sets r[6] p[6] y[3, 4]
+frame_stand_3: 2 bins | sensor [0] | pos x [-9.6,-1.9] y [+1.9,+5.8] z [-36.6,-32.8] cm | angle-bin sets r[6] p[6, 7] y[3]
+frame_tool_1: 21 bins | sensor [0] | pos x [-21.2,-13.5] y [-5.8,+5.8] z [-9.6,+5.8] cm | angle-bin sets r[6, 7] p[7, 8, 9] y[6, 7]
+frame_tool_2: 5 bins | sensor [0] | pos x [-13.5,-5.8] y [-1.9,+1.9] z [-17.4,-9.6] cm | angle-bin sets r[6, 10] p[6, 9, 10] y[6]
+frame_tool_3: 30 bins | sensor [0] | pos x [-28.9,-21.2] y [-17.4,+1.9] z [-40.5,-17.4] cm | angle-bin sets r[6, 7] p[8, 9] y[5, 6]
+===== ToolHang final_bins_d0 (11:06:21)
+labelled 180 training runs (5684s)
+false alarms on nominal held-out demos: 17/20
+drop: 20 rollouts, 18 really failed, detected 17/18
+miss: 20 rollouts, 19 really failed, detected 19/19
+===== ToolHang final_bins_d1 (12:44:56)
+labelled 180 training runs (360s)
+false alarms on nominal held-out demos: 3/20
+drop: 20 rollouts, 18 really failed, detected 11/18
+miss: 20 rollouts, 19 really failed, detected 17/19
+===== ToolHang final_gmm (12:55:45)
+labelled 180 training runs (1137s)
+learned likelihood thresholds: {'frame-above-stand': 10.09, 'holding-frame': -51.75, 'frame-in-stand': -56.22, 'at-tool-grasp': -38.93, 'holding-tool': -11.12, 'tool-at-hook': 0.57}
+false alarms on nominal held-out demos: 3/20
+drop: 20 rollouts, 18 really failed, detected 11/18
+miss: 20 rollouts, 19 really failed, detected 17/19
+===== ToolHang final_density (13:32:29)
+labelled 180 training runs (699s)
+false alarms on nominal held-out demos: 1/20
+drop: 20 rollouts, 18 really failed, detected 12/18
+miss: 20 rollouts, 19 really failed, detected 18/19
+===== ToolHang final_combined (14:06:12)
+labelled 180 training runs (1095s)
+false alarms on nominal held-out demos: 3/20
+drop: 20 rollouts, 18 really failed, detected 12/18
+miss: 20 rollouts, 19 really failed, detected 19/19
+| Variant | False alarms (held-out normal) | drop: caught / early only / missed | miss: caught / early only / missed | slip: caught / early only / missed | stall: caught / early only / missed | wrong_grasp: caught / early only / missed |
+|---|---|---|---|---|---|---|
+| final_bins_d0 | 17/20 | 9 / 8 / 1 (of 18) | 17 / 2 / 0 (of 19) | 9 / 8 / 1 (of 18) | 14 / 4 / 2 (of 20) | 12 / 8 / 0 (of 20) |
+| final_bins_d1 | 3/20 | 8 / 3 / 7 (of 18) | 13 / 4 / 2 (of 19) | 8 / 4 / 6 (of 18) | 8 / 2 / 10 (of 20) | 11 / 9 / 0 (of 20) |
+| final_gmm | 3/20 | 8 / 3 / 7 (of 18) | 15 / 2 / 2 (of 19) | 8 / 3 / 7 (of 18) | 8 / 1 / 11 (of 20) | 11 / 9 / 0 (of 20) |
+| final_density | 1/20 | 9 / 3 / 6 (of 18) | 16 / 2 / 1 (of 19) | 11 / 2 / 5 (of 18) | 11 / 1 / 8 (of 20) | 12 / 7 / 1 (of 20) |
+| final_combined | 3/20 | 9 / 3 / 6 (of 18) | 16 / 3 / 0 (of 19) | 11 / 2 / 5 (of 18) | 11 / 1 / 8 (of 20) | 12 / 8 / 0 (of 20) |
+
